@@ -1,0 +1,74 @@
+.. _scala-install:
+
+============
+Installation
+============
+
+The recommended way to get started with the {+driver-short+} in your
+project is by using a dependency management system.
+
+The following sections contain the Reactive Streams-based Scala
+implementation for asynchronous stream processing with non-blocking back
+pressure.
+
+Scala 2.12 Based Driver
+-----------------------
+
+.. tabs::
+
+   .. tab:: Maven
+      :tabid: maven-installation
+
+      If you are using `Maven <https://maven.apache.org/>`__ to manage your
+      packages, add the following entry to your ``pom.xml`` dependencies list:
+
+      .. code-block:: xml
+
+         <dependencies>
+             <dependency>
+                 <groupId>org.mongodb.scala</groupId>
+                 <artifactId>mongo-scala-driver</artifactId>
+                 <version>5.0.0_2.12</version>
+             </dependency>
+         </dependencies>
+
+   .. tab:: Gradle
+      :tabid: gradle-installation
+
+      If you are using `sbt <https://www.scala-sbt.org/>`__ to manage your
+      packages, add the following entry to your ``build.sbt`` file:
+      
+      .. code-block:: none
+
+         libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "5.0.0"
+
+Scala 2.11 Based Driver
+-----------------------
+
+.. tabs::
+
+   .. tab:: Maven
+      :tabid: maven-installation
+
+      If you are using `Maven <https://maven.apache.org/>`__ to manage your
+      packages, add the following entry to your ``pom.xml`` dependencies list:
+
+      .. code-block:: xml
+
+         <dependencies>
+             <dependency>
+                 <groupId>org.mongodb.scala</groupId>
+                 <artifactId>mongo-scala-driver</artifactId>
+                 <version>5.0.0_2.11</version>
+             </dependency>
+         </dependencies>
+
+   .. tab:: Gradle
+      :tabid: gradle-installation
+
+      If you are using `sbt <https://www.scala-sbt.org/>`__ to manage your
+      packages, add the following entry to your ``build.sbt`` file:
+      
+      .. code-block:: none
+
+         libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "5.0.0"
