@@ -39,8 +39,8 @@ Scala 2.12 Based Driver
              </dependency>
          </dependencies>
 
-   .. tab:: Gradle
-      :tabid: gradle-installation
+   .. tab:: sbt
+      :tabid: sbt-installation
 
       If you are using `sbt <https://www.scala-sbt.org/>`__ to manage your
       packages, add the following entry to your ``build.sbt`` file:
@@ -70,8 +70,8 @@ Scala 2.11 Based Driver
              </dependency>
          </dependencies>
 
-   .. tab:: Gradle
-      :tabid: gradle-installation
+   .. tab:: sbt
+      :tabid: sbt-installation
 
       If you are using `sbt <https://www.scala-sbt.org/>`__ to manage your
       packages, add the following entry to your ``build.sbt`` file:
