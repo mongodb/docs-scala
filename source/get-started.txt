@@ -15,5 +15,5 @@ Get Started
 - :ref:`scala-primer`
 
 .. 
-   - :ref:`javars-quickstart`
-   - :ref:`javars-pojo-qs`
+   - :ref:`scala-quickstart`
+   - :ref:`scala-pojo-qs`
