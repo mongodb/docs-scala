@@ -52,11 +52,11 @@ are given by the following protocol:
 
    onSubscribe onNext* (onError | onComplete)?
 
-This means that ``onSubscribe`` is always
+This means that ``onSubscribe()`` is always
 signaled, followed by a possibly unbounded number
-of ``onNext`` signals, as requested by
-``Observer``. This is followed by an ``onError`` signal
-if there is a failure or an ``onComplete`` signal
+of ``onNext()`` signals, as requested by
+``Observer``. This is followed by an ``onError()`` signal
+if there is a failure or an ``onComplete()`` signal
 when no more elements are available, as long as
 the ``Subscription`` is not canceled.
 
@@ -92,7 +92,7 @@ Back Pressure
 
 By default, the ``Observer`` trait will request all the results from the
 ``Observer`` as soon as the ``Observable`` is subscribed to. Ensure that
-the ``Observer`` has the capacity to handle all the results from the
+the ``Observer`` can handle all the results from the
 ``Observable``. Custom implementations of the ``Observer.onSubscribe()``
 method can save the ``Subscription`` so that data is only
 requested when the ``Observer`` has the capacity.
@@ -110,7 +110,7 @@ results of one example before starting the next, to ensure the
 state of the database. The ``Helpers`` object provides the following
 methods:
 
-- ``results()``: blocks until the ``Observable`` is completed and returns the collected results.
-- ``headResult()``: blocks until the first result of the ``Observable`` can be returned.
-- ``printResults()``: blocks until the ``Observable`` is completed, and prints out each result.
-- ``printHeadResult()``: blocks until the first result of the ``Observable`` is available and then prints it.
+- ``results()``: blocks until the ``Observable`` is completed and returns the collected results
+- ``headResult()``: blocks until the first result of the ``Observable`` can be returned
+- ``printResults()``: blocks until the ``Observable`` is completed, and prints out each result
+- ``printHeadResult()``: blocks until the first result of the ``Observable`` is available and then prints it
