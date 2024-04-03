@@ -9,7 +9,7 @@ Primer
    :values: reference
 
 .. meta::
-   :keywords: code example, design, types
+   :keywords: code example, design, types, preparation
 
 .. contents:: On this page
    :local:
