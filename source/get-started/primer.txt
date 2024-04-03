@@ -99,7 +99,9 @@ Helpers Used in the in the Quick Start
 --------------------------------------
 
 In the Quick Start, we have implemented custom implicit helpers defined
-in the `Helpers.scala </blob/master/driver-scala/src/integration/scala/tour/Helpers.scala>`__ file in the driver source GitHub repository.
+in the `Helpers.scala
+<{+driver-source-gh+}/blob/master/driver-scala/src/integration/scala/tour/Helpers.scala>`__
+file in the driver source GitHub repository.
 These helpers retrieve and print results. Though the Quick Start is an
 artificial scenario for asynchronous code, the examples block on the 
 results of one example before starting the next, to ensure the
