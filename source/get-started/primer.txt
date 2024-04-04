@@ -70,7 +70,7 @@ Observables
 
 The {+driver-short+} API mirrors the :driver:`Java Sync driver
 </java/sync/current/>` API and any methods that cause network 
-I/O to return a ``Observable<T>`` type, where ``T`` is the type of response
+I/O to return an ``Observable<T>`` type, where ``T`` is the type of response
 for the operation.
 
 .. note::
