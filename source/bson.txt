@@ -4,6 +4,13 @@
 BSON Implementation
 ===================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: documents, storage, codec
+
 The BSON library comprehensively supports `BSON
 <https://bsonspec.org/>`__, the data storage and network transfer format
 that MongoDB uses for documents. BSON, short 
