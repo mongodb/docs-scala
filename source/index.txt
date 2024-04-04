@@ -13,6 +13,7 @@
    :maxdepth: 1
 
    /installation/
+   /bson/
    View the Source <https://github.com/mongodb/mongo-java-driver>
    API Documentation <{+api+}/index.html>
    Previous Versions <https://mongodb.github.io/mongo-java-driver/>
@@ -32,6 +33,8 @@ runnable project by following one of the tutorials.
 .. - :ref:`scala-tutorials`
 
 .. - :ref:`scala-reference`
+
+- :ref:`scala-bson`
 
 - `Driver Source GitHub Repository <https://github.com/mongodb/mongo-java-driver>`__
 
