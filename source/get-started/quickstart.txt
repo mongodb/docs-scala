@@ -132,7 +132,7 @@ Access a Collection
 -------------------
 
 Once you have a ``MongoDatabase`` instance, use the
-``getCollection()``` method to access a collection.
+``getCollection()`` method to access a collection.
 
 Specify the name of the collection to the ``getCollection()`` method. If
 a collection does not exist, MongoDB creates the collection when you
@@ -183,7 +183,7 @@ Insert One Document
 ~~~~~~~~~~~~~~~~~~~
 
 To insert a document into a collection, use the ``insertOne()`` method.
-use the ``results()`` implicit helper to block until the observer is
+Then, use the ``results()`` implicit helper to block until the observer is
 completed:
 
 .. code-block:: scala
