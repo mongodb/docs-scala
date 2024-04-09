@@ -156,49 +156,49 @@ The following ``BsonTransformers`` are in scope by default:
      - BsonValue
 
    * - ``Boolean``
-     - => ``BsonBoolean``
+     - ``BsonBoolean``
 
    * - ``String``
-     - => ``BsonString``
+     - ``BsonString``
 
    * - ``Array[Byte]``
-     - => ``BsonBinary``
+     - ``BsonBinary``
 
    * - ``Regex``
-     - => ``BsonRegex``
+     - ``BsonRegex``
 
    * - ``Date``
-     - => ``BsonDateTime``
+     - ``BsonDateTime``
 
    * - ``ObjectId``
-     - => ``BsonObjectId``
+     - ``BsonObjectId``
 
    * - ``Int``
-     - => ``BsonInt32``
+     - ``BsonInt32``
 
    * - ``Long``
-     - => ``BsonInt64``
+     - ``BsonInt64``
 
    * - ``Double``
-     - => ``BsonDouble``
+     - ``BsonDouble``
 
    * - ``immutable.Document``
-     - => ``BsonDocument``
+     - ``BsonDocument``
 
    * - ``mutable.Document``
-     - => ``BsonDocument``
+     - ``BsonDocument``
 
    * - ``Option[T]``
-     - => ``BsonValue`` where ``T`` has a ``BsonTransformer``
+     - ``BsonValue`` where ``T`` has a ``BsonTransformer``
 
    * - ``Seq[(String, T)]``
-     - => ``BsonDocument`` where ``T`` has a ``BsonTransformer``
+     - ``BsonDocument`` where ``T`` has a ``BsonTransformer``
 
    * - ``Seq[T]``
-     - => ``BsonArray`` where ``T`` has a ``BsonTransformer``
+     - ``BsonArray`` where ``T`` has a ``BsonTransformer``
 
    * - ``BsonValue``
-     - => ``BsonValue``
+     - ``BsonValue``
 
 .. code-block:: scala
 
