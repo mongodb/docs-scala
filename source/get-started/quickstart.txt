@@ -17,6 +17,9 @@ Quick Start
    :depth: 2
    :class: singlecol
 
+Overview
+--------
+
 The code examples in this guide come from the `QuickTour.scala
 <{+driver-source-gh+}/blob/master/driver-scala/src/integration/scala/tour/QuickTour.scala>`__
 file in the driver source code GitHub repository.
