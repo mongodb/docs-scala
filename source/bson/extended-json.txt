@@ -9,7 +9,7 @@ Extended JSON
    :values: reference
 
 .. meta::
-   :keywords: representation, storage, codec
+   :keywords: documents, storage, codec, registry
 
 .. contents:: On this page
    :local:
@@ -25,7 +25,8 @@ represented as MongoDB Extended JSON. Both of the following variants are support
 
 - Strict Mode: representations of BSON types that conform to the `JSON
   RFC <https://www.json.org/json-en.html>`__. This is the format that
-  ``mongoexport`` produces and ``mongoimport`` consumes.
+  :dbtools:`mongoexport </mongoexport/>` produces and
+  :dbtools:`mongoimport </mongoimport/>` consumes.
 
 - Shell Mode: a superset of JSON that the :mongosh:`MongoDB shell </>` can parse.
 
