@@ -30,7 +30,7 @@ file in the driver source code GitHub repository.
 
 .. important::
 
-   See the :ref:`BSON Macros <todo-link>` documentation for information about
+   See the :ref:`BSON Macros <scala-macros>` documentation for information about
    using macros for configuring case class support with your
    ``MongoCollection`` instance.
 
