@@ -7,10 +7,10 @@ Tutorials
 .. toctree::
 
    /tutorials/connect/
+   /tutorials/indexes/
 
 .. 
    /tutorials/db-coll/
-   /tutorials/indexes/
    /tutorials/read-ops/
    /tutorials/encrypt/
    /tutorials/write-ops/
@@ -22,16 +22,17 @@ Tutorials
    /tutorials/command/
 
 - :ref:`scala-connect`
+- :ref:`scala-indexes`
 
 .. 
-  - :ref:`javars-db-coll`
-  - :ref:`javars-indexes`
-  - :ref:`javars-read-operations`
-  - :ref:`javars-encrypt`
-  - :ref:`javars-write-ops`
-  - :ref:`javars-aggregation`
-  - :ref:`javars-changestream`
-  - :ref:`javars-text-search`
-  - :ref:`javars-geo`
-  - :ref:`javars-gridfs`
-  - :ref:`javars-run-command`
+  - :ref:`scala-db-coll`
+  - :ref:`scala-indexes`
+  - :ref:`scala-read-operations`
+  - :ref:`scala-encrypt`
+  - :ref:`scala-write-ops`
+  - :ref:`scala-aggregation`
+  - :ref:`scala-changestream`
+  - :ref:`scala-text-search`
+  - :ref:`scala-geo`
+  - :ref:`scala-gridfs`
+  - :ref:`scala-run-command`
