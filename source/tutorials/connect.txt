@@ -9,7 +9,7 @@ Connect to MongoDB
    :values: reference
 
 .. meta::
-   :keywords: code example, connect to MongoDB, modify connection
+   :keywords: code example, modify connection
 
 .. TODO .. toctree::
 ..    
