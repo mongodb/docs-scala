@@ -9,9 +9,9 @@ Tutorials
    /tutorials/connect/
    /tutorials/db-coll/
    /tutorials/indexes/
+   /tutorials/read-ops/
 
 .. 
-   /tutorials/read-ops/
    /tutorials/encrypt/
    /tutorials/write-ops/
    /tutorials/aggregation/
@@ -24,9 +24,9 @@ Tutorials
 - :ref:`scala-connect`
 - :ref:`scala-db-coll`
 - :ref:`scala-indexes`
+- :ref:`scala-read-operations`
 
 .. 
-  - :ref:`scala-read-operations`
   - :ref:`scala-encrypt`
   - :ref:`scala-write-ops`
   - :ref:`scala-aggregation`
