@@ -9,7 +9,7 @@ Databases and Collections
    :values: reference
 
 .. meta::
-   :keywords: code example, access database, access collection
+   :keywords: code example, validation, codec registry, write concern
 
 .. contents:: On this page
    :local:
@@ -201,7 +201,6 @@ model your documents when performing CRUD operations:
 
 .. code-block:: scala
 
-   // pass BsonDocument.class as the second argument
    import org.mongodb.scala.bson._
    
    val collection: MongoCollection[BsonDocument] = database.getCollection[BsonDocument]("mycoll")
