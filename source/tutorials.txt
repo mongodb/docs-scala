@@ -7,10 +7,10 @@ Tutorials
 .. toctree::
 
    /tutorials/connect/
+   /tutorials/db-coll/
    /tutorials/indexes/
 
 .. 
-   /tutorials/db-coll/
    /tutorials/read-ops/
    /tutorials/encrypt/
    /tutorials/write-ops/
@@ -22,11 +22,10 @@ Tutorials
    /tutorials/command/
 
 - :ref:`scala-connect`
+- :ref:`scala-db-coll`
 - :ref:`scala-indexes`
 
 .. 
-  - :ref:`scala-db-coll`
-  - :ref:`scala-indexes`
   - :ref:`scala-read-operations`
   - :ref:`scala-encrypt`
   - :ref:`scala-write-ops`

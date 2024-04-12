@@ -14,7 +14,7 @@ Create Indexes
 .. contents:: On this page
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
    :class: singlecol
 
 Indexes support the efficient execution of queries in MongoDB. To
@@ -196,7 +196,7 @@ IndexOptions
 ------------
 
 In addition to the index specification document, the
-``createIndex()`` method can take an index options document, that
+``createIndex()`` method can take an index options document that
 directs the driver to create unique indexes or partial indexes.
 
 The driver provides the ``IndexOptions`` class to specify various
