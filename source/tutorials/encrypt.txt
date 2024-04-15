@@ -85,6 +85,9 @@ running. A specific daemon/process URI can be configured in the
 Examples
 --------
 
+Auto Encryption and Decryption
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The following example is a sample app that assumes the key and schema have
 already been created in MongoDB. The example uses a local key, but you
 can also use the AWS/Azure/GCP Key Management Service. The data in
@@ -137,6 +140,9 @@ file in the driver source code GitHub repository.
 .. note::
 
    Automatic encryption is an **enterprise only** feature.
+
+Specify a Data Encryption Key and Encrypted Fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example shows how to configure the
 ``AutoEncryptionSettings`` instance to create a new key and set the
