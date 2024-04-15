@@ -11,11 +11,6 @@ Bulk Write Operations
 .. meta::
    :keywords: code example, multiple changes
 
-Starting in v2.6, MongoDB supports bulk write commands
-for insert, update, and delete operations in a way that allows the
-driver to implement the correct semantics for ``BulkWriteResult`` and
-``BulkWriteException``.
-
 There are two types of bulk operations, ordered and unordered bulk
 operations:
 

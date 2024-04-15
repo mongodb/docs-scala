@@ -64,7 +64,7 @@ collection's ``insertOne()`` method:
 
 .. note::
 
-   If no top-level ``id`` field is specified in the document, MongoDB
+   If no top-level ``_id`` field is specified in the document, MongoDB
    automatically generates a value and adds this field to the inserted
    document.
 
@@ -94,7 +94,7 @@ The following example inserts two documents into the collection:
 
 .. note::
 
-   If no top-level ``id`` field is specified in the document, MongoDB
+   If no top-level ``_id`` field is specified in the document, MongoDB
    automatically generates a value and adds this field to the inserted
    document.
 
@@ -128,8 +128,8 @@ provides the ``Updates`` helper class.
 
 .. important::
 
-   The ``id`` field is immutable, so you cannot change the value of the
-   ``id`` field in a document.
+   The ``_id`` field is immutable, so you cannot change the value of the
+   ``_id`` field in a document.
 
 Update a Single Document
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,7 +202,7 @@ collection's ``replaceOne()`` method.
 
 .. important::
 
-   The ``id`` field is immutable, so you cannot replace the ``id``
+   The ``_id`` field is immutable, so you cannot replace the ``_id``
    field in a document.
 
 Filters
@@ -228,12 +228,12 @@ method.
 .. important::
 
    The replacement document can have different fields from the original
-   document. In the replacement document, you can omit the ``id`` field
-   since the ``id`` field is immutable. However, if you do include the
-   ``id`` field, you cannot specify a different value for the ``id`` field.
+   document. In the replacement document, you can omit the ``_id`` field
+   since the ``_id`` field is immutable. However, if you do include the
+   ``_id`` field, you cannot specify a different value for the ``_id`` field.
 
 The following operation on the ``restaurants`` collection replaces the
-document in which the value of the ``id`` field is
+document in which the value of the ``_id`` field is
 ``BsonObjectId("57506d62f57802807471dd41")``:
 
 .. code-block:: scala
