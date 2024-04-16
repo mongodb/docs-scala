@@ -19,9 +19,8 @@ TLS/SSL
 
 By default, the driver supports TLS/SSL connections to MongoDB
 servers using the underlying support for TLS/SSL provided by the JDK.
-This can be changed either by utilizing the extensibility of the `Java SE
-API <https://docs.oracle.com/javase/8/docs/api/>`__, or by using the
-`Netty API <https://netty.io/4.1/api/>`__.
+This can be changed by utilizing the extensibility of the `Java SE
+API <https://docs.oracle.com/javase/8/docs/api/>`__.
 
 MongoClient API
 ---------------
