@@ -13,10 +13,10 @@ Tutorials
    /tutorials/encrypt/
    /tutorials/write-ops/
    /tutorials/aggregation/
+   /tutorials/text-search/
 
 .. 
    /tutorials/change-stream/
-   /tutorials/text-search/
    /tutorials/geo/
    /tutorials/gridfs/
    /tutorials/command/
@@ -28,10 +28,10 @@ Tutorials
 - :ref:`scala-encrypt`
 - :ref:`scala-write-ops`
 - :ref:`scala-aggregation`
+- :ref:`scala-text-search`
 
 .. 
   - :ref:`scala-changestream`
-  - :ref:`scala-text-search`
   - :ref:`scala-geo`
   - :ref:`scala-gridfs`
   - :ref:`scala-run-command`
