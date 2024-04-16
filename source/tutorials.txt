@@ -14,12 +14,11 @@ Tutorials
    /tutorials/write-ops/
    /tutorials/aggregation/
    /tutorials/change-stream/
+   /tutorials/text-search/
    /tutorials/geospatial/
 
-.. 
-   /tutorials/text-search/
-   /tutorials/gridfs/
-   /tutorials/command/
+.. /tutorials/gridfs/
+.. /tutorials/command/
 
 - :ref:`scala-connect`
 - :ref:`scala-db-coll`
@@ -29,9 +28,8 @@ Tutorials
 - :ref:`scala-write-ops`
 - :ref:`scala-aggregation`
 - :ref:`scala-changestream`
+- :ref:`scala-text-search`
 - :ref:`scala-geospatial`
 
-.. 
-  - :ref:`scala-text-search`
-  - :ref:`scala-gridfs`
-  - :ref:`scala-run-command`
+.. - :ref:`scala-gridfs`
+.. - :ref:`scala-run-command`
