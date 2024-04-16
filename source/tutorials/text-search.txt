@@ -9,7 +9,7 @@ Text Search
    :values: reference
 
 .. meta::
-   :keywords: code example, full text search, phrases
+   :keywords: code example, full text search, phrases, match score
 
 .. contents:: On this page
    :local:
