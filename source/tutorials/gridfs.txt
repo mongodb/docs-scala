@@ -116,7 +116,7 @@ The following example uploads the contents of a
 
    // Get the input stream
    val observableToUploadFrom: Observable[ByteBuffer] = Observable(
-     Seq(ByteBuffer.wrap("MongoDB Tutorial..".getBytes(StandardCharsets.UTF_8)))
+     Seq(ByteBuffer.wrap("MongoDB Tutorial".getBytes(StandardCharsets.UTF_8)))
    )
    
    // Create some custom options
