@@ -9,7 +9,7 @@ Observables
    :values: reference
 
 .. meta::
-   :keywords: code example, 
+   :keywords: code example, subscribe, non-blocking
 
 The {+driver-short+} is an asynchronous and non-blocking driver.
 By implementing the ``Observable`` model, asynchronous events become simple, composable
@@ -174,7 +174,7 @@ The following list describes the available Monadic operators:
 
 See the `BoxedPublisher
 <{+api+}/org/mongodb/scala/ObservableImplicits$BoxedPublisher.html>`__
-documentation to learn more about each operator.
+API documentation to learn more about each operator.
 
 SingleObservable
 ~~~~~~~~~~~~~~~~
