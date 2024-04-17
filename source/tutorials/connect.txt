@@ -14,9 +14,8 @@ Connect to MongoDB
 .. toctree::
 
    /tutorials/connect/tls/
+   /tutorials/connect/authentication/
    /tutorials/connect/compression/
-
-..    /tutorials/connect/auth/
 
 .. contents:: On this page
    :local:
@@ -253,6 +252,5 @@ To learn how to implement other connection features, see the following
 tutorials:
 
 - :ref:`scala-tls`
+- :ref:`scala-auth`
 - :ref:`scala-compression`
-
-.. - :ref:`scala-auth`
