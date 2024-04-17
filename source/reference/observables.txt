@@ -11,6 +11,12 @@ Observables
 .. meta::
    :keywords: code example, subscribe, non-blocking
 
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
 The {+driver-short+} is an asynchronous and non-blocking driver.
 By implementing the ``Observable`` model, asynchronous events become simple, composable
 operations that are free from the complexity of nested callbacks.
