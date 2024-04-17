@@ -46,7 +46,7 @@ Observable
 
 The ``Observable`` is an extended ``Publisher`` implementation, and in general
 it represents a MongoDB operation which emits its results to the ``Observer``
-based on demand requested by the ``Subscription`` to the ``Observable``.
+based on a request from the ``Subscription`` to the ``Observable``.
 
 .. important::
 
