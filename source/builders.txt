@@ -17,7 +17,7 @@ the CRUD API:
 .. TODO replace with links
 
 - Projections: Support for building projections
-- :ref:`scala-builders-sorts`: Support for building sort specifications
+- :ref:`scala-builders-sorts`: Support for building sort criteria
 - Aggregation: Support for building aggregation pipelines
 - Updates: Support for building updates
 - Indexes: Support for creating index keys
