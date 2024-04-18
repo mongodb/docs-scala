@@ -17,7 +17,7 @@ the CRUD API:
 
 - Projections: Support for building projections
 - Sorts: Support for building sort criteria
-- Aggregation: Support for building aggregation pipelines
+- :ref:`scala-builders-agg`: Support for building aggregation pipelines
 - Updates: Support for building updates
 - Indexes: Support for creating index keys
 
