@@ -9,7 +9,7 @@ Projections
    :values: reference
 
 .. meta::
-   :keywords: code example, match, criteria
+   :keywords: code example, create fields, customize results
 
 .. contents:: On this page
    :local:
