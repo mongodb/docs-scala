@@ -10,6 +10,7 @@ Builders
    /builders/projections/
    /builders/sorts/
    /builders/aggregates/
+   /builders/updates/
    /builders/indexes/
 
 The {+driver-short+} provides the following classes that make it easier to use
@@ -19,11 +20,8 @@ the CRUD API:
 - :ref:`scala-builders-projections`: Support for building projections
 - :ref:`scala-builders-sorts`: Support for building sort criteria
 - :ref:`scala-builders-agg`: Support for building aggregation pipelines
+- :ref:`scala-builders-updates`: Support for building updates
 - :ref:`scala-builders-indexes`: Support for creating index keys
-
-.. TODO replace with links
-
-- Updates: Support for building updates
 
 .. important::
 
