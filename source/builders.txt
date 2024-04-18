@@ -7,6 +7,7 @@ Builders
 .. toctree::
 
    /builders/filters/
+   /builders/sorts/
 
 The {+driver-short+} provides the following classes that make it easier to use
 the CRUD API:
@@ -16,7 +17,7 @@ the CRUD API:
 .. TODO replace with links
 
 - Projections: Support for building projections
-- Sorts: Support for building sort criteria
+- :ref:`scala-builders-sorts`: Support for building sort specifications
 - Aggregation: Support for building aggregation pipelines
 - Updates: Support for building updates
 - Indexes: Support for creating index keys
