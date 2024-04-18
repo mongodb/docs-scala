@@ -38,7 +38,7 @@ Match
 The ``$match`` pipeline stage passes all documents matching the
 specified filter to the next stage. Though the filter can be an instance
 of any class that implements ``Bson``, it’s convenient to use methods from
-the :ref:`Filters <scala-builders-filters>` class.
+the :ref:`scala-builders-filters` class.
 
 The following example creates a pipeline stage that matches all
 documents where the ``author`` field value is ``"Dave"``:
@@ -62,7 +62,7 @@ Project
 The ``$project`` pipeline stage passes the projected fields of all
 documents to the next stage. Though the projection can be an instance of
 any class that implements ``Bson``, it’s convenient to use methods from the
-:ref:`Projections <>` class.
+:ref:`scala-builders-projections` class.
 
 The following example creates a pipeline stage that excludes the ``_id``
 field but includes the ``title`` and ``author`` fields:
@@ -100,7 +100,7 @@ Sort
 The ``$sort`` pipeline stage passes all documents to the next stage, sorted
 by the specified sort criteria. Though the sort criteria can be an
 instance of any class that implements ``Bson``, it’s convenient to use methods
-from the :ref:`Sorts <>` class.
+from the :ref:`scala-builders-sorts` class.
 
 The following example creates a pipeline stage that sorts in descending order
 according to the value of the ``age`` field and then in ascending order
