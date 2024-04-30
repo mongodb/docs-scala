@@ -129,8 +129,8 @@ The last part of the connection URI contains connection options as parameters.
 The example sets two connection options: ``maxPoolSize=20`` and
 ``w=majority``.
 
-Connect to a Standalone MongoDB Deployment
-------------------------------------------
+Connect to MongoDB Atlas
+------------------------
 
 You can use the following connection snippet to test your connection to
 your MongoDB deployment on Atlas:
