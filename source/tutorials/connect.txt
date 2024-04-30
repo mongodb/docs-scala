@@ -132,10 +132,61 @@ The example sets two connection options: ``maxPoolSize=20`` and
 Connect to a Standalone MongoDB Deployment
 ------------------------------------------
 
-The following example shows several ways to connect to a single
-MongoDB deployment.
+You can use the following connection snippet to test your connection to
+your MongoDB deployment on Atlas:
 
-You can connect to a single MongoDB deployment in the following ways:
+.. code-block:: scala
+   :emphasize-lines: 14
+
+   import com.mongodb.{ServerApi, ServerApiVersion}
+   import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
+   import org.mongodb.scala.bson.Document
+   
+   import scala.concurrent.Await
+   import scala.concurrent.duration.DurationInt
+   import scala.util.Using
+   
+   object MongoClientConnectionExample {
+   
+     def main(args: Array[String]): Unit = {
+   
+       // Replace the placeholder with your Atlas connection string
+       val connectionString = "<connection string>";
+   
+       // Construct a ServerApi instance using the ServerApi.builder() method
+       val serverApi = ServerApi.builder.version(ServerApiVersion.V1).build()
+   
+       val settings = MongoClientSettings
+         .builder()
+         .applyConnectionString(ConnectionString(connectionString))
+         .serverApi(serverApi)
+         .build()
+       
+       // Create a new client and connect to the server
+       Using(MongoClient(settings)) { mongoClient =>
+         // Send a ping to confirm a successful connection
+         val database = mongoClient.getDatabase("admin")
+         val ping = database.runCommand(Document("ping" -> 1)).head()
+   
+         Await.result(ping, 10.seconds)
+         System.out.println("Pinged your deployment. You successfully connected to MongoDB!")
+       }
+     }
+   }
+
+This connection snippet uses the Stable API feature, which you can
+enable when using the {+driver-short+} v4.3 and later to connect to MongoDB
+Server v5.0 and later. When you use this feature, you can update your
+driver or server without worrying about backward compatibility issues
+with any commands covered by the Stable API.
+
+To learn more about the Stable API feature, see
+:manual:`Stable API </reference/stable-api/>` in the Server manual.
+
+Connect to a Local MongoDB Deployment
+-------------------------------------
+
+You can connect to a local MongoDB deployment in the following ways:
 
 - Instantiate a ``MongoClient`` object without any parameters to
   connect to a MongoDB server running on localhost on port ``27017``:
