@@ -29,8 +29,8 @@ What's New in 5.1
 
 .. important:: MongoDB Server v3.6 End-of-Life
 
-   Support MongoDB Server v3.6 is deprecated in this
+   Support for MongoDB Server v3.6 is deprecated in this
    release and will be removed in the v5.2 release of the driver.
 
-To learn about other changes introduced in v5.1, see the :driver:`Java Sync
-Driver What's New guide </java/sync/current/whats-new/>`.
+To learn about other changes introduced in v5.1, see the :driver:`What's
+New </java/sync/current/whats-new/>` guide in the Java Sync Driver documentation.
