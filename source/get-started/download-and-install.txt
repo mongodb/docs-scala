@@ -60,10 +60,10 @@ Download and Install
       .. code-block:: none
          
          ThisBuild / scalaVersion := "2.13.12"
-         libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "5.2.0"
+         libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "{+full-version+}"
 
       This code configures your application to use Scala version 2.13.12 and
-      {+driver-short+} version 5.2.
+      {+driver-short+} version {+full-version+}.
 
 After you complete these steps, you have a new project directory with the driver
 dependencies installed.
