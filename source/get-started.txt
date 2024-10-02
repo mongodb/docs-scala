@@ -25,8 +25,8 @@ Get Started with the Scala Driver
 Overview
 --------
 
-The {+driver-long+} is an asynchronous API built upon the Java Reactive Streams driver
-that you can use to connect to MongoDB and interact with data stored in your deployment.
+The {+driver-long+} is an asynchronous API built upon the Java Reactive Streams driver,
+which you use to connect to MongoDB and interact with data stored in your deployment.
 This guide shows you how to create an application that uses the {+driver-short+} to
 connect to a MongoDB cluster hosted on MongoDB Atlas and query data in your cluster.
 
