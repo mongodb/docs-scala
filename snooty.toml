@@ -14,6 +14,7 @@ toc_landing_pages = [
     "/tutorials/connect",
     "/tutorials/write-ops",
     "/builders",
+    "/get-started"
     ]
 
 [constants]

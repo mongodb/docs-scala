@@ -24,8 +24,8 @@ Download and Install
 
    .. step:: Create a project directory
 
-      From your root directory, run the following command in your shell to create
-      a directory called ``scala-quickstart`` for this project:
+      Run the following command in your shell to create a directory
+      called ``scala-quickstart`` for this project:
 
       .. code-block:: bash
 
