@@ -20,11 +20,12 @@ the Atlas sample datasets.
 
    .. step:: Create an application file
 
-      Navigate to your ``scala-quickstart`` directory and create the ``src/main/scala/quickstart``
-      nested directories.
+      Navigate to the ``scala-quickstart`` directory that you made in the
+      :ref:`scala-quick-start-download-and-install` step of this guide and
+      create the ``src/main/scala/quickstart`` nested directories.
 
-      Select the tab corresponding to your operating system and run the following commands
-      to create a ``Main.scala`` file in the ``quickstart`` subdirectory:
+      Select the tab corresponding to your operating system and run the following
+      commands to create a ``Main.scala`` file in the ``quickstart`` subdirectory:
 
       .. tabs::
 
@@ -44,7 +45,7 @@ the Atlas sample datasets.
                 cd src/main/scala/quickstart
                 type nul > Main.scala
 
-    .. step:: Add helper methods
+   .. step:: Add helper methods
 
       Add the following ``Helpers.scala`` file from the `driver source code
       <https://github.com/mongodb/mongo-java-driver/blob/main/driver-scala/src/integration/scala/tour/Helpers.scala>`__
