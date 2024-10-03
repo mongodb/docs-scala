@@ -86,8 +86,8 @@ the Atlas sample datasets.
       .. code-block:: none
          :copyable: false
 
-         {"_id": {"$oid": "..."}, ... , "genres": ["Crime", "Drama"], "rated": "R", "metacritic": 80,
-         "title": "The Shawshank Redemption", ... }
+         {"_id": {"$oid": "..."}, ... , "genres": ["Crime", "Drama"], "rated": "R",
+         "metacritic": 80, "title": "The Shawshank Redemption", ... }
 
       If you encounter an error or see no output, ensure that you specified the
       proper connection string in the ``Main.scala`` file and that you loaded
