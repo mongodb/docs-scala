@@ -97,11 +97,11 @@ the Atlas sample datasets.
 
          You can exit the sbt shell by running the following command:
 
-         .. code-block:: bash
+         .. code-block:: none
 
             exit
 
-After you complete these steps, you have a scala application that
+After you complete these steps, you have a Scala application that
 connects to your MongoDB deployment, runs a query on the sample
 data, and returns a matching document.
 
