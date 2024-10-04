@@ -7,7 +7,7 @@ import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 import scala.concurrent.ExecutionContext.Implicits.global
 
-object MongoDBExample {
+object Retrieve {
   def main(args: Array[String]): Unit = {
     val mongoClient = MongoClient("<connection string>")
     

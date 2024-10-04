@@ -30,7 +30,7 @@ Sample Data
 
 The examples in this guide use the ``companies`` collection in the ``sample_training``
 database from the :atlas:`Atlas sample datasets </sample-data>`. To access this collection
-from your PHP application, create a ``MongoClient`` that connects to an Atlas cluster
+from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
 and assign the following value to your ``database`` and ``collection`` variables:
 
 .. literalinclude:: /includes/read/retrieve.scala
@@ -74,11 +74,29 @@ the ``FindObservable``.
 The following example uses the ``find()`` method to find all documents in which
 the ``founded_year`` field has the value ``1970`` and prints the results:
 
-.. literalinclude:: /includes/read/retrieve.scala
-    :language: scala
-    :dedent:
-    :start-after: start-find-many
-    :end-before: end-find-many
+.. io-code-block::
+   :copyable:
+
+   .. input:: /includes/read/retrieve.scala
+      :start-after: start-find-many
+      :end-before: end-find-many
+      :language: scala
+      :dedent:
+
+   .. output::
+      :visible: false
+
+      {"_id":{"$oid":"..."},"name":"Mitsubishi Motors","permalink":"mitsubishi-motors",
+      "crunchbase_url":"http://www.crunchbase.com/company/mitsubishi-motors",
+      ... }
+
+      {"_id":{"$oid":"..."},"name":"Western Digital","permalink":"western-digital",
+      "crunchbase_url":"http://www.crunchbase.com/company/western-digital",
+      ... }
+
+      {"_id":{"$oid":"..."},"name":"Celarayn","permalink":"celarayn","crunchbase_url":
+      "http://www.crunchbase.com/company/celarayn",
+      ... }
 
 .. note:: Find All Documents
 
@@ -177,10 +195,34 @@ The following example uses the ``find()`` method to find all documents in which
 the ``number_of_employees`` field has the value ``1000``. The example uses the
 ``limit()`` method to return a maximum of ``5`` results:
 
-.. literalinclude:: /includes/read/retrieve.scala
-    :language: scala
-    :start-after: start-modify
-    :end-before: end-modify
+.. io-code-block::
+   :copyable:
+
+   .. input:: /includes/read/retrieve.scala
+      :start-after: start-modify
+      :end-before: end-modify
+      :language: scala
+      :dedent:
+
+   .. output::
+      :visible: false
+
+      {"_id": {"$oid": "..."}, "name": "Akamai Technologies", "permalink": "akamai-technologies",
+      "crunchbase_url": "http://www.crunchbase.com/company/akamai-technologies", "homepage_url":
+      "http://www.akamai.com", ... }
+
+      {"_id": {"$oid": "..."}, "name": "Yodle", "permalink": "yodle", "crunchbase_url":
+      "http://www.crunchbase.com/company/yodle", "homepage_url": "http://www.yodle.com", ... }
+
+      {"_id": {"$oid": "..."}, "name": "Antal International", "permalink": "antal-international",
+      "crunchbase_url": "http://www.crunchbase.com/company/antal-international", "homepage_url":
+      "http://antal.com", ... }
+
+      {"_id": {"$oid": "..."}, "name": "Yatra online", "permalink": "yatra-online", "crunchbase_url":
+      "http://www.crunchbase.com/company/yatra-online", "homepage_url": "http://www.Yatra.com", ... }
+
+      {"_id": {"$oid": "..."}, "name": "Gumtree", "permalink": "gumtree", "crunchbase_url":
+      "http://www.crunchbase.com/company/gumtree", "homepage_url": "http://www.gumtree.co.za", ... }
 
 For a full list of ``FindObservable`` member methods, see the API documentation for the
 `FindObservable <{+api+}/org/mongodb/scala/FindObservable.html>`__ class.
