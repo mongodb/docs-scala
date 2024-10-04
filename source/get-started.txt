@@ -15,3 +15,4 @@ Get Started
 
    /get-started/create-a-deployment
    /get-started/create-a-connection-string
+   /get-started/connect-to-mongodb
