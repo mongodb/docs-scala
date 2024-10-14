@@ -6,7 +6,7 @@ import org.mongodb.scala.model.Filters._
 import org.mongodb.scala.result._
 import org.mongodb.scala.model.Updates._
 
-object WriteCodeExamples {
+object SampleWriteApp {
 
   def main(args: Array[String]): Unit = {
     val mongoClient = MongoClient("<connection string URI>")
@@ -17,6 +17,8 @@ object WriteCodeExamples {
 
     // End example code here
 
+    // Wait for the operations to complete before closing client
+    Thread.sleep(1000)
     mongoClient.close()
   }
 }

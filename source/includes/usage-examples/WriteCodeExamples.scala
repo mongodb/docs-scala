@@ -9,9 +9,9 @@ import org.mongodb.scala.model.Updates._
 object WriteCodeExamples {
 
   def main(args: Array[String]): Unit = {
-    val mongoClient = MongoClient("mongodb+srv://morisi:Wukong@testcluster.kmosy7d.mongodb.net/?retryWrites=true&w=majority&appName=TestCluster")
-    val database: MongoDatabase = mongoClient.getDatabase("sample_scala")
-    val collection: MongoCollection[Document] = database.getCollection("insert")
+    val mongoClient = MongoClient("<connection string URI>")
+    val database: MongoDatabase = mongoClient.getDatabase("<database name>")
+    val collection: MongoCollection[Document] = database.getCollection("<collection name>")
 
     // start-insert-one
     val doc: Document = Document("<field name>" -> "<value>")
@@ -19,7 +19,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[InsertOneResult] {
       override def onNext(result: InsertOneResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-insert-one
@@ -33,7 +33,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[InsertManyResult] {
       override def onNext(result: InsertManyResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-insert-many
@@ -45,7 +45,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[UpdateResult] {
       override def onNext(result: UpdateResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-update-one
@@ -57,7 +57,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[UpdateResult] {
       override def onNext(result: UpdateResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-update-many
@@ -69,7 +69,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[UpdateResult] {
       override def onNext(result: UpdateResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-replace-one
@@ -80,7 +80,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[DeleteResult] {
       override def onNext(result: DeleteResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-delete-one
@@ -91,7 +91,7 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[DeleteResult] {
       override def onNext(result: DeleteResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-delete-many
@@ -106,11 +106,13 @@ object WriteCodeExamples {
 
     observable.subscribe(new Observer[BulkWriteResult] {
       override def onNext(result: BulkWriteResult): Unit = println(result)
-      override def onError(e: Throwable): Unit = println("Failed")
+      override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Completed")
     })
     // end-bulk-write
 
+    // Wait for the operations to complete before closing client
+    Thread.sleep(1000)
     mongoClient.close()
   }
 }

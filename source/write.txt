@@ -52,8 +52,8 @@ relevant values for your MongoDB deployment.
 .. literalinclude:: /includes/usage-examples/SampleWriteApp.scala
     :language: scala
     :copyable:
-    :linenos: 16-18
-    :emphasize-lines: 
+    :linenos:
+    :emphasize-lines: 16-18
 
 Insert One 
 ----------
@@ -124,7 +124,8 @@ creating or editing a field:
 Replace One
 -----------
 
-The following code shows how to replace a single document in a collection:
+The following code shows how to replace a single document in a collection with a new
+document:
 
 .. literalinclude:: /includes/usage-examples/WriteCodeExamples.scala
    :start-after: start-replace-one
@@ -183,6 +184,6 @@ bulk operation:
    :dedent:
    :emphasize-lines: 23
 
-.. TODO: method name
-To learn more about the ``mongoc_collection_bulk_operation_execute()``
-method, see the :ref:`Bulk Write Operations <scala-bulk-write>` guide.
+.. TODO
+.. To learn more about the ``bulkWrite()``
+.. method, see the :ref:`Bulk Write Operations <scala-bulk-write>` guide.
