@@ -12,14 +12,8 @@
    :titlesonly:
    :maxdepth: 1
 
-   /installation
    /get-started
    /whats-new
-   /tutorials
-   /reference
-   /bson
-   /builders
-   /validate-signatures
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
    API Documentation <{+api+}/index.html>
@@ -28,53 +22,86 @@
 Introduction
 ------------
 
-Welcome to the documentation site for the {+driver-long+}, the
-official driver for asynchronous stream processing. Download
-the driver by following the :ref:`scala-install` guide, then set up a
-runnable project by following the :ref:`scala-quickstart` guide.
+Welcome to the documentation site for the {+driver-long+}, the official MongoDB driver for
+{+language+} applications.
 
-- :ref:`scala-install`
+Get Started
+-----------
 
-- :ref:`scala-get-started`
+Learn how to install the driver, establish a connection to MongoDB, and begin
+working with data in the :ref:`scala-get-started` tutorial.
 
-- :ref:`scala-whats-new`
+.. TODO
+.. Connect to MongoDB
+.. ------------------
 
-- :ref:`scala-tutorials`
+.. Learn how to create and configure a connection to a MongoDB deployment
+.. in the :ref:`scala-connect` section.
 
-- :ref:`scala-reference`
+.. TODO
+.. Databases and Collections
+.. -------------------------
+.. Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
+.. :ref:`scala-databases-collections` section.
 
-- :ref:`scala-bson`
+What's New
+----------
 
-- :ref:`scala-builders`
+For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
+section.
 
-- :ref:`Validate Driver Artifact Signatures <scala-validate-signatures>`
+.. TODO
+.. Write Data to MongoDB
+.. ---------------------
 
-- `Driver Source GitHub Repository <https://github.com/mongodb/mongo-java-driver>`__
+.. Learn how you can write data to MongoDB in the :ref:`scala-write` section.
 
-- `API Documentation <{+api+}/index.html>`__
+.. TODO
+.. Read Data from MongoDB
+.. ----------------------
 
-- `Previous Versions Documentation <https://mongodb.github.io/mongo-java-driver/>`__
+.. Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
 
-To access MongoDB by using Java instead of Scala, use the `Java Sync
-Driver <https://www.mongodb.com/docs/drivers/java/sync/current/>`__ or
-the asynchronous `Java Reactive Streams Driver
-<https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/>`__.
+.. TODO
+.. Optimize Queries by Using Indexes
+.. ---------------------------------
 
-Compatibility
+.. Learn how to work with common types of indexes in the :ref:`scala-indexes`
+.. section.
+
+.. TODO
+.. Transform Your Data with Aggregation
+.. ------------------------------------
+
+.. Learn how to use the {+driver-short+} to perform aggregation operations in the
+.. :ref:`scala-aggregation` section.
+
+.. TODO
+.. Configure Operations on Replica Sets
+.. ------------------------------------
+
+.. Learn how to configure read and write operations on a replica set in the
+.. :ref:`scala-read-write-config` section.
+
+.. TODO
+.. Issues & Help
+.. -------------
+
+.. Learn how to report bugs, contribute to the driver, and find more resources for
+.. asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
+
+.. TODO
+.. Compatibility
+.. ------------
+
+.. To learn about the versions of the {+mdb-server+} and the C language that are compatible with 
+.. each version of the {+driver-short+}, see the :ref:`Compatibility <scala-compatibility>` section.
+
+Developer Hub
 -------------
 
-Learn about compatibility between the {+driver-short+} and MongoDB, and
-the driver and Scala in the :ref:`scala-compatibility-tables` section.
+The Developer Hub provides tutorials and social engagement for
+developers.
 
-How To Get Help
----------------
-
-- Ask questions on our :community-forum:`MongoDB Community Forums <>`
-- Visit our :technical-support:`Support Channels </>`
-- See :driver:`Issues & Help </java/sync/current/issues-and-help/>`
-
-Validate Driver Artifact Signatures
------------------------------------
-
-Learn about how to validate signatures of {+driver-short+} artifacts
-published on Maven in the :ref:`Validate Driver Artifact Signatures <scala-validate-signatures>` section.
+To ask questions and engage in discussions with fellow developers who
+use the {+driver-short+}, see the `forums page <https://www.mongodb.com/community/forums/tag/scala>`__.

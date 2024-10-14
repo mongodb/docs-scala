@@ -1,4 +1,4 @@
-.. _scala-compatibility-tables:
+.. _scala-compatibility:
 
 =============
 Compatibility
