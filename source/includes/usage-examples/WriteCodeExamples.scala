@@ -63,8 +63,8 @@ object WriteCodeExamples {
     // end-update-many
 
     // start-replace-one
-    val replacementDoc: Document = Document("<field name>" -> "<value>")
     val filter = equal("<field to match>", "<value to match>")
+    val replacementDoc: Document = Document("<field name>" -> "<value>")
     val observable: Observable[UpdateResult] = collection.replaceOne(filter, replacementDoc)
 
     observable.subscribe(new Observer[UpdateResult] {

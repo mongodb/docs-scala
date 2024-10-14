@@ -33,7 +33,7 @@ Overview
 --------
 
 On this page, you can see copyable code examples that show common methods you
-can use to write data to MongoDB with the {+driver-short+}.
+can use to write data to MongoDB by using the {+driver-short+}.
 
 .. tip::
 
