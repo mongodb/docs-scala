@@ -53,7 +53,7 @@ relevant values for your MongoDB deployment.
     :language: scala
     :copyable:
     :linenos:
-    :emphasize-lines: 16-18
+    :emphasize-lines: 15-17
 
 Insert One 
 ----------
@@ -182,7 +182,6 @@ bulk operation:
    :language: scala
    :copyable:
    :dedent:
-   :emphasize-lines: 23
 
 .. TODO
 .. To learn more about the ``bulkWrite()``
