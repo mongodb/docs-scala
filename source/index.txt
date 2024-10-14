@@ -97,13 +97,8 @@ section.
 .. To learn about the versions of the {+mdb-server+} and the C language that are compatible with 
 .. each version of the {+driver-short+}, see the :ref:`Compatibility <scala-compatibility>` section.
 
-Learn
-------
-
-Visit the Developer Hub to learn more about the {+driver-long+}.
-
 Developer Hub
-~~~~~~~~~~~~~
+-------------
 
 The Developer Hub provides tutorials and social engagement for
 developers.
