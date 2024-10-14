@@ -14,6 +14,7 @@
 
    /installation
    /get-started
+   /read
    /whats-new
    /tutorials
    /reference
