@@ -31,7 +31,7 @@ object Retrieve {
     // start-project-include-without-id
     collection
         .find(equal("name", "Emerald Pub"))
-        .projection(include("name", "cuisine", "borough"), excludeId())
+        .projection(fields(include("name", "cuisine", "borough"), excludeId()))
         .subscribe((doc: Document) => println(doc.toJson()),
                                 (e: Throwable) => println(s"There was an error: $e"))
     // end-project-include-without-id

@@ -117,7 +117,7 @@ method that you can use to set the fields to exclude.
 
 The following example uses the ``find()`` method to find all restaurants in which the ``name``
 field value is ``"Emerald Pub"``. Then, the code calls the ``projection()`` and ``exclude()``
-methods to instruct the find operation to omit the ``grades`` and ``address`` fields
+methods to instruct the find operation to omit the ``name`` and ``address`` fields
 in the result:
 
 .. io-code-block::
