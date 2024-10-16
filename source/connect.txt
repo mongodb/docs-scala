@@ -1,5 +1,3 @@
-.. TODO
-
 .. _scala-connect:
 
 ==================
@@ -30,3 +28,5 @@ Connect to MongoDB
 
 Overview
 --------
+
+.. TODO
