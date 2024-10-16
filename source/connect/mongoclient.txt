@@ -40,8 +40,8 @@ Connection URI
 
 A standard connection string includes the following components:
 
-.. TODO, add this as last sentence for ``username:password`` description once a kotlin auth page is made: 
-.. For more information about the ``authSource`` connection option, see :ref:`kotlin-sync-auth`. 
+.. TODO, add this as last sentence for ``username:password`` description once a scala auth page is made: 
+.. For more information about the ``authSource`` connection option, see :ref:`scala-sync-auth`. 
 
 .. list-table::
    :widths: 20 80
@@ -99,7 +99,7 @@ to connect to a MongoDB instance:
    :dedent:
 
 You can also create a client with your desired configurations by passing a 
-``MongoClientSettings`` object to the ``MongoClient.create()`` method.
+``MongoClientSettings`` object to a ``MongoClient`` object.
 
 To instantiate a ``MongoClientSettings`` object, use the builder method to 
 specify your connection string, using the ``applyConnectionString()`` method, 
@@ -108,7 +108,7 @@ call the ``build()`` method.
 
 You can set the Stable API version client option to avoid breaking changes when 
 you upgrade to a new server version. To learn more about the Stable API feature, 
-see the :ref:`Stable API page <kotlin-sync-stable-api>`. 
+see the :ref:`Stable API page <scala-stable-api>`. 
 
 The following code shows how you can specify the connection string and the 
 Stable API client option when connecting to a MongoDB deployment on Atlas 
@@ -123,3 +123,7 @@ and verify that the connection is successful:
 
 API Documentation
 -----------------
+
+- `MongoClient <{+api}/org/mongodb/scala/MongoClient.html>`__
+
+- `MongoClientSettings <{+api}/org/mongodb/scala/MongoClientSettings$.html>`__

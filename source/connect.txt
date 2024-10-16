@@ -21,10 +21,10 @@ Connect to MongoDB
 .. toctree::
     
    /connect/mongoclient
+   /connect/stable-api
 ..   /connect/connection-targets
 ..   /connect/connection-options
 ..   /connect/tls
-..   /connect/stable-api
 
 Overview
 --------
