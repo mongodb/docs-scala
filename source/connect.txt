@@ -1,4 +1,4 @@
-.. Todo
+.. TODO
 
 .. _scala-connect:
 
@@ -21,8 +21,6 @@ Connect to MongoDB
    :keywords: client, ssl, tls, localhost
 
 .. toctree::
-   :titlesonly:
-   :maxdepth: 1
     
    /connect/mongoclient
 ..   /connect/connection-targets
