@@ -1,0 +1,21 @@
+.. _scala-connection-options:
+
+==========================
+Specify Connection Options
+==========================
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: connection string, URI, server, Atlas, settings, client
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+Overview
+--------

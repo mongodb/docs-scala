@@ -1,0 +1,34 @@
+.. Todo
+
+.. _scala-connect:
+
+==================
+Connect to MongoDB
+==================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+ 
+.. meta::
+   :description: Learn how to use the Scala driver to connect to MongoDB.
+   :keywords: client, ssl, tls, localhost
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+    
+   /connect/mongoclient
+..   /connect/connection-targets
+..   /connect/connection-options
+..   /connect/tls
+..   /connect/stable-api
+
+Overview
+--------
