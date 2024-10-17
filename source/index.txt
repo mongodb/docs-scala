@@ -13,6 +13,7 @@
    :maxdepth: 1
 
    /get-started
+   /read
    /write
    /whats-new
    /compatibility
