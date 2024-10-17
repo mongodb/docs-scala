@@ -13,7 +13,7 @@ Read Data from MongoDB
 .. facet::
    :name: genre
    :values: reference
- 
+
 .. meta::
    :description: Learn how to use the Scala driver to read data from MongoDB.
    :keywords: usage examples, save, crud, read, code example
@@ -23,3 +23,5 @@ Read Data from MongoDB
    :maxdepth: 1
 
    /read/retrieve
+   /read/specify-a-query
+
