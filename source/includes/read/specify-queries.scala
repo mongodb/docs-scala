@@ -6,6 +6,7 @@ import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 import scala.concurrent.ExecutionContext.Implicits.global
+import org.mongodb.scala.result.InsertManyResult
 
 object Retrieve {
   def main(args: Array[String]): Unit = {
@@ -23,7 +24,8 @@ object Retrieve {
         Document("_id" -> 4, "name" -> "pineapples", "qty" -> 3, "rating" -> 5, "color" -> "yellow")
     )
 
-    collection.insertMany(fruits)
+    val result = collection.insertMany(fruits)
+                           .subscribe((result: InsertManyResult) => println(result))
     // end-setup
 
     // Retrieves documents in which the "color" value is "yellow"
