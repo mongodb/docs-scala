@@ -7,7 +7,7 @@ import org.mongodb.scala.result._
 object Insert {
 
   def main(args: Array[String]): Unit = {
-    val mongoClient = MongoClient("mongodb+srv://morisi:Wukong@testcluster.kmosy7d.mongodb.net/?retryWrites=true&w=majority&appName=TestCluster")
+    val mongoClient = MongoClient("<connection string URI>")
 
     // start-db-coll
     val database: MongoDatabase = mongoClient.getDatabase("sample_restaurants")
