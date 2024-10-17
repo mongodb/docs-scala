@@ -64,7 +64,7 @@ Update One Document
 ~~~~~~~~~~~~~~~~~~~
 
 The following example uses the ``updateOne()`` method to update the
-``name`` value of a document from ``"Happy Garden"`` to ``"Mountain
+``name`` field value of a document from ``"Happy Garden"`` to ``"Mountain
 House"``:
 
 .. io-code-block::
@@ -78,6 +78,7 @@ House"``:
 
    .. output::
       :language: console
+      :visible: false
 
       Updated document count: 1
       Completed
@@ -86,7 +87,7 @@ Update Many Documents
 ~~~~~~~~~~~~~~~~~~~~~
 
 The following example uses the ``updateMany()`` method to update all documents
-in which the ``name`` value is ``"Starbucks"``. The update renames the
+in which the ``name`` field value is ``"Starbucks"``. The update renames the
 ``address`` field to ``location``.
 
 .. io-code-block::
@@ -171,7 +172,7 @@ Modify Update Example
 
 The following code uses the ``updateOne()`` method to match documents
 in which the ``name`` field value is ``"Sunrise Pizzeria"``. It then
-sets the ``borough`` value in the first matching document to
+sets the ``borough`` field value in the first matching document to
 ``"Queens"`` and the ``cuisine`` value to ``"Italian"``.
 
 Because the ``upsert`` option is set to ``true``, the driver inserts a
@@ -244,7 +245,7 @@ API Documentation
 To learn more about any of the methods or types discussed in this
 guide, see the following API documentation:
 
-- `updateOne() <{+api+}/mongodb/scala/MongoCollection.html#updateOne(clientSession:org.mongodb.scala.ClientSession,filter:org.mongodb.scala.bson.conversions.Bson,update:Seq[org.mongodb.scala.bson.conversions.Bson],options:org.mongodb.scala.model.UpdateOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.UpdateResult]>`__
+- `updateOne() <{+api+}/org/mongodb/scala/MongoCollection.html#updateOne(clientSession:org.mongodb.scala.ClientSession,filter:org.mongodb.scala.bson.conversions.Bson,update:Seq[org.mongodb.scala.bson.conversions.Bson],options:org.mongodb.scala.model.UpdateOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.UpdateResult]>`__
 - `updateMany() <{+api+}/org/mongodb/scala/MongoCollection.html#updateMany(clientSession:org.mongodb.scala.ClientSession,filter:org.mongodb.scala.bson.conversions.Bson,update:Seq[org.mongodb.scala.bson.conversions.Bson],options:org.mongodb.scala.model.UpdateOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.UpdateResult]>`__
 - `UpdateOptions <{+core-api+}/com/mongodb/client/model/UpdateOptions.html>`__
 - `UpdateResult <{+core-api+}/com/mongodb/client/result/UpdateResult.html>`__
