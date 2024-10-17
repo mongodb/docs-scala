@@ -92,6 +92,7 @@ The following example inserts a document into the ``restaurants`` collection:
 
    .. output::
       :language: console
+      :visible: false
 
       AcknowledgedInsertOneResult{insertedId=BsonObjectId{value=...}}
       Completed
@@ -115,6 +116,7 @@ The following example inserts two documents into the ``restaurants`` collection:
 
    .. output::
       :language: console
+      :visible: false
 
       AcknowledgedInsertManyResult{insertedIds={0=BsonObjectId{value=...}, 1=BsonObjectId{value=...}}}
       Completed
@@ -175,12 +177,6 @@ The following code uses the ``insertMany()`` method to insert
 three new documents into a collection. Because the ``bypassDocumentValidation``
 option is enabled, this insert operation bypasses document-level validation:
 
-.. literalinclude:: /includes/write/insert.scala
-    :language: scala
-    :dedent:
-    :start-after: start-insert-opts
-    :end-before: end-insert-opts
-
 .. io-code-block::
    :copyable: true
    
@@ -192,6 +188,7 @@ option is enabled, this insert operation bypasses document-level validation:
 
    .. output::
       :language: console
+      :visible: false
 
       AcknowledgedInsertManyResult{insertedIds={0=BsonObjectId{value=...}, 1=BsonObjectId{value=...}, 2=BsonObjectId{value=...}}}
       Completed
@@ -203,4 +200,4 @@ To learn more about any of the methods discussed in this
 guide, see the following API documentation:
 
 - `insertOne() <{+api+}/org/mongodb/scala/MongoCollection.html#insertOne(clientSession:org.mongodb.scala.ClientSession,document:TResult,options:org.mongodb.scala.model.InsertOneOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.InsertOneResult]>`__
-- `insertMany() <{+api+}/org/mongodb/scala/MongoCollection.html#insertMany(clientSession:org.mongodb.scala.ClientSession,documents:Seq[_<:TResult],options:org.mongodb.scala.model.InsertManyOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.InsertManyResult]>`__
+- `insertMany() <{+api+}/org/mongodb/scala/MongoCollection.html#insertMany(clientSession:org.mongodb.scala.ClientSession,documents:Seq[_%3C:TResult],options:org.mongodb.scala.model.InsertManyOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.InsertManyResult]>`__
