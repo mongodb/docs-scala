@@ -1,4 +1,3 @@
-
 import org.mongodb.scala._
 import org.mongodb.scala.bson.Document
 import org.mongodb.scala.model.Filters.equal

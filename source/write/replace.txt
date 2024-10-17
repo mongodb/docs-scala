@@ -72,7 +72,7 @@ Replace One Document
 
 The following example uses the ``replaceOne()`` method to replace the
 fields and values of a document in which the value of the ``name`` field
-value is ``"Primola Restaurant"``:
+is ``"Primola Restaurant"``:
 
 .. io-code-block::
    :copyable: true
