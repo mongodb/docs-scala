@@ -152,23 +152,9 @@ configure an ``InsertOneOptions`` instance:
 
 You can set the preceding settings on the ``insertMany()`` method
 by configuring an ``InsertManyOptions`` instance. You can also use the
-``ordered()`` method setter method to specify the order in which the driver
-inserts documents into MongoDB:
-
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
-
-   * - Method
-     - Description
-
-   * - ``ordered()``
-     - | If set to ``true``, the driver sends documents to the
-         server in the order provided. If an error occurs, the driver
-         cancels all remaining insert operations. 
-       | Defaults to ``true``.
-
-Pass options as the last parameter to the ``insertMany()`` method.
+``ordered()`` setter method to specify the order in which the driver
+inserts documents into MongoDB. Pass options as the last parameter to the ``insertMany()``
+method.
 
 Example
 ~~~~~~~
@@ -201,3 +187,5 @@ guide, see the following API documentation:
 
 - `insertOne() <{+api+}/org/mongodb/scala/MongoCollection.html#insertOne(clientSession:org.mongodb.scala.ClientSession,document:TResult,options:org.mongodb.scala.model.InsertOneOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.InsertOneResult]>`__
 - `insertMany() <{+api+}/org/mongodb/scala/MongoCollection.html#insertMany(clientSession:org.mongodb.scala.ClientSession,documents:Seq[_%3C:TResult],options:org.mongodb.scala.model.InsertManyOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.InsertManyResult]>`__
+- `InsertOneOptions <{+core-api+}/com/mongodb/client/model/InsertOneOptions.html>`__
+- `InsertManyOptions <{+core-api+}/com/mongodb/client/model/InsertManyOptions.html>`__
