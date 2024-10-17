@@ -63,6 +63,7 @@ The following example uses the ``deleteOne()`` method to remove a
 document in which the value of the ``name`` field is ``"Happy Garden"``:
 
 .. io-code-block::
+   :copyable: true
 
    .. input:: /includes/write/delete.scala
       :start-after: start-delete-many
@@ -85,6 +86,7 @@ in which the value of the ``borough`` field is ``"Brooklyn"`` and the
 value of the ``name`` field is ``"Starbucks"``:
 
 .. io-code-block::
+   :copyable: true
 
    .. input:: /includes/write/delete.scala
       :start-after: start-delete-many
@@ -156,6 +158,7 @@ collection in which the value of the ``name`` field includes the string
 ``"Red"``.
 
 .. io-code-block::
+   :copyable: true
 
    .. input:: /includes/write/delete.scala
       :start-after: start-delete-options
@@ -205,5 +208,5 @@ To learn more about any of the methods or types discussed in this
 guide, see the following API documentation:
 
 - `deleteOne() <{+api+}/org/mongodb/scala/MongoCollection.html#deleteOne(clientSession:org.mongodb.scala.ClientSession,filter:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.DeleteOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.DeleteResult]>`__
-- `deleteMany() <{+api+}/org/mongodb/scala/MongoCollection.html#deleteMany(clientSession:org.mongodb.scala.ClientSession,filter:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.DeleteOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.DeleteResult]`__
+- `deleteMany() <{+api+}/org/mongodb/scala/MongoCollection.html#deleteMany(clientSession:org.mongodb.scala.ClientSession,filter:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.DeleteOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.result.DeleteResult]>`__
 - `DeleteResult <{+core-api+}/com/mongodb/client/result/DeleteResult.html>`__
