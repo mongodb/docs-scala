@@ -18,6 +18,8 @@ object SampleWriteApp {
     // End example code here
 
     // Wait for the operations to complete before closing client
+    // Note: This example uses Thread.sleep() for brevity and does not guarantee all
+    // operations will be completed in time
     Thread.sleep(1000)
     mongoClient.close()
   }
