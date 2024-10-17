@@ -57,7 +57,7 @@ to the ``find()`` method. The ``Projections`` class provides the ``include()`` h
 method that you can use to set the fields to include.
 
 The following example uses the ``find()`` method to find all restaurants in which the ``name``
-field value is ``"Emerald Pub"``. Then, the code call the ``projection()`` and ``include()``
+field value is ``"Emerald Pub"``. Then, the code calls the ``projection()`` and ``include()``
 methods to instruct the find operation to return only the ``name``, ``cuisine``, and ``borough`` fields
 of matching documents:
 
