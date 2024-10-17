@@ -150,9 +150,8 @@ The following code shows how to delete a single document in a collection:
    :copyable:
    :dedent:
 
-.. TODO: method name
-.. To learn more about the ``deleteOne()`` method, see the
-.. :ref:`Delete Documents <scala-write-delete>` guide.
+To learn more about the ``deleteOne()`` method, see the
+:ref:`Delete Documents <scala-write-delete>` guide.
 
 Delete Multiple
 ---------------
@@ -166,9 +165,8 @@ The following code shows how to delete multiple documents in a collection:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``deleteMany()`` method, see the
-.. :ref:`Delete Documents <scala-write-delete>` guide.
+To learn more about the ``deleteMany()`` method, see the
+:ref:`Delete Documents <scala-write-delete>` guide.
 
 Bulk Write 
 ----------
