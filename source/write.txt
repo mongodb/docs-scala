@@ -100,9 +100,8 @@ creating or editing a field:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``updateOne()`` method, see the
-.. :ref:`Update Documents <scala-write-update>` guide.
+To learn more about the ``updateOne()`` method, see the
+:ref:`Update Documents <scala-write-update>` guide.
 
 Update Multiple
 ---------------
@@ -117,9 +116,8 @@ creating or editing a field:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``updateMany()`` method, see the
-.. :ref:`Update Documents <scala-write-update>` guide.
+To learn more about the ``updateMany()`` method, see the
+:ref:`Update Documents <scala-write-update>` guide.
 
 Replace One
 -----------
