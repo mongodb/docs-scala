@@ -24,7 +24,7 @@ In this guide, you can learn how to use the {+driver-short+} to perform a **repl
 operation** on a document in a MongoDB collection. A replace operation
 removes all fields and values from a specified document except the
 ``_id`` field, and adds new fields and values that you specify. This
-operations differs from an update operation, which changes only
+operation differs from an update operation, which changes only
 specified fields in one or more documents.
 
 To learn more about update operations, see the
@@ -35,8 +35,8 @@ Sample Data
 
 The examples in this guide use the ``restaurants`` collection in the ``sample_restaurants``
 database from the :atlas:`Atlas sample datasets </sample-data>`. To access this collection
-from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
-and assign the following value to your ``database`` and ``collection`` variables:
+from your Scala application, create a ``MongoClient`` object that connects to an Atlas cluster
+and assign the following values to your ``database`` and ``collection`` variables:
 
 .. literalinclude:: /includes/write/replace.scala
     :language: scala
@@ -92,7 +92,7 @@ is ``"Primola Restaurant"``:
 
 .. important::
 
-   The values of ``_id`` fields are immutable. If your replacement
+   The value of the ``_id`` field is immutable. If your replacement
    document specifies a value for the ``_id`` field, it must be the same
    as the ``_id`` value of the existing document or the driver raises a
    ``WriteError``.
@@ -100,13 +100,12 @@ is ``"Primola Restaurant"``:
 Customize the Replace Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``replaceOne()`` method optionally accepts
-a parameter that sets options to configure the replace operation.
-If you don't specify any options, the driver performs the replace
+The ``replaceOne()`` method optionally accepts a parameter with the ``ReplaceOptions`` data
+type. The ``ReplaceOptions`` class contains setter methods that you can use to configure
+the replace option. If you don't specify any options, the driver performs the replace
 operation with default settings.
 
-The following table describes the setter methods that you can use to
-configure an ``ReplaceOptions`` instance:
+The following table describes the setter methods in the ``ReplaceOptions`` class:
 
 .. list-table::
    :widths: 30 70
@@ -120,14 +119,13 @@ configure an ``ReplaceOptions`` instance:
          documents match the query filter. For more information, see :manual:`upsert
          behavior </reference/method/db.collection.replaceOne/#upsert>`
          in the {+mdb-server+} manual.
-       | Defaults to ``false``
+       | Defaults to ``false``.
 
    * - ``bypassDocumentValidation()``
      - | Specifies whether the update operation bypasses document validation. This lets you 
          update documents that don't meet the schema validation requirements, if any 
          exist. For more information about schema validation, see :manual:`Schema
-         Validation </core/schema-validation/#schema-validation>` in the MongoDB
-         Server manual.
+         Validation </core/schema-validation/#schema-validation>` in the {+mdb-server+} manual.
        | Defaults to ``false``.
 
    * - ``collation()``
