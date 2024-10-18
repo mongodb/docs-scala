@@ -35,7 +35,7 @@ database from the :atlas:`Atlas sample datasets </sample-data>`. To access this 
 from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
 and assign the following values to your ``database`` and ``collection`` variables:
 
-.. literalinclude:: /includes/write/replace.scala
+.. literalinclude:: /includes/write/delete.scala
     :language: scala
     :dedent:
     :start-after: start-db-coll
