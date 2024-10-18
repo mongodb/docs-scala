@@ -33,7 +33,7 @@ Sample Data
 The examples in this guide use the ``restaurants`` collection in the ``sample_restaurants``
 database from the :atlas:`Atlas sample datasets </sample-data>`. To access this collection
 from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
-and assign the following value to your ``database`` and ``collection`` variables:
+and assign the following values to your ``database`` and ``collection`` variables:
 
 .. literalinclude:: /includes/write/replace.scala
     :language: scala
