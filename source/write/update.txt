@@ -1,4 +1,4 @@
-.. _c-write-update:
+.. _scala-write-update:
 
 ================
 Update Documents
@@ -33,10 +33,10 @@ from your Scala application, create a ``MongoClient`` that connects to an Atlas 
 and assign the following values to your ``database`` and ``collection`` variables:
 
 .. literalinclude:: /includes/write/update.scala
-    :language: scala
-    :dedent:
-    :start-after: start-db-coll
-    :end-before: end-db-coll
+   :language: scala
+   :dedent:
+   :start-after: start-db-coll
+   :end-before: end-db-coll
 
 To learn how to create a free MongoDB Atlas cluster and load the sample datasets, see the
 :atlas:`Get Started with Atlas </getting-started>` guide.
@@ -51,21 +51,22 @@ You can update documents in MongoDB by using the following methods:
 
 Each update method requires the following parameters:
 
-- **Query filter**, which matches which documents to update. To learn
+- **Query filter**, which matches the documents you want to update. To learn
   more about query filters, see the :ref:`scala-specify-query`
   guide.
 
-- **Update document**, which specifies the update operator, or the kind of update to
-  perform, and the fields and values to be updated. For a list of update
-  operators and their usages, see the :manual:`Field Update Operators
-  guide page</reference/operator/update-field/>` in the {+mdb-server+} manual.
+- **Update document**, which specifies the update operator and the fields and values to be
+  updated. To view a list of update operators and learn about their usages, see the
+  :manual:`Field Update Operators guide page</reference/operator/update-field/>` in the
+  {+mdb-server+} manual.
 
-Update One Document
-~~~~~~~~~~~~~~~~~~~
+Update One Document Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example uses the ``updateOne()`` method to update the
 ``name`` field value of a document from ``"Happy Garden"`` to ``"Mountain
-House"``:
+House"``. The update document uses the ``set()`` method to update the ``name`` field
+value:
 
 .. io-code-block::
    :copyable: true
@@ -75,6 +76,7 @@ House"``:
       :end-before: end-update-one
       :language: scala
       :dedent:
+      :emphasize-lines: 21
 
    .. output::
       :language: console
@@ -83,12 +85,12 @@ House"``:
       Updated document count: 1
       Completed
 
-Update Many Documents
-~~~~~~~~~~~~~~~~~~~~~
+Update Many Documents Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example uses the ``updateMany()`` method to update all documents
-in which the ``name`` field value is ``"Starbucks"``. The update renames the
-``address`` field to ``location``.
+in which the ``name`` field value is ``"Starbucks"``. The update document uses the
+``rename()`` method to change the name of the ``address`` field to ``location``:
 
 .. io-code-block::
    :copyable: true
@@ -98,6 +100,7 @@ in which the ``name`` field value is ``"Starbucks"``. The update renames the
       :end-before: end-update-many
       :language: scala
       :dedent:
+      :emphasize-lines: 34
 
    .. output::
       :language: console
@@ -170,14 +173,16 @@ configure an ``UpdateOptions`` instance:
 Modify Update Example
 `````````````````````
 
-The following code uses the ``updateOne()`` method to match documents
-in which the ``name`` field value is ``"Sunrise Pizzeria"``. It then
-sets the ``borough`` field value in the first matching document to
-``"Queens"`` and the ``cuisine`` value to ``"Italian"``.
+This example creates and passes options to the ``updateOne()`` method.
+The example uses the ``equal()`` helper method to match documents
+in which the ``name`` field value is ``"Sunrise Pizzeria"``. It then uses the ``set()`` 
+method to set the ``borough`` field value in the first matching document to
+``"Queens"`` and the ``cuisine`` field value to ``"Italian"``. The code uses the
+``combine()`` method to specify multiple updates in one update document.
 
-Because the ``upsert`` option is set to ``true``, the driver inserts a
-new document that has the fields and values specified in the update
-document if the query filter doesn't match any existing documents.
+Because the ``upsert`` option is set to ``true`` in the ``UpdateOptions`` instance,
+the driver inserts a new document that has the fields and values specified in the filter
+and update document if the query filter doesn't match any existing documents.
 
 .. io-code-block::
    :copyable: true
@@ -187,6 +192,7 @@ document if the query filter doesn't match any existing documents.
       :end-before: end-update-options
       :language: scala
       :dedent:
+      :emphasize-lines: 46
 
    .. output::
       :language: console

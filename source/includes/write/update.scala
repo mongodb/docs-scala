@@ -21,7 +21,8 @@ object Update {
     val observable: Observable[UpdateResult] = collection.updateOne(filter, update)
 
     observable.subscribe(new Observer[UpdateResult] {
-      override def onNext(result: UpdateResult): Unit = println(s"Updated document count: ${result.getModifiedCount}")
+      override def onNext(result: UpdateResult): Unit =
+          println(s"Updated document count: ${result.getModifiedCount}")
       override def onError(e: Throwable): Unit = println(s"Failed: ${e.getMessage}")
       override def onComplete(): Unit = println("Completed")
     })
@@ -33,7 +34,8 @@ object Update {
     val observable: Observable[UpdateResult] = collection.updateMany(filter, update)
 
     observable.subscribe(new Observer[UpdateResult] {
-      override def onNext(result: UpdateResult): Unit = println(s"Updated document count: ${result.getModifiedCount}")
+      override def onNext(result: UpdateResult): Unit =
+          println(s"Updated document count: ${result.getModifiedCount}")
       override def onError(e: Throwable): Unit = println(s"Failed: ${e.getMessage}")
       override def onComplete(): Unit = println("Completed")
     })
@@ -49,7 +51,8 @@ object Update {
     val observable: Observable[UpdateResult] = collection.updateOne(filter, update, opts)
 
     observable.subscribe(new Observer[UpdateResult] {
-      override def onNext(result: UpdateResult): Unit = println(s"Updated document count: ${result.getModifiedCount}")
+      override def onNext(result: UpdateResult): Unit =
+          println(s"Updated document count: ${result.getModifiedCount}")
       override def onError(e: Throwable): Unit = println(s"Failed: ${e.getMessage}")
       override def onComplete(): Unit = println("Completed")
     })

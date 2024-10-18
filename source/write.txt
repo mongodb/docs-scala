@@ -101,7 +101,7 @@ creating or editing a field:
    :dedent:
 
 To learn more about the ``updateOne()`` method, see the
-:ref:`Update Documents <scala-write-update>` guide.
+:ref:`scala-write-update` guide.
 
 Update Multiple
 ---------------
@@ -117,7 +117,7 @@ creating or editing a field:
    :dedent:
 
 To learn more about the ``updateMany()`` method, see the
-:ref:`Update Documents <scala-write-update>` guide.
+:ref:`scala-write-update` guide.
 
 Replace One
 -----------
