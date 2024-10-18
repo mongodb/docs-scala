@@ -183,8 +183,7 @@ an ``UpdateResult`` instance:
      - Description
 
    * - ``getMatchedCount()``
-     - | Returns the number of documents that matched the query filter, regardless of
-         how many updates were performed.
+     - | Returns the number of documents that matched the query filter.
 
    * - ``getModifiedCount()``
      - | Returns the number of documents modified by the update operation. If an updated
@@ -195,8 +194,8 @@ an ``UpdateResult`` instance:
      - | Returns ``true`` if the server acknowledged the result.
 
    * - ``getUpsertedId()``
-     - | Returns the ``_id`` value of the document that was upserted
-         in the database, if the driver performed an upsert.
+     - | Returns the ``_id`` value of the document that the driver upserted
+         into the database, if any.
 
 Additional Information 
 ----------------------
