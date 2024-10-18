@@ -67,7 +67,7 @@ the Atlas sample datasets.
    .. step:: Assign the connection string
 
       Replace the ``<connection string>`` placeholder with the 
-      connection string that you copied from the :ref:`scala-quick-start-connection-string`
+      connection string that you copied from the :ref:`scala-connection-string`
       step of this guide.
 
    .. step:: Run your Scala application
