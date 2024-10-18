@@ -24,8 +24,8 @@ To connect to a MongoDB deployment, you need two things:
 
 - A **connection URI**, also known as a *connection string*, which tells the {+driver-short+}
   which MongoDB deployment to connect to.
-- A **MongoClient** object, which creates the connection to and performs 
-  operations on the MongoDB deployment.
+- A **MongoClient** object, which creates the connection to and allows you to perform operations 
+  on the MongoDB deployment.
 
 You can also use ``MongoClientSettings`` to customize the way the {+driver-short+} behaves
 while connected to MongoDB.
@@ -81,7 +81,7 @@ A standard connection string includes the following components:
 
 For more information about creating a connection string, see
 :manual:`Connection Strings </reference/connection-string>` in the
-MongoDB Server documentation.
+{+mdb-server+} manual.
 
 Atlas Connection Example
 ------------------------
@@ -101,10 +101,10 @@ to connect to a MongoDB instance:
 You can also create a client with your desired configurations by passing a 
 ``MongoClientSettings`` object to a ``MongoClient`` object.
 
-To instantiate a ``MongoClientSettings`` object, use the builder method to 
-specify your connection string, using the ``applyConnectionString()`` method, 
-and any other client options. Once you have your desired configuration, 
-call the ``build()`` method.
+To instantiate a ``MongoClientSettings`` object, call the ``builder()`` method,
+then chain the ``applyConnectionString()`` method and pass in your connection 
+string. You can also use the ``builder()`` method to specify any other client 
+options. Once you have your desired configuration, call the ``build()`` method.
 
 You can set the Stable API version client option to avoid breaking changes when 
 you upgrade to a new server version. To learn more about the Stable API feature, 

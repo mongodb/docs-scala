@@ -12,7 +12,7 @@ object ClientBasic {
 
     // start-create-a-client
     // Replace the placeholder with your Atlas connection string
-    val connectionString = "<connection string>";
+    val connectionString = "<connection string>"
 
     // Create a new client and connect to the server
     val mongoClient = MongoClient(connectionString)

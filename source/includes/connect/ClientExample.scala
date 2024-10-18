@@ -12,7 +12,7 @@ object MongoClientConnectionExample {
   def main(args: Array[String]): Unit = {
 
     // Replace the placeholder with your Atlas connection string
-    val connectionString = "<connection string>";
+    val connectionString = "<connection string>"
 
     // Construct a ServerApi instance using the ServerApi.builder() method
     val serverApi = ServerApi.builder.version(ServerApiVersion.V1).build()
