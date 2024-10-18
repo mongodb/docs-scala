@@ -74,7 +74,7 @@ value:
    .. input:: /includes/write/update.scala
       :start-after: start-update-one
       :end-before: end-update-one
-      :emphasize-lines: 21
+      :emphasize-lines: 3
       :language: scala
       :dedent:
 
@@ -98,7 +98,7 @@ in which the ``name`` field value is ``"Starbucks"``. The update document uses t
    .. input:: /includes/write/update.scala
       :start-after: start-update-many
       :end-before: end-update-many
-      :emphasize-lines: 34
+      :emphasize-lines: 3
       :language: scala
       :dedent:
 
@@ -191,7 +191,7 @@ and update document if the query filter doesn't match any existing documents.
       :start-after: start-update-options
       :end-before: end-update-options
       :language: scala
-      :emphasize-lines: 46
+      :emphasize-lines: 2
       :dedent:
 
    .. output::
