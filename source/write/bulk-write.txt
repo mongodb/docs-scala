@@ -99,8 +99,8 @@ Update Operations
 To update a document, create an instance of ``UpdateOneModel`` and pass
 the following arguments:
 
-- A **query filter** that specifies the criteria used to match documents in your collection
-- The update operation you want to perform. For more information about update
+- **Query filter** that specifies the criteria used to match documents in your collection.
+- Update operation you want to perform. For more information about update
   operations, see the :manual:`Field Update Operators
   </reference/operator/update-field/>` guide in the {+mdb-server+} manual.
 
@@ -135,9 +135,11 @@ Replace Operations
 
 A replace operation removes all fields and values of a specified document and
 replaces them with new fields and values that you specify. To perform a
-replace operation, create an instance of ``ReplaceOneModel`` and pass a
-query filter and the fields and values you want to replace the matching
-document with.
+replace operation, create an instance of ``ReplaceOneModel`` and pass the following
+arguments:
+
+- Query filter that specifies the criteria used to match documents in your collection
+- Replacement document that specifies the new fields and values to insert
 
 The following example creates an instance of ``ReplaceOneModel``:
 
@@ -205,13 +207,14 @@ The following example performs multiple write operations by using the
 
    .. output::
       
-      Success: AcknowledgedBulkWriteResult{insertedCount=1, matchedCount=1, removedCount=1, modifiedCount=1, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=...}}]}
+      Success: AcknowledgedBulkWriteResult{insertedCount=1, matchedCount=1, removedCount=1,
+      modifiedCount=1, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=...}}]}
       Completed
 
 If any of the write operations fail, the {+driver-short+} raises a
 ``BulkWriteError`` and does not perform any further operations.
 ``BulkWriteError`` provides a ``details`` item that includes the
-operation that failed, and details about the exception.
+operation that failed and details about the exception.
 
 .. note::
 
@@ -262,7 +265,7 @@ configure a ``BulkWriteOptions`` instance:
          variables for the operation. Values must be constant or closed
          expressions that don't reference document fields.
 
-The following code creates options and uses the ``ordered(false)`` option to
+The following code creates options and sets the ``ordered`` option to ``false`` to
 specify an unordered bulk write. Then, the example uses the
 ``bulkWrite()`` method to perform a bulk operation:
 
@@ -284,9 +287,9 @@ reports the errors only after attempting all operations.
 Return Value
 ------------
 
-The ``bulkWrite()`` method returns a ``SingleObservable`` object. You can subscribe to
-this observable to access information from a ``BulkWriteResult`` instance by using the
-following methods:
+The ``bulkWrite()`` method returns a ``SingleObservable`` object that contains a
+``BulkWriteResult``. You can access information from the ``BulkWriteResult`` instance by 
+subscribing to the observable and using the following methods:
 
 .. list-table::
    :widths: 30 70
@@ -330,7 +333,7 @@ API Documentation
 ~~~~~~~~~~~~~~~~~
 
 To learn more about any of the methods or types discussed in this
-guide, see the following API Documentation:
+guide, see the following API documentation:
 
 - `bulkWrite() <{+api+}/org/mongodb/scala/MongoCollection.html#bulkWrite(clientSession:org.mongodb.scala.ClientSession,requests:Seq[_%3C:org.mongodb.scala.model.WriteModel[_%3C:TResult]],options:org.mongodb.scala.model.BulkWriteOptions):org.mongodb.scala.SingleObservable[org.mongodb.scala.BulkWriteResult]>`__
 - `InsertOneModel <{+core-api+}/com/mongodb/client/model/InsertOneModel.html>`__

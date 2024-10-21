@@ -48,7 +48,7 @@ object BulkWrite {
       // end-bulk-delete-one
 
       // start-bulk-delete-many
-      val deleteMany = DeleteManyModel(equal("cuisine", "Experimental"))
+      val deleteManyModel = DeleteManyModel(equal("cuisine", "Experimental"))
       // end-bulk-delete-many
     }
     {
