@@ -67,9 +67,8 @@ The following code shows how to insert a single document into a collection:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``insertOne()`` method, see the
-.. :ref:`Insert Documents <scala-write-insert>` guide.
+To learn more about the ``insertOne()`` method, see the
+:ref:`Insert Documents <scala-write-insert>` guide.
 
 Insert Multiple
 ---------------
@@ -83,9 +82,8 @@ The following code shows how to insert multiple documents into a collection:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``insertMany()`` method, see the
-.. :ref:`Insert Documents <scala-write-insert>` guide.
+To learn more about the ``insertMany()`` method, see the
+:ref:`Insert Documents <scala-write-insert>` guide.
 
 Update One
 ----------
@@ -134,9 +132,8 @@ document:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``replaceOne()`` method, see the
-.. :ref:`Replace Documents <scala-write-replace>` guide.
+To learn more about the ``replaceOne()`` method, see the
+:ref:`Replace Documents <scala-write-replace>` guide.
 
 Delete One
 ----------
