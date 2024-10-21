@@ -132,9 +132,8 @@ document:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``replaceOne()`` method, see the
-.. :ref:`Replace Documents <scala-write-replace>` guide.
+To learn more about the ``replaceOne()`` method, see the
+:ref:`Replace Documents <scala-write-replace>` guide.
 
 Delete One
 ----------
