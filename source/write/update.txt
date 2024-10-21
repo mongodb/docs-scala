@@ -29,7 +29,7 @@ Sample Data
 
 The examples in this guide use the ``restaurants`` collection in the ``sample_restaurants``
 database from the :atlas:`Atlas sample datasets </sample-data>`. To access this collection
-from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
+from your {+language+} application, create a ``MongoClient`` that connects to an Atlas cluster
 and assign the following values to your ``database`` and ``collection`` variables:
 
 .. literalinclude:: /includes/write/update.scala
@@ -56,7 +56,8 @@ Each update method requires the following parameters:
   guide.
 
 - **Update document**, which specifies the update operator and the fields and values to be
-  updated. To view a list of update operators and learn about their usages, see the
+  updated. The update operator specifies the type of update to perform. To view a list of
+  update operators and learn about their usages, see the
   :manual:`Field Update Operators guide page</reference/operator/update-field/>` in the
   {+mdb-server+} manual.
 
