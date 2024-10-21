@@ -198,6 +198,7 @@ The following example performs multiple write operations by using the
 ``bulkWrite()`` method:
 
 .. io-code-block::
+   :copyable:
 
    .. input:: /includes/write/bulk-write.scala
       :start-after: start-bulk-write-mixed
@@ -206,6 +207,7 @@ The following example performs multiple write operations by using the
       :dedent:
 
    .. output::
+      :visible: false
       
       Success: AcknowledgedBulkWriteResult{insertedCount=1, matchedCount=1, removedCount=1,
       modifiedCount=1, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=...}}]}
@@ -225,7 +227,7 @@ operation that failed and details about the exception.
 Customize Bulk Write Operation
 ------------------------------
 
-The ``bulkWrite()`` method optionally accepts a parameter which
+The ``bulkWrite()`` method optionally accepts a ``BulkWriteOptions`` parameter, which
 specifies options you can use to configure the bulk write
 operation. If you don't specify any options, the driver performs the
 bulk operation with default settings.
