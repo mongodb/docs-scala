@@ -16,7 +16,11 @@ object BulkWrite {
 
     {
       // start-bulk-insert-one
-      val insertOneModel = InsertOneModel(Document("name" -> "Blue Moon Grill", "borough" -> "Brooklyn", "cuisine" -> "American"))
+      val insertOneModel = InsertOneModel(
+          Document("name" -> "Blue Moon Grill",
+                   "borough" -> "Brooklyn",
+                   "cuisine" -> "American")
+      )
       // end-bulk-insert-one
 
       // start-bulk-update-one
@@ -33,7 +37,9 @@ object BulkWrite {
 
       // start-bulk-replace-one
       val replaceFilter = equal("name", "Cooper Town Diner")
-      val replaceDoc = Document("name" -> "Smith Town Diner", "borough" -> "Brooklyn", "cuisine" -> "American")
+      val replaceDoc = Document("name" -> "Smith Town Diner",
+                                "borough" -> "Brooklyn",
+                                "cuisine" -> "American")
       val replaceOneModel = ReplaceOneModel(replaceFilter, replaceDoc)
       // end-bulk-replace-one
 
@@ -47,7 +53,11 @@ object BulkWrite {
     }
     {
       // start-bulk-write-mixed
-      val insertOneModel = InsertOneModel(Document("name" -> "Red's Pizza", "borough" -> "Brooklyn", "cuisine" -> "Pizzeria"))
+      val insertOneModel = InsertOneModel(
+          Document("name" -> "Red's Pizza",
+                   "borough" -> "Brooklyn",
+                   "cuisine" -> "Pizzeria")
+      )
       val updateOneModel = UpdateOneModel(equal("name", "Moonlit Tavern"), set("borough", "Queens"))
       val deleteManyModel = DeleteManyModel(equal("name", "Crepe"))
 
