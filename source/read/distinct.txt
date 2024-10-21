@@ -52,8 +52,8 @@ Retrieve Distinct Values
 To retrieve the distinct values for a specified field, call the ``distinct()``
 method and pass the name of the field you want to find distinct values for.
 
-Retrieve Distinct Values Across a Collection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Retrieve Values Across a Collection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example retrieves the distinct values of the ``borough`` field in
 the ``restaurants`` collection:
@@ -70,19 +70,19 @@ the ``restaurants`` collection:
    .. output::
       :visible: false
 
-      "Bronx"
-      "Manhattan"
-      "Missing"
-      "Queens"
-      "Staten Island"
+      Bronx
+      Manhattan
+      Missing
+      Queens
+      Staten Island
 
 The operation returns an instance of the ``DistinctObservable`` class, which
 you can iterate through to access each distinct ``borough`` field value. Although
 several documents have the same value in the ``borough`` field, each value appears
 in the results only once.
 
-Retrieve Distinct Values Across Specified Documents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Retrieve Values Across Specified Documents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can provide a **query filter** to the ``distinct()`` method to find the distinct
 field values across a subset of documents in a collection. A query filter is an expression
@@ -104,10 +104,10 @@ all documents that have a ``cuisine`` field value of ``"Italian"``:
    .. output:: 
       :visible: false
 
-      "Bronx"
-      "Manhattan"
-      "Queens"
-      "Staten Island"
+      Bronx
+      Manhattan
+      Queens
+      Staten Island
 
 Modify Distinct Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,13 +155,13 @@ method to ``distinct()`` to add a comment to the operation:
    .. output:: 
       :visible: false
 
-      "$1.25 Pizza"
-      "18 East Gunhill Pizza"
-      "2 Bros"
-      "Aenos Pizza"
-      "Alitalia Pizza Restaurant"
-      "Amici Pizza And Pasta"
-      "Angie'S Cafe Pizza"
+      $1.25 Pizza
+      18 East Gunhill Pizza
+      2 Bros
+      Aenos Pizza
+      Alitalia Pizza Restaurant
+      Amici Pizza And Pasta
+      Angie'S Cafe Pizza
       ...
 
 API Documentation

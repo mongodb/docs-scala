@@ -18,7 +18,7 @@ object Retrieve {
 
     // Retrieves distinct values of the "borough" field
     // start-distinct
-    collection.distinct("borough").subscribe((doc: Document) => println(doc.toJson()),
+    collection.distinct("borough").subscribe((value: String) => println(value),
                                 (e: Throwable) => println(s"There was an error: $e"))
     //end-distinct
 
@@ -26,7 +26,7 @@ object Retrieve {
     // start-distinct-with-query
     val filter = equal("cuisine", "Italian")
 
-    collection.distinct("borough", filter).subscribe((doc: Document) => println(doc.toJson()),
+    collection.distinct("borough", filter).subscribe((value: String) => println(value),
                                 (e: Throwable) => println(s"There was an error: $e"))
     // end-distinct-with-query
 
@@ -37,7 +37,7 @@ object Retrieve {
 
     collection.distinct("name", filter)
                .comment("Bronx Pizza restaurants")
-               .subscribe((doc: Document) => println(doc.toJson()),
+               .subscribe((value: String) => println(value),
                          (e: Throwable) => println(s"There was an error: $e"))
     // end-distinct-with-comment
 
