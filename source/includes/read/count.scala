@@ -18,14 +18,15 @@ object Count {
 
     // Counts all documents in the collection
     // start-count-all
-    collection.countDocuments().subscribe((count: Long) => println(s"Number of documents: $count"),
-                             (e: Throwable) => println(s"There was an error: $e"))
+    collection.countDocuments()
+              .subscribe((count: Long) => println(s"Number of documents: $count"),
+                        (e: Throwable) => println(s"There was an error: $e"))
     // end-count-all
 
     // Counts documents that have a "founded_year" value of 2010
     // start-count-accurate
     collection.countDocuments(equal("founded_year", 2010))
-              .subscribe((count: Long) => println(s"Number of companies founded in 2010: $count"),
+              .subscribe((count: Long) => println(s"Companies founded in 2010: $count"),
                         (e: Throwable) => println(s"There was an error: $e"))
     // end-count-accurate
 
@@ -33,7 +34,7 @@ object Count {
     // start-modify-accurate
     val countOptions = CountOptions().limit(100)
     collection.countDocuments(equal("number_of_employees", 50), countOptions)
-              .subscribe((count: Long) => println(s"Number of companies with 50 employees: $count"),
+              .subscribe((count: Long) => println(s"Companies with 50 employees: $count"),
                         (e: Throwable) => println(s"There was an error: $e"))
     // end-modify-accurate
 
