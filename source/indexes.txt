@@ -1,0 +1,34 @@
+.. _php-indexes:
+
+=================================
+Optimize Queries by Using Indexes
+=================================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :description: Learn how to use indexes by using the MongoDB PHP Library.
+   :keywords: query, optimization, efficiency, usage example, code example
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+    /indexes/single-field-index
+
+Overview
+--------
+
+On this page, you can see copyable code examples that show how to manage
+different types of indexes by using the {+driver-long+}.
+
+.. TODO
+
