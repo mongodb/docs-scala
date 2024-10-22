@@ -71,6 +71,9 @@ field index. The following example creates an index in ascending order on the
    :copyable:
    :dedent:
 
+Check and Use the Index
+~~~~~~~~~~~~~~~~~~~~~~~
+
 You can check that the index was created by using the ``listIndexes()`` method.
 You should see an index for ``title`` in the list, as shown in the output
 below:
