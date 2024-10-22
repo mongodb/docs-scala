@@ -21,8 +21,8 @@ Optimize Queries by Using Indexes
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-
-    /indexes/single-field-index
+   
+   /indexes/single-field-index
 
 Overview
 --------
