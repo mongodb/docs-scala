@@ -44,8 +44,22 @@ and assign the following values to your ``database`` and ``collection`` variable
     :start-after: start-db-coll
     :end-before: end-db-coll
 
-To learn how to create a free MongoDB Atlas cluster and load the sample datasets, see the
-:atlas:`Get Started with Atlas </getting-started>` guide.
+.. tip::
+
+   To learn how to create a free MongoDB Atlas cluster and load the sample datasets,
+   see the :atlas:`Get Started with Atlas </getting-started>` guide.
+
+Some examples use instances of the ``LatchedObserver`` class to receive change
+stream events. This class is a custom observer that prints change stream events
+and continues monitoring data changes until the stream completes or generates
+an error. To use the ``LatchedObserver`` class, paste the following code into
+your application file:
+
+.. literalinclude:: /includes/read/change-streams.scala
+    :language: scala
+    :dedent:
+    :start-after: start-latched-observer
+    :end-before: end-latched-observer
 
 Open a Change Stream
 --------------------
@@ -59,8 +73,9 @@ classes:
 - ``Database``: Monitor changes in all collections in the database
 - ``Collection``: Monitor changes in the collection
 
-The following example opens a change stream on the ``restaurants`` collection
-and outputs changes as they occur:
+The following example calls the ``watch()`` method to open a change stream on the
+``restaurants`` collection. The code creates a ``LatchedObserver`` instance to
+receive and output changes as they occur:
 
 .. literalinclude:: /includes/read/change-streams.scala
    :start-after: start-open-change-stream
@@ -107,9 +122,13 @@ list:
 - ``$redact``: Restricts the contents of the documents
 - ``$unset``: Removes fields from documents
 
-The following example passes a pipeline that includes the ``$match`` stage to the
-``watch()`` method. This instructs the ``watch()`` method to output events only
-when update operations occur:
+The {+driver-short+} provides the ``Aggregates`` class, which includes helper methods
+for building the preceding pipeline stages. To learn more about ``Aggregates``, see
+the `API documentation <{+api+}/org/mongodb/scala/ChangeStreamObservable.html>`__.
+
+The following example passes a pipeline to ``watch()`` that uses the ``Aggregates.filter()``
+method to build the ``$match`` stage. This instructs the ``watch()`` method to output
+events only when update operations occur:
 
 .. literalinclude:: /includes/read/change-streams.scala
    :start-after: start-change-stream-pipeline
