@@ -1,11 +1,12 @@
 import org.mongodb.scala._
-import org.mongodb.scala.model.Filters._
+import org.mongodb.scala.model.{ Aggregates, Filters, Updates }
 import org.mongodb.scala.model.Projections._
 import org.mongodb.scala.model.Sorts._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 import scala.concurrent.ExecutionContext.Implicits.global
+import org.mongodb.scala.result.UpdateResult
 
 object ChangeStreams {
   def main(args: Array[String]): Unit = {
@@ -46,10 +47,10 @@ object ChangeStreams {
     // Updates a document that has a "name" value of "Blarney Castle"
     // start-update-for-change-stream
     val filter = equal("name", "Blarney Castle")
-    val update = set("cuisine", "Irish")
+    val update = set("cuisine", "American")
 
     collection.updateOne(filter, update)
-              .subscribe((doc: Document) => println(doc.toJson()),
+              .subscribe((res: UpdateResult) => println(res),
                         (e: Throwable) => println(s"There was an error: $e"))
     // end-update-for-change-stream
 

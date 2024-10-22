@@ -49,7 +49,7 @@ and assign the following values to your ``database`` and ``collection`` variable
    To learn how to create a free MongoDB Atlas cluster and load the sample datasets,
    see the :atlas:`Get Started with Atlas </getting-started>` guide.
 
-Some examples use instances of the ``LatchedObserver`` class to receive change
+Some examples use instances of the ``LatchedObserver`` class to handle change
 stream events. This class is a custom observer that prints change stream events
 and continues monitoring data changes until the stream completes or generates
 an error. To use the ``LatchedObserver`` class, paste the following code into
@@ -101,11 +101,12 @@ as it occurs. The printed change event resembles the following output:
 .. code-block:: none
    :copyable: false
 
-   { "_id" : { "_data" : "..." }, "operationType" : "update", "clusterTime" :
-   { "$timestamp" : { ... } }, "wallTime" : { "$date" : "..." }, "ns" : { "db" :
-   "sample_restaurants", "coll" : "restaurants" }, "documentKey" : { "_id" : 
-   { "$oid" : "..." } }, "updateDescription" : { "updatedFields" : { "cuisine" : "Irish" },
-   "removedFields" : [  ], "truncatedArrays" : [  ] } }
+   ChangeStreamDocument{ operationType=update, resumeToken={"_data": "..."},
+   namespace=sample_restaurants.restaurants, destinationNamespace=null, 
+   fullDocument=null, fullDocumentBeforeChange=null, documentKey={"_id": {...}},
+   clusterTime=Timestamp{...}, updateDescription=UpdateDescription{removedFields=[],
+   updatedFields={"cuisine": "Irish"}, truncatedArrays=[], disambiguatedPaths=null},
+   txnNumber=null, lsid=null, splitEvent=null, wallTime=BsonDateTime{...}}
 
 Modify the Change Stream Output
 -------------------------------
@@ -231,18 +232,20 @@ output:
 
 .. code-block:: none
    :copyable: false
-   :emphasize-lines: 3-6
+   :emphasize-lines: 3-8
 
-   { "_id" : { "_data" : "..." }, "operationType" : "update", "clusterTime" :
-   { "$timestamp" : { ... } }, "wallTime" : { "$date" : "..." },
-   "fullDocument" : { "_id" : { "$oid" : "..." }, "address" : { "building" : 
-   "202-24", "coord" : [ -73.925044200000002093, 40.559546199999999772 ], "street"
-   : "Rockaway Point Boulevard", "zipcode" : "11697" }, "borough" : "Queens",
-   "cuisine" : "Irish", "grades" : [ ...], "name" : "Blarney Castle", "restaurant_id" :
-   "40366356" }, "ns" : { "db" : "sample_restaurants", "coll" : "restaurants" },
-   "documentKey" : { "_id" : { "$oid" : "..." } }, "updateDescription" :
-   { "updatedFields" : { "cuisine" : "Irish" }, "removedFields" : [  ],
-   "truncatedArrays" : [  ] } }
+   ChangeStreamDocument{ operationType=update, resumeToken={"_data": "..."},
+   namespace=sample_restaurants.restaurants, destinationNamespace=null,
+   fullDocument=Iterable((_id,BsonObjectId{...}), (address,{"building": "202-24",
+   "coord": [-73.9250442, 40.5595462], "street": "Rockaway Point Boulevard",
+   "zipcode": "11697"}), (borough,BsonString{value='Queens'}),
+   (cuisine,BsonString{value='Irish'}), (grades,BsonArray{values=[...]}),
+   (name,BsonString{value='Blarney Castle'}), (restaurant_id,BsonString{...}),
+   (blank,BsonString{value='Irish'})), fullDocumentBeforeChange=null,
+   documentKey={"_id": {"$oid": "..."}}, clusterTime=Timestamp{...}, updateDescription=
+   UpdateDescription{removedFields=[], updatedFields={"cuisine": "Irish"},
+   truncatedArrays=[], disambiguatedPaths=null}, txnNumber=null, lsid=null,
+   splitEvent=null, wallTime=BsonDateTime{...}}
 
 .. tip::
 
