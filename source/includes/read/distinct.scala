@@ -18,16 +18,18 @@ object Retrieve {
 
     // Retrieves distinct values of the "borough" field
     // start-distinct
-    collection.distinct("borough").subscribe((value: String) => println(value),
-                                (e: Throwable) => println(s"There was an error: $e"))
+    collection.distinct("borough")
+              .subscribe((value: String) => println(value),
+                        (e: Throwable) => println(s"There was an error: $e"))
     //end-distinct
 
     // Retrieves distinct "borough" field values for documents with a "cuisine" value of "Italian"
     // start-distinct-with-query
     val filter = equal("cuisine", "Italian")
 
-    collection.distinct("borough", filter).subscribe((value: String) => println(value),
-                                (e: Throwable) => println(s"There was an error: $e"))
+    collection.distinct("borough", filter)
+              .subscribe((value: String) => println(value),
+                        (e: Throwable) => println(s"There was an error: $e"))
     // end-distinct-with-query
 
     // Retrieves distinct "name" field values for documents matching the "borough" and "cuisine" fields query

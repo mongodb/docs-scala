@@ -71,6 +71,7 @@ the ``restaurants`` collection:
       :visible: false
 
       Bronx
+      Brooklyn
       Manhattan
       Missing
       Queens
@@ -84,8 +85,8 @@ in the results only once.
 Retrieve Values Across Specified Documents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can provide a **query filter** to the ``distinct()`` method to find the distinct
-field values across a subset of documents in a collection. A query filter is an expression
+You can provide a **query filter** to the ``distinct()`` method to find distinct
+field values within a subset of documents in a collection. A query filter is an expression
 that specifies search criteria used to match documents in an operation. For more information
 about creating a query filter, see the :ref:`scala-specify-query` guide.
 
@@ -105,6 +106,7 @@ all documents that have a ``cuisine`` field value of ``"Italian"``:
       :visible: false
 
       Bronx
+      Brooklyn
       Manhattan
       Queens
       Staten Island
