@@ -26,7 +26,7 @@ allows your application to subscribe to data changes on a collection, database,
 or deployment.
 
 When using the {+driver-short+}, you can call the ``watch()`` method to return an
-instance of ``ChangeStreamObservable``. Then, you can iterate through the 
+instance of ``ChangeStreamObservable``. Then, you can subscribe to the
 ``ChangeStreamObservable`` instance to see new data changes, such as updates,
 insertions, and deletions.
 
@@ -69,9 +69,9 @@ call the ``watch()`` method determines the scope of events that the change
 stream monitors. You can call the ``watch()`` method on instances of the following
 classes:
 
-- ``Client``: Monitor all changes in the MongoDB deployment
-- ``Database``: Monitor changes in all collections in the database
-- ``Collection``: Monitor changes in the collection
+- ``MongoClient``: Monitor all changes in the MongoDB deployment
+- ``MongoDatabase``: Monitor changes in all collections in the database
+- ``MongoCollection``: Monitor changes in the collection
 
 The following example calls the ``watch()`` method to open a change stream on the
 ``restaurants`` collection. The code creates a ``LatchedObserver`` instance to
@@ -125,7 +125,7 @@ list:
 
 The {+driver-short+} provides the ``Aggregates`` class, which includes helper methods
 for building the preceding pipeline stages. To learn more about ``Aggregates``, see
-the `API documentation <{+api+}/org/mongodb/scala/ChangeStreamObservable.html>`__.
+the `API documentation <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__.
 
 The following example passes a pipeline to ``watch()`` that uses the ``Aggregates.filter()``
 method to build the ``$match`` stage. This instructs the ``watch()`` method to output
@@ -137,8 +137,8 @@ events only when update operations occur:
    :language: scala
    :dedent:
 
-Modify ``watch()`` Behavior
----------------------------
+Modify watch() Behavior
+-----------------------
 
 You can modify the behavior of the ``watch()`` method by chaining
 methods provided by the ``ChangeStreamObservable`` class. The following
