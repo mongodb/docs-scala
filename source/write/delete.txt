@@ -127,26 +127,26 @@ configure a ``DeleteOptions`` instance:
    * - ``hint()``
      - | Specifies the index to use when matching documents.
          For more information, see the :manual:`hint </reference/command/delete/#std-label-deletes-array-hint>`
-         description in the {+mdb-server+} manual.
+         option in the ``delete`` reference page of the {+mdb-server+} manual.
 
    * - ``hintString()``
      - | Specifies the index as a string to use when matching documents.
          For more information, see the :manual:`hint </reference/command/delete/#std-label-deletes-array-hint>`
-         description in the {+mdb-server+} manual.
+         option in the `` delete`` reference page of the {+mdb-server+} manual.
 
    * - ``let()``
      - | Provides a map of parameter names and values to set top-level
          variables for the operation. Values must be constant or closed
          expressions that don't reference document fields. For more information,
          see the :manual:`let
-         </reference/command/delete/#std-label-delete-let-syntax>` description in the
-         {+mdb-server+} manual for more information.
+         </reference/command/delete/#std-label-delete-let-syntax>` option in the ``delete``
+         reference page of the {+mdb-server+} manual.
 
    * - ``comment()``
      - | Sets a comment to attach to the operation. For more
          information, see the :manual:`Command
          Fields </reference/command/delete/#command-fields>` section in the ``delete``
-         reference page of the {+mdb-server+} manual for more information.
+         reference page of the {+mdb-server+} manual.
 
 Modify Delete Example
 `````````````````````
