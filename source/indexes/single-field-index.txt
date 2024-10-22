@@ -51,27 +51,54 @@ load the sample datasets, see the :atlas:`Get Started with Atlas
 Create Single-Field Index
 -------------------------
 
-Use the ``MongoDB\Collection::createIndex()`` method to create a single
-field index. The following example creates an index in ascending order on the
-``title`` field:
+You must include the following import statements to run the following examples:
 
-.. literalinclude:: /includes/indexes/indexes.php
-   :start-after: start-index-single
-   :end-before: end-index-single
-   :language: php
+.. literalinclude:: /includes/indexes/single-field.scala
+   :start-after: start-single-index-imports
+   :end-before: end-single-index-imports
+   :language: scala
    :copyable:
    :dedent:
 
-The following is an example of a query that is covered by the index
-created in the preceding code example:
+Use the ``createIndex()`` method to create a single
+field index. The following example creates an index in ascending order on the
+``title`` field:
+
+.. literalinclude:: /includes/indexes/single-field.scala
+   :start-after: start-index-single
+   :end-before: end-index-single
+   :language: scala
+   :copyable:
+   :dedent:
+
+You can check that the index was created by using the ``listIndexes()`` method.
+You should see an index for ``title`` in the list, as shown in the output
+below:
 
 .. io-code-block::
    :copyable: true
 
-   .. input:: /includes/indexes/indexes.php
+   .. input:: /includes/indexes/single-field.scala
+      :start-after: start-check-single-index
+      :end-before: end-check-single-index
+      :language: scala
+      :dedent:
+   
+   .. output::
+      :visible: true
+
+      {"v": 2, "key": {"title": 1}, "name": "title_1"}
+
+The following is an example of a query that is covered by the above index
+created on the ``title`` field:
+
+.. io-code-block::
+   :copyable: true
+
+   .. input:: /includes/indexes/single-field.scala
       :start-after: start-index-single-query
       :end-before: end-index-single-query
-      :language: php
+      :language: scala
       :dedent:
    
    .. output::
@@ -84,7 +111,7 @@ Additional Information
 ----------------------
 
 To view runnable examples that demonstrate how to manage indexes, see
-:ref:`php-indexes`.
+:ref:`scala-indexes`.
 
 To learn more about single field indexes, see :manual:`Single Field
 Indexes </core/index-single>` in the {+mdb-server+} manual.
@@ -95,5 +122,6 @@ API Documentation
 To learn more about any of the methods discussed in this guide, see the
 following API documentation:
 
-- :phpmethod:`MongoDB\Collection::createIndex()`
-- :phpmethod:`MongoDB\Collection::findOne()`
+- :api:`createIndex() </org/mongodb/scala/MongoCollection.html#createIndex(key:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.IndexOptions):org.mongodb.scala.SingleObservable[String]>`
+- :api:`find() </org/mongodb/scala/MongoCollection.html#find[C](filter:org.mongodb.scala.bson.conversions.Bson)(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.FindObservable[C]>`
+- :api:`listIndexes <org/mongodb/scala/MongoCollection.html#listIndexes[C]()(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,org.mongodb.scala.Document],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.ListIndexesObservable[C]>`
