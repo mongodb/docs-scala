@@ -51,8 +51,8 @@ load the sample datasets, see the :atlas:`Get Started with Atlas
 Create Single-Field Index
 -------------------------
 
-You must include the following import statements in your file to run the 
-following examples:
+To run the examples in this guide, you must include the following import 
+statements in your file:
 
 .. literalinclude:: /includes/indexes/single-field.scala
    :start-after: start-single-index-imports
@@ -72,12 +72,8 @@ field index. The following example creates an index in ascending order on the
    :copyable:
    :dedent:
 
-Check and Use the Index
-~~~~~~~~~~~~~~~~~~~~~~~
-
-You can check that the index was created by using the ``listIndexes()`` method.
-You should see an index for ``title`` in the list, as shown in the output
-below:
+You can verify that the index was created by using the ``listIndexes()`` method.
+You should see an index for ``title`` in the list, as shown in the following output:
 
 .. io-code-block::
    :copyable: true
@@ -93,7 +89,7 @@ below:
 
       {"v": 2, "key": {"title": 1}, "name": "title_1"}
 
-The following is an example of a query that is covered by the above index
+The following is an example of a query that is covered by the index
 created on the ``title`` field:
 
 .. io-code-block::
