@@ -1,9 +1,9 @@
 mport org.mongodb.scala._
 import org.mongodb.scala.bson.Document
 import org.mongodb.scala.model.Filters.equal
-import org.mongodb.scala.model.UpdateOptions
-import org.mongodb.scala.model.Updates.{combine, rename, set}
-import org.mongodb.scala.result.UpdateResult
+import org.mongodb.scala.model.Aggregates._
+import org.mongodb.scala.model.Accumulators._
+import com.mongodb.ExplainVerbosity
 
 object Aggregation {
 
