@@ -1,4 +1,4 @@
-.. _php-indexes:
+.. _scala-indexes:
 
 =================================
 Optimize Queries by Using Indexes
