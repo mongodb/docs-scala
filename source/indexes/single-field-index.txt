@@ -51,7 +51,8 @@ load the sample datasets, see the :atlas:`Get Started with Atlas
 Create Single-Field Index
 -------------------------
 
-You must include the following import statements to run the following examples:
+You must include the following import statements in your file to run the 
+following examples:
 
 .. literalinclude:: /includes/indexes/single-field.scala
    :start-after: start-single-index-imports
@@ -125,6 +126,6 @@ API Documentation
 To learn more about any of the methods discussed in this guide, see the
 following API documentation:
 
-- :api:`createIndex() </org/mongodb/scala/MongoCollection.html#createIndex(key:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.IndexOptions):org.mongodb.scala.SingleObservable[String]>`
-- :api:`find() </org/mongodb/scala/MongoCollection.html#find[C](filter:org.mongodb.scala.bson.conversions.Bson)(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.FindObservable[C]>`
-- :api:`listIndexes <org/mongodb/scala/MongoCollection.html#listIndexes[C]()(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,org.mongodb.scala.Document],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.ListIndexesObservable[C]>`
+- :api:`createIndex() <org/mongodb/scala/MongoCollection.html#createIndex(key:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.IndexOptions):org.mongodb.scala.SingleObservable[String]>`
+- :api:`find() <org/mongodb/scala/MongoCollection.html#find[C](filter:org.mongodb.scala.bson.conversions.Bson)(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.FindObservable[C]>`
+- :api:`listIndexes() <org/mongodb/scala/MongoCollection.html#listIndexes[C]()(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,org.mongodb.scala.Document],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.ListIndexesObservable[C]>`
