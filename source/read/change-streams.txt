@@ -69,10 +69,11 @@ call the ``watch()`` method determines the scope of events that the change
 stream monitors. You can call the ``watch()`` method on instances of the following
 classes:
 
-- ``MongoClient``: Monitors changes to all non-system collections across all databases
-  in a deployment
-- ``MongoDatabase``: Monitors changes in all collections in one database
-- ``MongoCollection``: Monitors changes in one collection
+- ``MongoClient``: Monitors changes to all collections across all databases
+  in a deployment, excluding :manual:`system collections </reference/system-collections/>`
+  or collections in the ``admin``, ``local``, and ``config`` databases
+- ``MongoDatabase``: Monitors changes to all collections in one database
+- ``MongoCollection``: Monitors changes to one collection
 
 The following example calls the ``watch()`` method to open a change stream on the
 ``restaurants`` collection. The code creates a ``LatchedObserver`` instance to
@@ -201,10 +202,10 @@ By default, when you perform an operation on a collection, the
 corresponding change event includes only the modified fields and
 their values before and after the operation. 
 
-You can instruct the ``watch()`` method to return the document's **pre-image**, or the
-full version of a document *before* a change. To include the pre-image in
-the change stream event, chain the ``fullDocumentBeforeChange()`` method to
-``watch()``. Pass one of the following values to the ``fullDocumentBeforeChange()``
+You can instruct the ``watch()`` method to return the document's **pre-image**, the
+full version of the document *before* changes, in addition to the modified fields. To
+include the pre-image in the change stream event, chain the ``fullDocumentBeforeChange()``
+method to ``watch()``. Pass one of the following values to the ``fullDocumentBeforeChange()``
 method:
 
 - ``FullDocumentBeforeChange.WHEN_AVAILABLE``: The change event includes a pre-image
@@ -215,9 +216,9 @@ method:
   server raises an error.  
 
 You can also instruct the ``watch()`` method to return the document's **post-image**,
-or the full version of a document *after* a change. To include the
-post-image in the change stream event, chain the ``fullDocument()`` method to
-``watch()``. Pass one of the following values to the ``fullDocument()`` method:
+the full version of the document *after* changes, in addition to the modified fields.
+To include the post-image in the change stream event, chain the ``fullDocument()``
+method to ``watch()``. Pass one of the following values to the ``fullDocument()`` method:
 
 - ``FullDocument.UPDATE_LOOKUP``: The change event includes a
   copy of the entire changed document from some time after the change.
