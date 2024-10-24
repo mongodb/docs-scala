@@ -53,8 +53,8 @@ statements in your file:
    :dedent:
 
 Use the ``createIndex()`` method to create a
-compound index. The following example creates an index in ascending
-order on the ``runtime`` and ``year`` fields:
+compound index. The following example creates an index in descending
+order on the ``runtime`` field and in ascending order on the ``year`` field:
 
 .. literalinclude:: /includes/indexes/compound-field.scala
    :start-after: start-index-compound
@@ -95,7 +95,7 @@ created on the ``runtime`` and ``year`` fields:
    .. output::
       :visible: false
 
-      {"_id":...,"title":"Before Sunrise",...,"year":1995,...}
+      {"_id":...,"runtime": 877,...,"title":"Taken",...,"year":2002,...}
 
 Additional Information
 ----------------------
@@ -116,5 +116,3 @@ documentation:
 - `MongoCollection.createIndex() <{+api+}/org/mongodb/scala/MongoCollection.html#createIndex(key:org.mongodb.scala.bson.conversions.Bson,options:org.mongodb.scala.model.IndexOptions):org.mongodb.scala.SingleObservable[String]>`__
 - `MongoCollection.find() <{+api+}/org/mongodb/scala/MongoCollection.html#find[C](filter:org.mongodb.scala.bson.conversions.Bson)(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.FindObservable[C]>`__
 - `MongoCollection.listIndexes() <{+api+}/org/mongodb/scala/MongoCollection.html#listIndexes[C]()(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,org.mongodb.scala.Document],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.ListIndexesObservable[C]>`__
-
-\

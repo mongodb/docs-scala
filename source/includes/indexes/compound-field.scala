@@ -29,7 +29,7 @@ object CompoundFieldIndex {
     // end-index-compound
 
     // start-index-compound-query
-    val filter = and(gt("runtime", 80), gt("year", 2004))
+    val filter = and(gt("runtime", 80), gt("year", 1999))
 
     collection.find(filter).first().subscribe((doc: Document) => println(doc.toJson()),
                             (e: Throwable) => println(s"There was an error: $e"))
