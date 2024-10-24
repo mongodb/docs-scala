@@ -84,10 +84,10 @@ outputs messages such as the following:
 .. code-block:: none
    :copyable: false
 
-   Cluster with unique client identifier ClusterId{value='...', description='...'} opening
+   Cluster with ID ClusterId{value='...', description='...'} opening
    Writable server available
    Readable server available
-   Cluster with unique client identifier ClusterId{value='...', description='...'} closed
+   Cluster with ID ClusterId{value='...', description='...'} closed
 
 Event Descriptions
 ------------------
@@ -115,7 +115,7 @@ the event is published:
      - `ClusterListener <{+core-api+}/com/mongodb/event/ClusterListener.html>`__
      - Created when the driver first connects to the cluster.
 
-   * - `ClusterClosedEvent <{+core-api+}/com/mongodb/event/ClusterOpeningEvent.html>`__
+   * - `ClusterClosedEvent <{+core-api+}/com/mongodb/event/ClusterClosedEvent.html>`__
      - `ClusterListener <{+core-api+}/com/mongodb/event/ClusterListener.html>`__
      - Created when the driver disconnects from the cluster.
 
@@ -123,11 +123,11 @@ the event is published:
      - `ServerListener <{+core-api+}/com/mongodb/event/ServerListener.html>`__
      - Created when the server description changes
 
-   * - `ServerOpeningEvent <{+core-api+}/com/mongodb/event/ServerDescriptionChangedEvent.html>`__
+   * - `ServerOpeningEvent <{+core-api+}/com/mongodb/event/ServerOpeningEvent.html>`__
      - `ServerListener <{+core-api+}/com/mongodb/event/ServerListener.html>`__
      - Created when a new server is added to the topology.
 
-   * - `ServerClosedEvent <{+core-api+}/com/mongodb/event/ServerDescriptionChangedEvent.html>`__
+   * - `ServerClosedEvent <{+core-api+}/com/mongodb/event/ServerClosedEvent.html>`__
      - `ServerListener <{+core-api+}/com/mongodb/event/ServerListener.html>`__
      - Created when an existing server is removed from the topology.
 

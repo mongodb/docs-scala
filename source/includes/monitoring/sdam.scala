@@ -13,10 +13,10 @@ object Sdam {
     var isReadable: Boolean = false
 
     override def clusterOpening(event: ClusterOpeningEvent): Unit =
-        println(s"Cluster with unique client identifier ${event.getClusterId} opening")
+        println(s"Cluster with ID ${event.getClusterId} opening")
 
     override def clusterClosed(event: ClusterClosedEvent): Unit =
-        println(s"Cluster with unique client identifier ${event.getClusterId} closed")
+        println(s"Cluster with ID ${event.getClusterId} closed")
 
     override def clusterDescriptionChanged(event: ClusterDescriptionChangedEvent): Unit = {
         if (!isWritable) {
@@ -48,7 +48,7 @@ object Sdam {
 
   def main(args: Array[String]): Unit = {
     // start-configure-client
-    val uri: ConnectionString = ConnectionString("<connnection string>")
+    val uri: ConnectionString = ConnectionString("<connection string>")
     val settings: MongoClientSettings = MongoClientSettings
         .builder()
         .applyToClusterSettings((builder: ClusterSettings.Builder) =>
