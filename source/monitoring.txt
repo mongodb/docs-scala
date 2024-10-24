@@ -1,0 +1,10 @@
+.. _php-monitoring:
+
+========================
+Monitor Your Application
+========================
+
+.. toctree::
+   :caption: Monitoring categories
+
+   /monitoring/cluster-monitoring
