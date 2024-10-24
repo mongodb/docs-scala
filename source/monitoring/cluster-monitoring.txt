@@ -56,10 +56,10 @@ The following code creates the ``TestClusterListener`` class, which implements
 the ``ClusterListener`` interface. The class contains the following methods
 to handle topology-related events:
 
-- ``clusterOpening()``: Prints a message when a new cluster is created
-- ``clusterClosed()``: Prints a message when a cluster is closed
-- ``clusterDescriptionChanged()``: Prints a message about changes to the
-   read and write availability of the cluster
+- ``clusterOpening()``: Prints a message when the driver first connects to a cluster
+- ``clusterClosed()``: Prints a message when the driver disconnects from a cluster
+- ``clusterDescriptionChanged()``: Prints a message about changes to the read
+  and write availability of the cluster
 
 .. literalinclude:: /includes/monitoring/sdam.scala
    :start-after: start-listener-class
@@ -68,8 +68,8 @@ to handle topology-related events:
    :copyable:
    :dedent:
 
-Then, add the ``TestClusterListener`` class to a ``MongoClient`` by passing
-settings to the ``MongoClient`` constructor, as shown in the following code:
+Then, subscribe to the ``TestClusterListener`` class by configuring settings
+for your ``MongoClient`` instance, as shown in the following code:
 
 .. literalinclude:: /includes/monitoring/sdam.scala
    :start-after: start-configure-client
@@ -84,9 +84,10 @@ outputs messages such as the following:
 .. code-block:: none
    :copyable: false
 
-   Server opening on ac-rmuag0v-shard-00-00.gh0qg50.mongodb.net:27017
-   Server opening on ac-rmuag0v-shard-00-01.gh0qg50.mongodb.net:27017
-   Server opening on ac-rmuag0v-shard-00-02.gh0qg50.mongodb.net:27017
+   Cluster with unique client identifier ClusterId{value='...', description='...'} opening
+   Writable server available
+   Readable server available
+   Cluster with unique client identifier ClusterId{value='...', description='...'} closed
 
 Event Descriptions
 ------------------

@@ -1,6 +1,6 @@
 import org.mongodb.scala._
-import org.mongodb.scala.model.Filters._
-import org.mongodb.scala.model.CountOptions
+import org.mongodb.scala.connection._
+import com.mongodb.event._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.util.{Failure, Success}
@@ -48,11 +48,12 @@ object Sdam {
 
   def main(args: Array[String]): Unit = {
     // start-configure-client
+    val uri: ConnectionString = ConnectionString("<connnection string>")
     val settings: MongoClientSettings = MongoClientSettings
         .builder()
         .applyToClusterSettings((builder: ClusterSettings.Builder) =>
                 builder.addClusterListener(TestClusterListener(ReadPreference.secondary())))
-        .applyConnectionString("<connection string>")
+        .applyConnectionString(uri)
         .build()
     val client: MongoClient = MongoClient(settings)
     // end-configure-client
