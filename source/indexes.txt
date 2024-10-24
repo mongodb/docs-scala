@@ -22,7 +22,7 @@ Optimize Queries by Using Indexes
    :titlesonly:
    :maxdepth: 1
 
-   /indexes/single-field-index
+   /indexes/compound-index
 
 Overview
 --------
