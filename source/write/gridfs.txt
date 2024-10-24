@@ -29,7 +29,7 @@ the file storage.
 Use GridFS if the size of your files exceeds the BSON document
 size limit of 16MB. For more detailed information on whether GridFS is
 suitable for your use case, see :manual:`GridFS </core/gridfs>` in the
-MongoDB Server manual.
+{+mdb-server+} manual.
 
 The following sections describe GridFS operations and how to
 perform them.

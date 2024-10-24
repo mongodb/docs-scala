@@ -39,7 +39,7 @@ object GridFS {
         .metadata(Document("type" -> "presentation"))
 
       // Upload the file
-      val fileIdObservable = bucket.uploadFromObservable("mongodb-tutorial", observableToUploadFrom, options)
+      val fileIdObservable = filesBucket.uploadFromObservable("mongodb-tutorial", observableToUploadFrom, options)
       val fileId = Await.result(fileIdObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       println(s"File uploaded with id: ${fileId.toHexString}")
       // end-upload-files
@@ -47,7 +47,7 @@ object GridFS {
 
     {
       // start-retrieve-file-info
-      val filesObservable = bucket.find()
+      val filesObservable = filesBucket.find()
       val results = Await.result(filesObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       results.foreach(file => println(s" - ${file.getFilename}"))
       // end-retrieve-file-info
@@ -55,7 +55,7 @@ object GridFS {
 
     {
       // start-retrieve-file-info-filter
-      val filesObservable = bucket.find(Filters.equal("metadata.contentType", "image/png"))
+      val filesObservable = filesBucket.find(Filters.equal("metadata.contentType", "image/png"))
       val results = Await.result(filesObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       results.foreach(file => println(s" - ${file.getFilename}"))
       // end-retrieve-file-info-filter
@@ -64,14 +64,14 @@ object GridFS {
     {
       // start-download-files-name
       val fileId: ObjectId = new ObjectId()
-      val downloadObservable = bucket.downloadToObservable(fileId)
+      val downloadObservable = filesBucket.downloadToObservable(fileId)
       val downloadById = Await.result(downloadObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-download-files-name
     }
 
     {
       // start-download-files-id
-      val downloadObservable = bucket.downloadToObservable("mongodb-tutorial")
+      val downloadObservable = filesBucket.downloadToObservable("mongodb-tutorial")
       val downloadById = Await.result(downloadObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-download-files-id
     }
@@ -79,7 +79,7 @@ object GridFS {
     {
       // start-rename-files
       val fileId: ObjectId = new ObjectId()
-      val renameObservable = bucket.rename(fileId, "mongodbTutorial")
+      val renameObservable = filesBucket.rename(fileId, "mongodbTutorial")
       Await.result(renameObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-rename-files
     }
@@ -87,7 +87,7 @@ object GridFS {
     {
       // start-delete-files
       val fileId: ObjectId = new ObjectId()
-      val deleteObservable = bucket.delete(fileId)
+      val deleteObservable = filesBucket.delete(fileId)
       Await.result(deleteObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-delete-files
     }
