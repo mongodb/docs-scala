@@ -216,13 +216,7 @@ The following example deletes a file by its ``_id``:
 API Documentation
 -----------------
 
-To learn more about using {+driver-short+} to store and retrieve large files,
+To learn more about using GridFS to store and retrieve large files,
 see the following API documentation:
 
-- `GridFSBucket <{+api-root+}gridfs/index.html#gridfs.GridFSBucket>`__
-- `open_upload_stream() <{+api-root+}gridfs/index.html#gridfs.GridFSBucket.open_upload_stream>`__
-- `find() <{+api-root+}gridfs/index.html#gridfs.GridFSBucket.find>`__
-- `open_download_stream_by_name() <{+api-root+}gridfs/index.html#gridfs.GridFSBucket.open_download_stream_by_name>`__
-- `open_download_stream() <{+api-root+}gridfs/index.html#gridfs.GridFSBucket.open_download_stream>`__
-- `rename() <{+api-root+}gridfs/index.html#gridfs.GridFSBucket.rename>`__
-- `delete() <{+api-root+}gridfs/index.html#gridfs.GridFSBucket.delete>`__
+- `GridFSBucket <{+api+}/org/mongodb/scala/gridfs/GridFSBucket$.html>`__
