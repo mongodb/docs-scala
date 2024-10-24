@@ -121,7 +121,7 @@ the event is published:
 
    * - `ServerDescriptionChangedEvent <{+core-api+}/com/mongodb/event/ServerDescriptionChangedEvent.html>`__
      - `ServerListener <{+core-api+}/com/mongodb/event/ServerListener.html>`__
-     - Created when the server description changes
+     - Created when the server description changes.
 
    * - `ServerOpeningEvent <{+core-api+}/com/mongodb/event/ServerOpeningEvent.html>`__
      - `ServerListener <{+core-api+}/com/mongodb/event/ServerListener.html>`__
