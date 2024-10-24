@@ -47,22 +47,36 @@ The **aggregation pipeline** is the assembly line, **aggregation stages** are th
 assembly stations, and **operator expressions** are the
 specialized tools.
 
-Aggregation Versus Find Operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compare Aggregation and Find Operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use find operations to perform the following actions:
+The following table lists the different tasks that find
+operations can perform and compares them to what aggregation
+operations can perform. The aggregation framework provides
+expanded functionality that allows you to transform and manipulate
+your data.
 
-- Select which documents to return
-- Select which fields to return
-- Sort the results
+.. list-table::
+   :header-rows: 1
+   :widths: 50 50
 
-You can use aggregation operations to perform the following actions:
+   * - Find Operations
+     - Aggregation Operations
 
-- Run find operations
-- Rename fields
-- Calculate fields
-- Summarize data
-- Group values
+   * - | Select *certain* documents to return
+       | Select *which* fields to return
+       | Sort the results
+       | Limit the results
+       | Count the results
+     - | Select *certain* documents to return
+       | Select *which* fields to return
+       | Sort the results
+       | Limit the results
+       | Count the results
+       | Rename fields
+       | Compute new fields
+       | Summarize data
+       | Connect and merge data sets
 
 Limitations
 ~~~~~~~~~~~
@@ -75,19 +89,16 @@ Consider the following limitations when performing aggregation operations:
 - Pipeline stages have a memory limit of 100 megabytes by default. You can exceed this
   limit by passing a value of ``true`` to the ``allowDiskUse()`` method and chaining the
   method to ``aggregate()``.
-
-  .. important:: $graphLookup Exception
-
-     The :manual:`$graphLookup
-     </reference/operator/aggregation/graphLookup/>` stage has a strict
-     memory limit of 100 megabytes and ignores the ``allowDiskUse`` option.
+- The :manual:`$graphLookup </reference/operator/aggregation/graphLookup/>`
+  operator has a strict memory limit of 100 megabytes and ignores the
+  value passed to the ``allowDiskUse()`` method.
 
 .. _scala-aggregation-example:
 
 Aggregation Example
 -------------------
 
-.. note::
+.. note:: Sample Data
   
    The examples in this guide use the ``restaurants`` collection in the ``sample_restaurants``
    database from the :atlas:`Atlas sample datasets </sample-data>`. To learn how to create a
@@ -107,9 +118,10 @@ which includes helper methods for building pipeline stages.
       {+mdb-server+} manual
     - `Aggregates <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__ in the API documentation
 
-The following code example produces a count of the number of bakeries in each borough
+This code example produces a count of the number of bakeries in each borough
 of New York. To do so, it calls the ``aggregate()`` method and passes an aggregation
-pipeline as a list containing the following ``Aggregates`` helper methods:
+pipeline as a list of stages. The code builds these stages by using the following
+``Aggregates`` helper methods:
 
 - ``filter()``: Builds the :manual:`$match </reference/operator/aggregation/match/>` stage
   to filter for documents that have a ``cuisine`` value of ``"Bakery"``
