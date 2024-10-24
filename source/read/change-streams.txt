@@ -280,6 +280,6 @@ To learn more about any of the methods or types discussed in this
 guide, see the following API documentation:
 
 - `watch() <{+api+}/org/mongodb/scala/MongoCollection.html#watch[C]()(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.ChangeStreamObservable[C]>`__
-- `ChangeStreamObservable() <{+api+}/org/mongodb/scala/ChangeStreamObservable.html>`__
+- `ChangeStreamObservable <{+api+}/org/mongodb/scala/ChangeStreamObservable.html>`__
 - `fullDocument() <{+api+}/org/mongodb/scala/ChangeStreamObservable.html#fullDocument(fullDocument:org.mongodb.scala.model.changestream.FullDocument):org.mongodb.scala.ChangeStreamObservable[TResult]>`__
 - `fullDocumentBeforeChange() <{+api+}/org/mongodb/scala/ChangeStreamObservable.html#fullDocumentBeforeChange(fullDocumentBeforeChange:org.mongodb.scala.model.changestream.FullDocumentBeforeChange):org.mongodb.scala.ChangeStreamObservable[TResult]>`__
