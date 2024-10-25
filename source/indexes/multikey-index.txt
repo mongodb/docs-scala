@@ -1,4 +1,4 @@
-.. scala-multikey-index:
+.. _scala-multikey-index:
 
 ================
 Multikey Indexes
@@ -23,7 +23,7 @@ Overview
 **Multikey indexes** are indexes that improve the performance of queries
 on array-valued fields. You can create a multikey index on a collection
 by using the ``createIndex()`` method and the same syntax that you use to create 
-:ref:`single field <scala-single-field-index>`.
+a :ref:`single field index <scala-single-field-index>`.
 
 When creating a multikey index, you must specify the following details:
 
@@ -62,8 +62,8 @@ statements in your file:
    :dedent:
 
 Use the ``createIndex()`` method to create a
-compound index. The following example creates an index in descending
-order on the ``runtime`` field and in ascending order on the ``year`` field:
+compound index. The following example creates an index in ascending order 
+on the ``cast`` field:
 
 .. literalinclude:: /includes/indexes/multikey-field.scala
    :start-after: start-index-multikey
@@ -73,7 +73,7 @@ order on the ``runtime`` field and in ascending order on the ``year`` field:
    :dedent:
 
 You can verify that the index was created by using the ``listIndexes()`` method.
-You should see an index for ``runtime`` and ``year`` in the list, as shown in the following output:
+You should see an index for ``cast`` in the list, as shown in the following output:
 
 .. io-code-block::
    :copyable: true
@@ -90,7 +90,7 @@ You should see an index for ``runtime`` and ``year`` in the list, as shown in th
       {"v": 2, "key": {"cast": 1}, "name": "cast_1"}
 
 The following is an example of a query that is covered by the index
-created on the ``runtime`` and ``year`` fields:
+created on the ``cast`` field:
 
 .. io-code-block::
    :copyable: true
