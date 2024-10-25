@@ -25,11 +25,11 @@ run a database command. You can use database commands to perform a
 variety of administrative and diagnostic tasks, such as fetching server
 statistics, initializing a replica set, or running an aggregation pipeline.
 
-.. important:: Prefer Library Methods to Database Commands
+.. important:: Prefer Driver Methods to Database Commands
 
-   The library provides wrapper methods for many database commands.
-   We recommend using these methods instead of executing database
-   commands when possible.
+   The driver provides wrapper methods for many database commands.
+   If possible, we recommend using these methods instead of executing
+   database commands.
    
    To perform administrative tasks, use the :mongosh:`MongoDB Shell </>`
    instead of the {+driver-short+}. The shell provides helper methods
@@ -76,9 +76,11 @@ to run the ``hello`` command, which returns information about the server:
    :start-after: start-hello
    :end-before: end-hello
 
-To find a link to a full list of database commands and corresponding
-parameters, see :manual:`Database Commands </reference/command/>` in 
-the {+mdb-server+} manual.
+.. tip::
+
+   To view a full list of database commands and their corresponding
+   parameters, see :manual:`Database Commands </reference/command/>` in 
+   the {+mdb-server+} manual.
 
 .. _scala-command-read-pref:
 
@@ -99,8 +101,10 @@ shown in the following code:
       :start-after: start-readpref
       :end-before: end-readpref
 
-To learn more about read preference options, see :manual:`Read
-Preference </core/read-preference/>` in the {+mdb-server+} manual.
+.. tip::
+
+   To learn more about read preference options, see :manual:`Read
+   Preference </core/read-preference/>` in the {+mdb-server+} manual.
 
 .. _scala-command-response:
 
@@ -121,24 +125,28 @@ The raw command response document contains the following fields:
    * - Field
      - Description
 
-   * - <command result>
+   * - ``<command result>``
      - Fields specific to the database command. For example,
        the ``hello`` command returns the ``topologyVersion`` field.
 
    * - ``ok``
      - Indicates whether the command has succeeded (``1.0``) or failed (``0.0``). The
        driver raises a ``MongoCommandException`` if the ``ok``
-       field is ``0.0``.
+       value is ``0.0``.
 
    * - ``$clusterTime``
      - A document that contains the signed cluster time. Cluster time is a
-       logical time used for the ordering of operations.
+       logical time used for the ordering of operations. This field only
+       applies to commands run on replica sets or sharded cluster.
 
    * - ``operationTime``
-     - The logical time of the operation. MongoDB uses the
-       logical time to order operations. To learn more about this
-       concept, see :website:`Global Logical Clock </blog/post/transactions-background-part-4-the-global-logical-clock>`
-       on the MongoDB website.
+     - The logical time of the operation execution. This field only
+       applies to commands run on replica sets or sharded cluster.
+
+.. tip::
+
+   To learn more about logical time, see the Wikipedia entry on
+   the :wikipedia:`logical clock <w/index.php?title=Logical_clock&oldid=1072010149>`.
 
 Example
 ~~~~~~~
@@ -157,7 +165,8 @@ The output of this command includes information about the data stored in
 the database, as shown in the following code:
 
 .. code-block:: none
-
+   :copyable: false
+   
    {"db": "sample_restaurants", "collections": 4, "views": 0, "objects":
    18767, "avgObjSize": 596.1911866574306, "dataSize": 11188720,
    "storageSize": 7528448, "totalFreeStorageSize": 0, "numExtents": 0,
