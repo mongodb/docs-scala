@@ -1,0 +1,24 @@
+.. _scala-databases-collections:
+
+=========================
+Databases and Collections
+=========================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: table, row, organize, storage, code example
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   /databases-collections/run-command
