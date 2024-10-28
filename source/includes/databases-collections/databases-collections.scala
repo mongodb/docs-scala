@@ -66,7 +66,7 @@ object DatabasesCollections {
       val tag2 = new Tag("DC", "sf")
       val tagSet = new TagSet(List(tag1, tag2).asJava)
 
-      val connectionString = ConnectionString("mongodb://localhost")
+      val connectionString = ConnectionString("<connection string URI>")
       val readPreference = ReadPreference.primaryPreferred(tagSet)
 
       val mongoClientSettings = MongoClientSettings.builder()
@@ -80,7 +80,7 @@ object DatabasesCollections {
 
     {
       // start-local-threshold
-      val connectionString = ConnectionString("mongodb://localhost")
+      val connectionString = ConnectionString("mongodb://localhost:27017")
 
       val clusterSettings = ClusterSettings.builder()
         .localThreshold(35, TimeUnit.MILLISECONDS)

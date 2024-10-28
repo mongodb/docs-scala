@@ -14,6 +14,7 @@
 
    /get-started
    /connect
+   /databases-collections
    /write
    /read
    /whats-new
