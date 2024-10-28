@@ -109,7 +109,7 @@ created on the ``cast`` field:
 Additional Information
 ----------------------
 
-To learn more about compound indexes, see :manual:`Compound
+To learn more about compound indexes, see :manual:`Multikey
 Indexes </core/indexes/index-types/index-multikey/>` in the {+mdb-server+} manual.
 
 To view runnable examples that demonstrate how to manage indexes, see
