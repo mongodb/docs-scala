@@ -45,10 +45,9 @@ defined in the GridFS specification:
 - The ``chunks`` collection stores the binary file chunks.
 - The ``files`` collection stores the file metadata.
 
-When you create a new GridFS bucket, the driver creates the preceding 
-collections, prefixed with the default bucket name ``fs``, unless
-you specify a different name. The driver also creates an index on each
-collection to ensure efficient retrieval of the files and related
+When you create a new GridFS bucket, the driver creates the ``fs.chunks`` and ``fs.files``
+collections, unless you specify a different name in the ``GridFSBucket()`` constructor. The
+driver also creates an index on each collection to ensure efficient retrieval of the files and related
 metadata. The driver creates the GridFS bucket, if it doesn't exist, only when the first write
 operation is performed. The driver creates indexes only if they don't exist and when the
 bucket is empty. For more information about
@@ -124,6 +123,10 @@ about the file it refers to, including:
 - The length/size of the file
 - The upload date and time
 - A ``metadata`` document in which you can store any other information
+
+To learn more about fields you can retrieve from the ``files`` collection, see the
+:manual:`GridFS Files Collection </core/gridfs/#the-files-collection>` documentation in the
+{+mdb-server+} manual.
 
 To retrieve files from a GridFS bucket, call the ``find()`` method on the ``GridFSBucket``
 instance. The following code example retrieves and prints file metadata from all files in

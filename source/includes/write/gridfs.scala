@@ -62,23 +62,23 @@ object GridFS {
     }
 
     {
-      // start-download-files-name
-      val fileId: ObjectId = new ObjectId()
-      val downloadObservable = filesBucket.downloadToObservable(fileId)
-      val downloadById = Await.result(downloadObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
-      // end-download-files-name
-    }
-
-    {
       // start-download-files-id
-      val downloadObservable = filesBucket.downloadToObservable("mongodb-tutorial")
+      val fileId: ObjectId = new ObjectId("<example file ID>")
+      val downloadObservable = filesBucket.downloadToObservable(fileId)
       val downloadById = Await.result(downloadObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-download-files-id
     }
 
     {
+      // start-download-files-name
+      val downloadObservable = filesBucket.downloadToObservable("mongodb-tutorial")
+      val downloadById = Await.result(downloadObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      // end-download-files-name
+    }
+
+    {
       // start-rename-files
-      val fileId: ObjectId = new ObjectId()
+      val fileId: ObjectId = new ObjectId("<example file ID>")
       val renameObservable = filesBucket.rename(fileId, "mongodbTutorial")
       Await.result(renameObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-rename-files
@@ -86,7 +86,7 @@ object GridFS {
 
     {
       // start-delete-files
-      val fileId: ObjectId = new ObjectId()
+      val fileId: ObjectId = new ObjectId("<example file ID>")
       val deleteObservable = filesBucket.delete(fileId)
       Await.result(deleteObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-delete-files
