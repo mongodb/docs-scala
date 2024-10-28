@@ -34,7 +34,7 @@ When creating a multikey index, you must specify the following details:
 Sample Data
 ~~~~~~~~~~~
 
-The examples in this guide use the ``restaurants`` collection in the ``sample_restaurants``
+The examples in this guide use the ``movies`` collection in the ``sample_mflix``
 database from the :atlas:`Atlas sample datasets </sample-data>`. To access this collection
 from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
 and assign the following values to your ``database`` and ``collection`` variables:
@@ -72,7 +72,7 @@ on the ``cast`` field:
    :copyable:
    :dedent:
 
-You can verify that the index was created by using the ``listIndexes()`` method.
+You can verify that the index was created by calling the ``listIndexes()`` method.
 You should see an index for ``cast`` in the list, as shown in the following output:
 
 .. io-code-block::
@@ -109,7 +109,7 @@ created on the ``cast`` field:
 Additional Information
 ----------------------
 
-To learn more about compound indexes, see :manual:`Multikey
+To learn more about multikey indexes, see :manual:`Multikey
 Indexes </core/indexes/index-types/index-multikey/>` in the {+mdb-server+} manual.
 
 To view runnable examples that demonstrate how to manage indexes, see
