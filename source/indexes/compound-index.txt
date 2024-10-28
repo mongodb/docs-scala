@@ -33,11 +33,19 @@ When creating a compound index, you must specify the following details:
 Sample Data
 ~~~~~~~~~~~
 
-The examples in this guide use the ``movies`` collection in the
-``sample_mflix`` database from the :atlas:`Atlas sample datasets
-</sample-data>`. To learn how to create a free MongoDB Atlas cluster and
-load the sample datasets, see the :atlas:`Get Started with Atlas
-</getting-started>` guide.
+The examples in this guide use the ``movies`` collection in the ``sample_mflix``
+database from the :atlas:`Atlas sample datasets </sample-data>`. To access this collection
+from your Scala application, create a ``MongoClient`` that connects to an Atlas cluster
+and assign the following values to your ``database`` and ``collection`` variables:
+
+.. literalinclude:: /includes/indexes/compound-field.scala
+    :language: scala
+    :dedent:
+    :start-after: start-db-coll
+    :end-before: end-db-coll
+
+To learn how to create a free MongoDB Atlas cluster and load the sample datasets, see the
+:atlas:`Get Started with Atlas </getting-started>` guide.
 
 Create a Compound Index
 -----------------------

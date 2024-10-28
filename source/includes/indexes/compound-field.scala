@@ -17,8 +17,11 @@ object CompoundFieldIndex {
 
     // Create a new client and connect to the server
     val mongoClient = MongoClient(connectionString)
-    val database = mongoClient.getDatabase("sample_mflix")
-    val collection = database.getCollection("movies")
+
+    // start-db-coll
+    val database: MongoDatabase = mongoClient.getDatabase("sample_mflix")
+    val collection: MongoCollection[Document] = database.getCollection("movies")
+    // end-db-coll
 
     // start-index-compound
     collection.createIndex(
