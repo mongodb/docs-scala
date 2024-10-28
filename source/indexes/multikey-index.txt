@@ -110,7 +110,7 @@ Additional Information
 ----------------------
 
 To learn more about compound indexes, see :manual:`Compound
-Indexes </core/index-compound>` in the {+mdb-server+} manual.
+Indexes </core/indexes/index-types/index-multikey/>` in the {+mdb-server+} manual.
 
 To view runnable examples that demonstrate how to manage indexes, see
 :ref:`scala-indexes`.
