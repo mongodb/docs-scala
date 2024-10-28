@@ -52,18 +52,20 @@ object DatabasesCollections {
     }
 
     // start-database-read-prefs
-    val databaseWithReadPrefs = mongoClient.getDatabase("test_database").withReadPreference(ReadPreference.secondary())
+    val databaseWithReadPrefs =
+        mongoClient.getDatabase("test_database").withReadPreference(ReadPreference.secondary())
     // end-database-read-prefs
 
     // start-collection-read-prefs
-    val collectionWithReadPrefs = database.getCollection("test_collection").withReadPreference(ReadPreference.secondary())
+    val collectionWithReadPrefs =
+        database.getCollection("test_collection").withReadPreference(ReadPreference.secondary())
     // end-collection-read-prefs
 
 
     {
       // start-tags
-      val tag1 = new Tag("DC", "ny")
-      val tag2 = new Tag("DC", "sf")
+      val tag1 = new Tag("dc", "ny")
+      val tag2 = new Tag("dc", "sf")
       val tagSet = new TagSet(List(tag1, tag2).asJava)
 
       val connectionString = ConnectionString("<connection string URI>")
