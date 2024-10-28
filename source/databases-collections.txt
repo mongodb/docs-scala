@@ -1,4 +1,4 @@
-.. _scala-databases-collection:
+.. _scala-databases-collections:
 
 =========================
 Databases and Collections
@@ -137,7 +137,8 @@ To query for only the names of the collections in the database, call the
       test_collection
       example_collection
 
-For more information about iterating over a cursor, see :ref:`scala-cursors`. 
+.. TODO
+.. For more information about iterating over a cursor, see :ref:`scala-cursors`. 
 
 Delete a Collection
 -------------------
