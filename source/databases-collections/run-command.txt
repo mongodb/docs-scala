@@ -65,7 +65,7 @@ Execute a Command
 To run a database command, create a ``Document`` object that specifies
 the command and pass it as a parameter to the ``runCommand()`` method.
 This method returns a ``SingleObservable`` instance, and you can subscribe
-to this observable to access the command result.
+to this observable to execute the command and access the command result.
 
 The following example calls the ``runCommand()`` method on a database
 to run the ``hello`` command, which returns information about the server:
@@ -113,8 +113,8 @@ Response
 
 The ``runCommand()`` method returns a ``SingleObservable`` that contains
 the response from the database for the given command. You can call the
-``subscribe()`` method on the observable to access the response as 
-a document.
+``subscribe()`` method on the observable to run the command and access
+the response as a document.
 
 The raw command response document contains the following fields:
 
@@ -166,7 +166,7 @@ the database, as shown in the following code:
 
 .. code-block:: none
    :copyable: false
-   
+
    {"db": "sample_restaurants", "collections": 4, "views": 0, "objects":
    18767, "avgObjSize": 596.1911866574306, "dataSize": 11188720,
    "storageSize": 7528448, "totalFreeStorageSize": 0, "numExtents": 0,
