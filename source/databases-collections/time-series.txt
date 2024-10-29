@@ -108,8 +108,8 @@ the ``listCollections()`` method on the database and print the results:
         "info": {
           "readOnly": false
         }
-     }
-     ...
+      }
+      ...
 
 .. _scala-time-series-store:
 
