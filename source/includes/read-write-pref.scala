@@ -11,7 +11,7 @@ object ReadWritePref {
 
     // start-client-settings
     val mongoClient = MongoClient(MongoClientSettings.builder()
-        .applyConnectionString(ConnectionString("mongodb://127.0.0.1/"))
+        .applyConnectionString(ConnectionString("mongodb://localhost:27017/"))
         .readPreference(ReadPreference.secondary())
         .readConcern(ReadConcern.LOCAL)
         .writeConcern(WriteConcern.W2)
@@ -19,7 +19,7 @@ object ReadWritePref {
     // end-client-settings
 
     // start-client-settings-uri
-    val mongoClient = MongoClient("mongodb://127.0.0.1/?readPreference=secondary&w=2&readConcernLevel=local")
+    val mongoClient = MongoClient("mongodb://localhost:27017/?readPreference=secondary&w=2&readConcernLevel=local")
     // end-client-settings-uri
 
     // start-session-settings

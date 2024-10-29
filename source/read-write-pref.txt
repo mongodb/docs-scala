@@ -49,8 +49,8 @@ list of these options, see the following guides in the {+mdb-server+} manual:
 Configure Read and Write Operations
 -----------------------------------
 
-You can control how the library routes read operations by setting a read preference.
-You can also control how the library waits for acknowledgment of read and write operations
+You can control how the driver routes read operations by setting a read preference.
+You can also control how the driver waits for acknowledgment of read and write operations
 on a replica set by setting read and write concerns.
 
 This section shows how to configure these read and write options at the following levels:
@@ -59,9 +59,9 @@ This section shows how to configure these read and write options at the followin
   or in the connection URI
 - :ref:`Transaction <scala-read-write-transaction>`: Specify options in a ``TransactionOptions``
   instance
-- :ref:`Database <scala-read-write-database>`: Call corresponding option methods on the
+- :ref:`Database <scala-read-write-database>`: Call corresponding option methods on a
   ``MongoDatabase`` instance
-- :ref:`Collection <scala-read-write-collection>`: Call corresponding option methods on the
+- :ref:`Collection <scala-read-write-collection>`: Call corresponding option methods on a
   ``MongoCollection`` instance
 
 .. _scala-read-write-client:
@@ -105,9 +105,8 @@ This example shows how to set the read preference, read concern, and
 write concern of a transaction by passing a ``TransactionOptions``
 instance to the ``startTransaction()`` method. Transactions run within
 sessions, or groupings of related read or write operations that you
-intend to run sequentially. Before starting a transaction, create a
-``ClientSession`` instance and call the ``startTransaction()`` method on
-the session.
+intend to run sequentially. Before configuring transaction options, create a
+``ClientSession`` instance to start a session.
 
 .. tip::
 
@@ -221,7 +220,7 @@ to prefer reads from secondary replica set members in the following order:
 Local Threshold
 ~~~~~~~~~~~~~~~
 
-If multiple replica-set members match the read preference and tag sets you specify,
+If multiple replica set members match the read preference and tag sets you specify,
 the {+driver-short+} reads from the nearest replica set members, chosen according to
 their ping time.
 
