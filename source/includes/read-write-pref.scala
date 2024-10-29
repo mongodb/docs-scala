@@ -9,6 +9,7 @@ object ReadWritePref {
 
   def main(args: Array[String]): Unit = {
 
+    // Uses the settings builder methods to set read and write settings for the client
     // start-client-settings
     val mongoClient = MongoClient(MongoClientSettings.builder()
         .applyConnectionString(ConnectionString("mongodb://localhost:27017/"))
@@ -18,18 +19,12 @@ object ReadWritePref {
         .build())
     // end-client-settings
 
+    // Uses connection URI parameters to read and write settings for the client
     // start-client-settings-uri
     val mongoClient = MongoClient("mongodb://localhost:27017/?readPreference=secondary&w=2&readConcernLevel=local")
     // end-client-settings-uri
 
-    // start-session-settings
-    val clientSession: ClientSession = mongoClient.startSession()
-    clientSession
-        .setReadPreference(ReadPreference.primaryPreferred())
-        .setReadConcern(ReadConcern.LOCAL)
-        .setWriteConcern(WriteConcern.MAJORITY)
-    // end-session-settings
-
+    // Sets read and write settings for the transaction
     // start-transaction-settings
     val tOptions: TransactionOptions = TransactionOptions.builder()
         .readPreference(ReadPreference.primary())
@@ -39,6 +34,7 @@ object ReadWritePref {
     clientSession.startTransaction(tOptions)
     // end-transaction-settings
 
+    // Sets read and write settings for the "test_database" database
     // start-database-settings
     val database = mongoClient.getDatabase("test_database")
         .withReadPreference(ReadPreference.primaryPreferred())
@@ -46,6 +42,7 @@ object ReadWritePref {
         .withWriteConcern(WriteConcern.MAJORITY)
     // end-database-settings
 
+    // Sets read and write settings for the "test_collection" collection
     // start-collection-settings
     val collection = database.getCollection("test_collection")
         .withReadPreference(ReadPreference.secondaryPreferred())
