@@ -31,3 +31,4 @@ rs-docs = "https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/org/r
 core-api = "https://mongodb.github.io/mongo-java-driver/{+version+}/apidocs/mongodb-driver-core"
 mongocrypt-version = "{+full-version+}"
 mdb-server = "MongoDB Server"
+stable-api = "Stable API"

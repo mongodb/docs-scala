@@ -7,7 +7,7 @@ import scala.concurrent.duration.DurationInt
 import scala.util.Using
 
 // start-connect
-object MongoClientConnectionTargets {
+object MongoClientConnectToAtlas {
 
   def main(args: Array[String]): Unit = {
 

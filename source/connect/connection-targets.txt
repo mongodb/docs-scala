@@ -62,7 +62,7 @@ default, the ``mongod`` process runs on port 27017, though you can customize thi
 your deployment.
 
 - Instantiate a ``MongoClient`` object without any parameters to
-  connect to a MongoDB server running on localhost on port ``27017``:
+  connect to a MongoDB server running on ``localhost`` on port ``27017``:
 
   .. literalinclude:: /includes/connect/connection-targets-local-replica.scala
    :language: scala
@@ -91,7 +91,7 @@ Replica Sets
 ------------
 
 To connect to a replica set, specify the hostnames (or IP addresses) and 
-port numbers of the replica-set members.
+port numbers of the replica set members.
 
 If you aren't able to provide a full list of hosts in the replica set, you can 
 specify one or more of the hosts in the replica set and instruct the {+driver-short+} to 

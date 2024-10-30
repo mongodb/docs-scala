@@ -14,11 +14,11 @@ object MongoClientConnectionTargets {
     // end-connect-local
 
     // start-connect-local-host
-    val mongoClient = MongoClient("mongodb://host1")
+    val mongoClient = MongoClient("mongodb://localhost")
     // end-connect-local-host
 
     // start-connect-local-host-port
-    val mongoClient = MongoClient("mongodb://host1:27017")
+    val mongoClient = MongoClient("mongodb://localhost:27017")
     // end-connect-local-host-port
 
     // start-replica-set
