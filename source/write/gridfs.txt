@@ -78,20 +78,20 @@ You can use the ``GridFSBucket`` instance to
 call read and write operations on the files in your bucket.
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-create-bucket
-      :end-before: end-create-bucket
+   :language: scala
+   :dedent:
+   :start-after: start-create-bucket
+   :end-before: end-create-bucket
 
 To create or reference a bucket with a custom name other than the default name
 ``fs``, pass your bucket name as the second parameter to the ``GridFSBucket()``
 constructor, as shown in the following example:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-create-custom-bucket
-      :end-before: end-create-custom-bucket
+   :language: scala
+   :dedent:
+   :start-after: start-create-custom-bucket
+   :end-before: end-create-custom-bucket
 
 Upload Files
 ------------
@@ -106,10 +106,10 @@ The following example uploads the contents of an ``Observable[ByteBuffer]`` into
 ``GridFSBucket``:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-upload-files
-      :end-before: end-upload-files
+   :language: scala
+   :dedent:
+   :start-after: start-upload-files
+   :end-before: end-upload-files
 
 Retrieve File Information
 -------------------------
@@ -133,10 +133,10 @@ instance. The following code example retrieves and prints file metadata from all
 a GridFS bucket:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-retrieve-file-info
-      :end-before: end-retrieve-file-info
+   :language: scala
+   :dedent:
+   :start-after: start-retrieve-file-info
+   :end-before: end-retrieve-file-info
 
 To learn more about querying MongoDB, see :ref:`<scala-retrieve>`.
 
@@ -150,20 +150,20 @@ To download a file by its file ``_id``, pass the ``_id`` to the method.
 The following example downloads a file by its file ``_id``:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-download-files-id
-      :end-before: end-download-files-id
+   :language: scala
+   :dedent:
+   :start-after: start-download-files-id
+   :end-before: end-download-files-id
 
 If you don't know the ``_id`` of the file but know the filename, then you
 can pass the filename to the ``downloadToObservable()`` method. The following example
 downloads a file named ``mongodb-tutorial``:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-download-files-name
-      :end-before: end-download-files-name
+   :language: scala
+   :dedent:
+   :start-after: start-download-files-name
+   :end-before: end-download-files-name
 
 .. note::
 
@@ -181,10 +181,10 @@ rather than its file name.
 The following example renames a file to ``mongodbTutorial``:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-rename-files
-      :end-before: end-rename-files
+   :language: scala
+   :dedent:
+   :start-after: start-rename-files
+   :end-before: end-rename-files
 
 .. note::
 
@@ -204,10 +204,10 @@ file name.
 The following example deletes a file by its ``_id``:
 
 .. literalinclude:: /includes/write/gridfs.scala
-      :language: scala
-      :dedent:
-      :start-after: start-delete-files
-      :end-before: end-delete-files
+   :language: scala
+   :dedent:
+   :start-after: start-delete-files
+   :end-before: end-delete-files
 
 .. note::
 
