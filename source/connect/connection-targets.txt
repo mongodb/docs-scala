@@ -57,9 +57,7 @@ code also uses the ``serverApi()`` method to specify a {+stable-api+} version.
 Local Deployments
 -----------------
 
-To connect to a local MongoDB deployment, use ``localhost`` as the hostname. By
-default, the ``mongod`` process runs on port 27017, though you can customize this for
-your deployment.
+You can connect to a local MongoDB deployment in the following ways:
 
 - Instantiate a ``MongoClient`` object without any parameters to
   connect to a MongoDB server running on ``localhost`` on port ``27017``:
