@@ -18,7 +18,7 @@ toc_landing_pages = [
     "/builders",
     "/get-started",
     "/write"
-]
+    ]
 
 [constants]
 driver-short = "Scala driver"
