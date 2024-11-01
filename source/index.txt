@@ -13,6 +13,7 @@
    :maxdepth: 1
 
    /get-started
+   /connect
    /read
    /write
    /whats-new
