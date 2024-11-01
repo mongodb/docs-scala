@@ -12,6 +12,12 @@ sharedinclude_root = "https://raw.githubusercontent.com/10gen/docs-shared/main/"
 toc_landing_pages = [
     "/get-started",
     "/connect"
+    "/bson",
+    "/tutorials/connect",
+    "/tutorials/write-ops",
+    "/builders",
+    "/get-started",
+    "/write"
     ]
 
 [constants]
@@ -27,3 +33,4 @@ driver-source-gh = "https://github.com/mongodb/mongo-java-driver"
 rs-docs = "https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/org/reactivestreams"
 core-api = "https://mongodb.github.io/mongo-java-driver/{+version+}/apidocs/mongodb-driver-core"
 mongocrypt-version = "{+full-version+}"
+mdb-server = "MongoDB Server"

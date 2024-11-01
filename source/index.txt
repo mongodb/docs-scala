@@ -14,6 +14,8 @@
 
    /get-started
    /connect
+   /read
+   /write
    /whats-new
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
