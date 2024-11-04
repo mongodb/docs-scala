@@ -1,3 +1,9 @@
+package quickstart
+
+import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
+import org.mongodb.scala.bson.Document
+import Helpers._
+
 // start-single-index-imports
 import org.mongodb.scala._
 import org.mongodb.scala.model.Indexes
