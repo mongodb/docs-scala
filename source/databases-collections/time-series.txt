@@ -72,7 +72,8 @@ Example
 ~~~~~~~
 
 This example creates the ``october2024`` time series collection in the
-``fall_weather`` database with the ``timeField`` option set to the ``"timestamp"`` field:
+``fall_weather`` database with the ``timeField`` option set to the ``"timestamp"`` field
+and the ``metaField`` option set to the ``"location"`` field:
 
 .. literalinclude:: /includes/databases-collections/time-series.scala
    :language: scala
