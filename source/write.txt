@@ -176,6 +176,5 @@ bulk operation:
    :copyable:
    :dedent:
 
-.. TODO
-.. To learn more about the ``bulkWrite()``
-.. method, see the :ref:`Bulk Write Operations <scala-bulk-write>` guide.
+To learn more about the ``bulkWrite()``
+method, see the :ref:`Bulk Write Operations <scala-bulk-write>` guide.
