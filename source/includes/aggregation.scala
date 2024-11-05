@@ -25,11 +25,11 @@ object Aggregation {
 
     // Performs the same aggregation operation as above but asks MongoDB to explain it
     // start-explain
-    val pipeline = Seq(Aggregates.filter(Filters.equal("cuisine", "Bakery")),
+    val pipelineToExplain = Seq(Aggregates.filter(Filters.equal("cuisine", "Bakery")),
                        Aggregates.group("$borough", Accumulators.sum("count", 1))
     )
 
-    collection.aggregate(pipeline)
+    collection.aggregate(pipelineToExplain)
               .explain(ExplainVerbosity.EXECUTION_STATS)
               .subscribe((doc: Document) => println(doc.toJson()),
                         (e: Throwable) => println(s"There was an error: $e"))
