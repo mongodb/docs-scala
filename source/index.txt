@@ -13,8 +13,11 @@
    :maxdepth: 1
 
    /get-started
+   /connect
+   /databases-collections
    /read
    /write
+   /read
    /whats-new
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
@@ -40,11 +43,10 @@ working with data in the :ref:`scala-get-started` tutorial.
 .. Learn how to create and configure a connection to a MongoDB deployment
 .. in the :ref:`scala-connect` section.
 
-.. TODO
-.. Databases and Collections
-.. -------------------------
-.. Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
-.. :ref:`scala-databases-collections` section.
+Databases and Collections
+-------------------------
+Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
+:ref:`scala-databases-collections` section.
 
 What's New
 ----------
