@@ -17,6 +17,7 @@ toc_landing_pages = [
     "/tutorials/write-ops",
     "/builders",
     "/get-started",
+    "/databases-collections",
     "/write"
 ]
 
