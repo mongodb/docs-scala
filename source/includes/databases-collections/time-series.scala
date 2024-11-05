@@ -1,6 +1,6 @@
 import org.bson.json.JsonWriterSettings
 import org.mongodb.scala._
-import org.mongodb.scala.bson.Document
+import org.mongodb.scala.bson.{BsonDateTime, Document}
 import org.mongodb.scala.model._
 
 import java.util.concurrent.TimeUnit
@@ -10,9 +10,11 @@ import scala.concurrent.duration.Duration
 object TimeSeries {
 
   def main(args: Array[String]): Unit = {
-    val mongoClient = MongoClient("<connection string URI>")
+    val mongoClient = MongoClient("mongodb+srv://morisi:Wukong@testcluster.kmosy7d.mongodb.net/?retryWrites=true&w=majority&appName=TestCluster")
+    val deleteDatabase = mongoClient.getDatabase("fall_weather")
+    val deleteObservable = deleteDatabase.drop()
+    Await.result(deleteObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
 
-    // Create a time series collection
     // start-create-time-series
     val database = mongoClient.getDatabase("fall_weather")
 
@@ -23,7 +25,6 @@ object TimeSeries {
     Await.result(createObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-create-time-series
 
-    // Print the details of the collections in the database, including the time series collection
     // start-print-time-series
     val listObservable = database.listCollections()
     val list = Await.result(listObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
@@ -34,13 +35,12 @@ object TimeSeries {
     })
     // end-print-time-series
 
-    // Insert data into the time series collection
     // start-insert-time-series-data
     val collection = database.getCollection("october2024")
 
     val temperatures = Seq(
-      Document("timestamp" -> "2024-10-01T00:00:00Z", "temperature" -> 54, "location" -> "New York City"),
-      Document("timestamp" -> "2024-10-01T01:00:00Z", "temperature" -> 55, "location" -> "New York City"),
+      Document("timestamp" -> BsonDateTime(1727755200000L), "temperature" -> 54, "location" -> "New York City"),
+      Document("timestamp" -> BsonDateTime(1727841600000L), "temperature" -> 55, "location" -> "New York City"),
     )
 
     val insertObservable = collection.insertMany(temperatures)
