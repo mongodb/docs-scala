@@ -43,8 +43,8 @@ To enable the {+stable-api+}, perform the following steps:
 
 1. Construct a ``ServerApi`` object and specify a {+stable-api+} version. You must use
    a {+stable-api+} version defined in the ``ServerApiVersion`` enum.
-#. Construct a ``MongoClientSettings`` object using the ``MongoClientSettings.Builder`` class.
-#. Instantiate a ``MongoClient`` using the ``MongoClient.create()`` method and 
+#. Construct a ``MongoClientSettings`` object by using the ``MongoClientSettings.Builder`` class.
+#. Instantiate a ``MongoClient`` by using the constructor and 
    pass your ``MongoClientSettings`` instance as a parameter.
 
 The following code example shows how to specify {+stable-api+} version 1:
@@ -57,15 +57,16 @@ The following code example shows how to specify {+stable-api+} version 1:
    :dedent:
 
 Once you create a ``MongoClient`` instance with
-a specified API version, all commands you run with the client use the specified
+a specified API version, all commands that you run with the client use the specified
 version. If you must run commands using more than one version of the 
 {+stable-api+}, create a new ``MongoClient``.
 
 Configure the {+stable-api+}
 ----------------------------
 
-The following table describes the parameters of the ``ServerApi`` class. You can use these
-parameters to customize the behavior of the {+stable-api+}.
+The following table describes {+stable-api+} options that you can set by calling methods
+from the ``ServerApi`` class. You can use these options to customize the behavior of the
+{+stable-api+}.
 
 .. list-table::
    :header-rows: 1
