@@ -16,27 +16,27 @@ object Sdam {
 
     override def clusterDescriptionChanged(event: ClusterDescriptionChangedEvent): Unit = {
         if (!isWritable) {
-        if (event.getNewDescription.hasWritableServer) {
-            isWritable = true
-            println("Writable server available")
-        }
+            if (event.getNewDescription.hasWritableServer) {
+                isWritable = true
+                println("Writable server available")
+            }
         } else {
-        if (!event.getNewDescription.hasWritableServer) {
-            isWritable = false
-            println("No writable server available")
-        }
+            if (!event.getNewDescription.hasWritableServer) {
+                isWritable = false
+                println("No writable server available")
+            }
         }
 
         if (!isReadable) {
-        if (event.getNewDescription.hasReadableServer(readPreference)) {
-            isReadable = true
-            println("Readable server available")
-        }
+            if (event.getNewDescription.hasReadableServer(readPreference)) {
+                isReadable = true
+                println("Readable server available")
+            }
         } else {
-        if (!event.getNewDescription.hasReadableServer(readPreference)) {
-            isReadable = false
-            println("No readable server available")
-        }
+            if (!event.getNewDescription.hasReadableServer(readPreference)) {
+                isReadable = false
+                println("No readable server available")
+            }
         }
     }
   }
