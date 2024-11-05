@@ -10,7 +10,7 @@ import scala.concurrent.duration.Duration
 object TimeSeries {
 
   def main(args: Array[String]): Unit = {
-    val mongoClient = MongoClient("mongodb+srv://morisi:Wukong@testcluster.kmosy7d.mongodb.net/?retryWrites=true&w=majority&appName=TestCluster")
+    val mongoClient = MongoClient("<connection string URI>")
     val deleteDatabase = mongoClient.getDatabase("fall_weather")
     val deleteObservable = deleteDatabase.drop()
     Await.result(deleteObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
