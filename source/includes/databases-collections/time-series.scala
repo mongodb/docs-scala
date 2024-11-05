@@ -42,9 +42,11 @@ object TimeSeries {
       Document("timestamp" -> "2024-10-01T00:00:00Z", "temperature" -> 54, "location" -> "New York City"),
       Document("timestamp" -> "2024-10-01T01:00:00Z", "temperature" -> 55, "location" -> "New York City"),
     )
+
+    val insertObservable = collection.insertMany(temperatures)
+    Await.result(insertObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-insert-time-series-data
 
-    Thread.sleep(1000)
     mongoClient.close()
   }
 }
