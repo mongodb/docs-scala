@@ -11,10 +11,8 @@ object TimeSeries {
 
   def main(args: Array[String]): Unit = {
     val mongoClient = MongoClient("<connection string URI>")
-    val deleteDatabase = mongoClient.getDatabase("fall_weather")
-    val deleteObservable = deleteDatabase.drop()
-    Await.result(deleteObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
 
+    // Create a time series collection
     // start-create-time-series
     val database = mongoClient.getDatabase("fall_weather")
 
@@ -25,6 +23,7 @@ object TimeSeries {
     Await.result(createObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-create-time-series
 
+    // Print the details of the collections in the database, including the time series collection
     // start-print-time-series
     val listObservable = database.listCollections()
     val list = Await.result(listObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
@@ -35,6 +34,7 @@ object TimeSeries {
     })
     // end-print-time-series
 
+    // Insert data into the time series collection
     // start-insert-time-series-data
     val collection = database.getCollection("october2024")
 
