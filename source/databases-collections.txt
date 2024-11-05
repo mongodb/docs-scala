@@ -241,10 +241,10 @@ their ping time.
 
 By default, the driver uses only those members whose ping times are within 15 milliseconds
 of the nearest member for queries. To distribute reads between members with
-higher latencies, chain the ``localThreshold()`` method to the ``ClusterSettings`` builder,
-then pass the ``ClusterSettings`` instance to the ``MongoClientSettings`` builder, and finally
-pass the ``MongoClientSettings`` instance to the ``MongoClient`` constructor.
-Alternatively, include the ``localThresholdMS`` parameter in your connection string URI.
+higher latencies, use the ``localThreshold()`` method within the ``ClusterSettings.Builder``
+block provided by the ``applyToClusterSettings()`` method of the ``MongoClientSettings.Builder``
+class. Alternatively, include the ``localThresholdMS`` parameter in your connection string
+URI.
 
 The following example connects to a MongoDB deployment running on ``localhost:27017``
 and specifies a local threshold of 35 milliseconds:

@@ -84,13 +84,9 @@ object DatabasesCollections {
       // start-local-threshold
       val connectionString = ConnectionString("mongodb://localhost:27017")
 
-      val clusterSettings = ClusterSettings.builder()
-        .localThreshold(35, TimeUnit.MILLISECONDS)
-        .build()
-
       val mongoClientSettings = MongoClientSettings.builder()
         .applyConnectionString(connectionString)
-        .applyToClusterSettings(builder => builder.applySettings(clusterSettings))
+        .applyToClusterSettings(builder => builder.localThreshold(35, TimeUnit.MILLISECONDS))
         .build()
 
       val client = MongoClient(mongoClientSettings)
