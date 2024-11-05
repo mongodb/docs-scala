@@ -1,9 +1,6 @@
 import org.mongodb.scala._
-import scala.concurrent.Await
-import scala.concurrent.duration._
-import scala.util.{Failure, Success}
-import scala.concurrent.ExecutionContext.Implicits.global
 import com.mongodb.{ TransactionOptions, ReadConcern, ReadPreference, WriteConcern }
+import scala.jdk.CollectionConverters._
 
 object ReadWritePref {
 
@@ -21,11 +18,12 @@ object ReadWritePref {
 
     // Uses connection URI parameters to read and write settings for the client
     // start-client-settings-uri
-    val mongoClient = MongoClient("mongodb://localhost:27017/?readPreference=secondary&w=2&readConcernLevel=local")
+    val uriClient = MongoClient("mongodb://localhost:27017/?readPreference=secondary&w=2&readConcernLevel=local")
     // end-client-settings-uri
 
     // Sets read and write settings for the transaction
     // start-transaction-settings
+    // Start a client session here
     val tOptions: TransactionOptions = TransactionOptions.builder()
         .readPreference(ReadPreference.primary())
         .readConcern(ReadConcern.MAJORITY)
@@ -54,8 +52,11 @@ object ReadWritePref {
     // located in New York, followed by a secondary in San Francisco, and
     // lastly fall back to any secondary.
     // start-tag-set
-    val tagList = List(Tag("dc", "ny"), Tag("dc", "sf"), TagSet())
-    val readPreference = ReadPreference.secondary(List(TagSet(tagList)))
+    val tag1 = new TagSet(new Tag("dc", "ny"))
+    val tag2 = new TagSet(new Tag("dc", "sf"))
+    val tag3 = new TagSet()
+
+    val readPreference = ReadPreference.secondary(List(tag1, tag2, tag3).asJava)
 
     val database = mongoClient.getDatabase("test_database")
         .withReadPreference(readPreference)
@@ -65,7 +66,7 @@ object ReadWritePref {
     // of the closest member's ping time
     // start-local-threshold
     val connectionString = "mongodb://localhost:27017/?replicaSet=repl0&localThresholdMS=35"
-    val mongoClient = MongoClient(connectionString)
+    val client = MongoClient(connectionString)
     // end-local-threshold
 
     // Keep the main thread alive long enough for the asynchronous operations to complete
