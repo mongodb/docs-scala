@@ -17,6 +17,7 @@
    /databases-collections
    /read
    /write
+   /aggregation
    /whats-new
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
@@ -72,12 +73,12 @@ section.
 .. Learn how to work with common types of indexes in the :ref:`scala-indexes`
 .. section.
 
-.. TODO
-.. Transform Your Data with Aggregation
-.. ------------------------------------
 
-.. Learn how to use the {+driver-short+} to perform aggregation operations in the
-.. :ref:`scala-aggregation` section.
+Transform Your Data with Aggregation
+------------------------------------
+
+Learn how to use the {+driver-short+} to perform aggregation operations in the
+:ref:`scala-aggregation` section.
 
 .. TODO
 .. Configure Operations on Replica Sets
