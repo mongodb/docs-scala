@@ -1,8 +1,4 @@
 import org.mongodb.scala._
-import scala.concurrent.Await
-import scala.concurrent.duration._
-import scala.util.{Failure, Success}
-import scala.concurrent.ExecutionContext.Implicits.global
 
 object RunCommand {
   def main(args: Array[String]): Unit = {
