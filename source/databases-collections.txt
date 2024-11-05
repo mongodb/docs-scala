@@ -15,12 +15,13 @@ Databases and Collections
    :values: reference
 
 .. meta::
-   :keywords: table, row, organize, storage
+   :keywords: table, row, organize, storage, code example
 
 .. toctree::
    :titlesonly:
    :maxdepth: 1
 
+   /databases-collections/run-command
    /databases-collections/time-series
 
 Overview
