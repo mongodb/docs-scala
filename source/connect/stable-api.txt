@@ -114,7 +114,7 @@ Provided apiStrict:true, but the command count is not in API Version
 The {+driver-short+} raises this exception if your ``MongoClient`` runs an operation that
 isn't in the {+stable-api+} version you specified. To avoid this error, use an alternative
 operation supported by the specified {+stable-api+} version, or set the ``strict``
-option to ``False`` when constructing your ``ServerApi`` object.
+option to ``false`` when constructing your ``ServerApi`` object.
 
 API Documentation
 -----------------
