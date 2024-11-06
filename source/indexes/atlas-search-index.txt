@@ -85,13 +85,29 @@ You can use the ``listSearchIndexes()`` method to return all Atlas Search indexe
 collection.
 
 The following code example shows how to print a list of the search indexes in
-a collection:
+a collection by using the ``Observable`` returned by the ``listSearchIndexes()``:
 
-.. literalinclude:: /includes/indexes/atlas-search-index.scala
-   :language: scala
-   :start-after: start-list-search-indexes
-   :end-before: end-list-search-indexes
-   :dedent:
+.. .. literalinclude:: /includes/indexes/atlas-search-index.scala
+..    :language: scala
+..    :start-after: start-list-search-indexes
+..    :end-before: end-list-search-indexes
+..    :dedent:
+
+.. io-code-block::
+   :copyable: true
+
+   .. input:: /includes/indexes/atlas-search-index.scala
+      :language: scala
+      :start-after: start-list-search-indexes
+      :end-before: end-list-search-indexes
+      :dedent:
+
+   .. output::
+      :visible: false
+
+      {"id": "...", "name": "<index name 1>", "type": "search", "status": "READY", "queryable": true, ... }
+      {"id": "...", "name": "<index name 2>", "type": "search", "status": "READY", "queryable": true, ... }
+      Completed
 
 .. _scala-atlas-search-index-update:
 
@@ -126,12 +142,17 @@ The following code shows how to delete a search index from a collection:
 Additional Information
 ----------------------
 
-To learn more about MongoDB Atlas Search, see the :atlas:`Atlas Search Indexes </atlas-search/atlas-search-overview/>`
+To learn more about MongoDB Atlas Search, see the :atlas:`Atlas Search </atlas-search/atlas-search-overview/>`
 documentation.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~
 
-To learn more about the types mentioned in this guide, see the following API documentation:
+To learn more about the methods and types mentioned in this guide, see the following API documentation:
 
 - `SearchIndexModel <{+api+}/org/mongodb/scala/model/package$$SearchIndexModel$.html>`_
+- `createSearchIndex() <{+api+}/org/mongodb/scala/MongoCollection.html#createSearchIndex(definition:org.mongodb.scala.bson.conversions.Bson):org.mongodb.scala.SingleObservable[String]>`__
+- `createSearchIndexes() <{+api+}/org/mongodb/scala/MongoCollection.html#createSearchIndexes(searchIndexModels:List[org.mongodb.scala.model.SearchIndexModel]):org.mongodb.scala.Observable[String]>`__
+- `listSearchIndexes() <{+api+}/org/mongodb/scala/MongoCollection.html#listSearchIndexes[C]()(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,org.mongodb.scala.Document],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.ListSearchIndexesObservable[C]>`__
+- `updateSearchIndex() <{+api+}/org/mongodb/scala/MongoCollection.html#updateSearchIndex(indexName:String,definition:org.mongodb.scala.bson.conversions.Bson):org.mongodb.scala.SingleObservable[Unit]>`__
+- `dropSearchIndex() <{+api+}/org/mongodb/scala/MongoCollection.html#dropSearchIndex(indexName:String):org.mongodb.scala.SingleObservable[Unit]>`__
