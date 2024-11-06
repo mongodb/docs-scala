@@ -17,6 +17,7 @@
    /databases-collections
    /read
    /write
+   /monitoring
    /aggregation
    /whats-new
    /compatibility
