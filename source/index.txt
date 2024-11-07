@@ -19,6 +19,7 @@
    /write
    /monitoring
    /aggregation
+   /secure-your-data
    /whats-new
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
@@ -80,6 +81,12 @@ Transform Your Data with Aggregation
 
 Learn how to use the {+driver-short+} to perform aggregation operations in the
 :ref:`scala-aggregation` section.
+
+Secure Your Data
+----------------
+
+Learn about ways you can authenticate your application and encrypt your data in the
+:ref:`scala-security` section.
 
 .. TODO
 .. Configure Operations on Replica Sets
