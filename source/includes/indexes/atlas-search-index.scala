@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
-object StableAPI {
+object AtlasSearchIndexes {
 
   def main(args: Array[String]): Unit = {
     val mongoClient = MongoClient("<connection string URI>")
@@ -23,8 +23,8 @@ object StableAPI {
 
     {
       // start-create-search-indexes
-      val indexOne = SearchIndexModel("<first index name>", Document("mappings" -> Document("dynamic" -> true)))
-      val indexTwo = SearchIndexModel("<second index name>", Document("mappings" -> Document("dynamic" -> true)))
+      val indexOne = SearchIndexModel("<first index name>", Document("mappings" -> Document("dynamic" -> true, "fields" -> Document("field1" -> Document("type" -> "string")))))
+      val indexTwo = SearchIndexModel("<second index name>", Document("mappings" -> Document("dynamic" -> false, "fields" -> Document("field2" -> Document("type" -> "string")))))
       val observable = collection.createSearchIndexes(List(indexOne, indexTwo))
       Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-create-search-indexes
@@ -43,7 +43,7 @@ object StableAPI {
 
     {
       // start-update-search-indexes
-      val updateIndex = Document("mappings" -> Document("dynamic" -> true))
+      val updateIndex = Document("mappings" -> Document("dynamic" -> false))
       val observable = collection.updateSearchIndex("<index to update>", updateIndex)
       Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
       // end-update-search-indexes

@@ -64,7 +64,9 @@ The following code example shows how to create an Atlas Search index:
    :end-before: end-create-search-index
    :dedent:
 
-The following code example shows how to create multiple indexes:
+The following code example shows how to create multiple indexes. Unlike the
+``createSearchIndex()`` method, which assigns a default name to the created index,
+you must provide index names for each index when using the ``createSearchIndexes()`` method.
 
 .. literalinclude:: /includes/indexes/atlas-search-index.scala
    :language: scala
