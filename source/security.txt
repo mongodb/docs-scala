@@ -16,7 +16,7 @@ Secure Your Data
  
 .. meta::
    :keywords: ldap, encryption, principal, tls, authorize, ecs, aws
-   :description: Learn how to use the Java Reactive Streams driver to secure your data.
+   :description: Learn how to use the Scala driver to secure your data.
 
 .. toctree::
     :titlesonly:

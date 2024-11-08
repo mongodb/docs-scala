@@ -85,7 +85,7 @@ Learn how to use the {+driver-short+} to perform aggregation operations in the
 Secure Your Data
 ----------------
 
-Learn about ways you can authenticate your application and encrypt your data in the
+Learn how to authenticate your application and encrypt your data in the
 :ref:`scala-security` section.
 
 .. TODO

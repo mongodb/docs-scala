@@ -17,7 +17,7 @@ Authentication Mechanisms
    :depth: 2
    :class: singlecol
 
-The driver supports all MongoDB authentication mechanisms,
+The {+driver-short+} supports all MongoDB authentication mechanisms,
 including those available only in the MongoDB Enterprise Edition.
 
 MongoCredential
@@ -57,12 +57,11 @@ authentication mechanism:
    :copyable:
    :dedent:
 
-For challenge and response mechanisms, using the default
-authentication mechanism is the recommended approach, as it makes
-upgrading from MongoDB 2.6 to MongoDB 3.0 more simple, even after
-upgrading the authentication schema. For MongoDB 4.0 users, using the
-default authentication mechanism is also recommended as the mechanisms are
-checked and the correct hashing algorithm is used.
+For challenge and response mechanisms, we recommend using the default
+authentication mechanism. This approach simplifies upgrading from MongoDB 2.6 to MongoDB
+3.0, even after upgrading the authentication schema. For MongoDB 4.0 users, we also recommend
+the default authentication mechanism because it checks the mechanisms and uses the correct
+hashing algorithm.
 
 SCRAM-Based Mechanisms
 ----------------------
@@ -130,7 +129,7 @@ Or, you can use a connection string that explicitly specifies
 X.509
 -----
 
-With the ``X.509`` mechanism, MongoDB uses the X.509 certificate presented
+With the X.509 mechanism, MongoDB uses the X.509 certificate presented
 during SSL negotiation to authenticate a user whose name is derived
 from the distinguished name of the X.509 certificate.
 
