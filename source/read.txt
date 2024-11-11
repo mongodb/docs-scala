@@ -33,8 +33,8 @@ Read Data from MongoDB
 Overview
 --------
 
-On this page, you can see copyable code examples that show common methods you
-can use to read data from MongoDB by using the {+driver-short+}.
+On this page, you can see copyable code examples that show common {+driver-short+} methods you
+can use to read data from MongoDB.
 
 .. tip::
 
@@ -72,7 +72,7 @@ given filter:
    :copyable:
    :dedent:
 
-To learn more about the ``find().first()`` method, see the :ref:`Retrieve Data <scala-retrieve>` guide.
+To learn more about the ``first()`` method, see the :ref:`Retrieve Data <scala-retrieve>` guide.
 
 Find Multiple
 -------------
@@ -107,8 +107,7 @@ Count Documents Returned from a Query
 -------------------------------------
 
 The following example returns the number of documents in the specified
-collection that match the criteria specified by
-the given filter:
+collection that match query criteria:
 
 .. literalinclude:: /includes/usage-examples/ReadCodeExamples.scala
    :start-after: start-count-documents
