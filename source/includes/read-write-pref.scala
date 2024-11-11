@@ -1,5 +1,8 @@
 import org.mongodb.scala._
 import com.mongodb.{ TransactionOptions, ReadConcern, ReadPreference, WriteConcern }
+import java.util.concurrent.TimeUnit
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 import scala.jdk.CollectionConverters._
 
 object ReadWritePref {
