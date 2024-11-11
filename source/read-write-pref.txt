@@ -225,15 +225,33 @@ their ping time.
 
 By default, the driver uses only members whose ping times are within 15 milliseconds
 of the nearest member for queries. To distribute reads among members with
-higher latencies, specify the ``localThresholdMS`` option in your connection URI.
+higher latencies, set the ``localThresholdMS`` option in a ``ClusterSettings``
+instance or in your connection URI.
 
-The following example specifies a local threshold of 35 milliseconds:
+The following example specifies a local threshold of 35 milliseconds. Select 
+the ::guilabel:`ClusterSettings` or ::guilabel:`Connection URI` tab to see
+corresponding code for each approach:
 
-.. literalinclude:: /includes/read-write-pref.scala
-    :language: scala
-    :dedent:
-    :start-after: start-local-threshold
-    :end-before: end-local-threshold
+.. tabs::
+
+    .. tab:: ClusterSettings
+      :tabid: settings
+
+      .. literalinclude:: /includes/read-write-pref.scala
+          :language: rust
+          :dedent:
+          :start-after: start-local-threshold-settings
+          :end-before: end-local-threshold-settings
+
+    
+    .. tab:: Connection URI
+      :tabid: uri
+
+      .. literalinclude:: /includes/read-write-pref.scala
+          :language: rust
+          :dedent:
+          :start-after: start-local-threshold-uri
+          :end-before: end-local-threshold-uri
 
 In the preceding example, the {+driver-short+} distributes reads among matching members
 within 35 milliseconds of the closest member's ping time.

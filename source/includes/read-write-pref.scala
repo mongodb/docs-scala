@@ -23,7 +23,9 @@ object ReadWritePref {
 
     // Sets read and write settings for the transaction
     // start-transaction-settings
-    // Start a client session here
+    val clientSessionFuture = mongoClient.startSession().toFuture()
+    val clientSession = Await.result(clientSessionFuture, Duration(10, TimeUnit.SECONDS))
+
     val tOptions: TransactionOptions = TransactionOptions.builder()
         .readPreference(ReadPreference.primary())
         .readConcern(ReadConcern.MAJORITY)
@@ -59,15 +61,29 @@ object ReadWritePref {
     val readPreference = ReadPreference.secondary(List(tag1, tag2, tag3).asJava)
 
     val database = mongoClient.getDatabase("test_database")
-        .withReadPreference(readPreference)
+                              .withReadPreference(readPreference)
     // end-tag-set
 
     // Instructs the library to distribute reads between members within 35 milliseconds
-    // of the closest member's ping time
-    // start-local-threshold
+    // of the closest member's ping time using client settings
+    // start-local-threshold-uri
     val connectionString = "mongodb://localhost:27017/?replicaSet=repl0&localThresholdMS=35"
     val client = MongoClient(connectionString)
-    // end-local-threshold
+    // end-local-threshold-uri
+
+    // Instructs the library to distribute reads between members within 35 milliseconds
+    // of the closest member's ping time using a URI option
+    // start-local-threshold-settings
+    val clusterSettings = ClusterSettings.builder()
+        .localThreshold(35, TimeUnit.MILLISECONDS)
+        .requiredReplicaSetName("repl0")
+        .build()
+
+    val client = MongoClient(MongoClientSettings.builder()
+        .applyConnectionString(ConnectionString("mongodb://localhost:27017/"))
+        .applyToClusterSettings(builder => builder.applySettings(clusterSettings))
+        .build())
+    // end-local-threshold-settings
 
     // Keep the main thread alive long enough for the asynchronous operations to complete
     Thread.sleep(5000)
