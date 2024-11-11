@@ -109,7 +109,7 @@ Access Read Operation Results
 
 To access data retrieved by a read operation, create an ``Observable[T]``
 to store the operation results. Then, subscribe to the observable and
-override the ``Observable`` class callback methods to process the results.
+override the ``Observer`` class callback methods to process the results.
 
 This example queries the ``restaurants`` database for documents
 in which the ``cuisine`` value is ``"Czech"``. To retrieve
@@ -152,7 +152,7 @@ Access Write Operation Results
 
 To access data retrieved by a write operation, create an ``Observable[T]``
 to store the operation results. Then, subscribe to the observable and
-override the ``Observable`` class callback methods to process the results.
+override the ``Observer`` class callback methods to process the results.
 
 This example inserts documents into the ``restaurants`` database
 in which the ``cuisine`` value is ``"Nepalese"``. To retrieve
