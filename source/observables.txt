@@ -31,8 +31,13 @@ How to Process an Observable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run a MongoDB operation and process its data, you must request
-the operation results from an ``Observable``. Each operation returns
-an instance of the ``Observable[T]`` type, where the ``[T]``
+the operation results from an ``Observable``. The ``Observable``
+is a higher-level abstraction built on top of a cursor, or a 
+mechanism that fetches results in batches. The {+driver-short+}
+handles the cursor internally and exposes the operation
+results through an observable interface.
+
+Each operation returns an instance of the ``Observable[T]`` type, where the ``[T]``
 parameterization corresponds to the type of each item stored by the
 observable. Some operations return a specialized observable that
 extends the general ``Observable[T]`` type and provides additional
@@ -108,16 +113,16 @@ override the ``Observable`` class callback methods to process the results.
 
 This example queries the ``restaurants`` database for documents
 in which the ``cuisine`` value is ``"Czech"``. To retrieve
-and process results, the example assigns a ``FindObservable[Document]``
+and process results, the example assigns a ``Observable[Document]``
 to the operation and performs the following actions:
 
-- Calls the ``subscribe()`` method to subscribe to the ``FindObservable``
+- Calls the ``subscribe()`` method to subscribe to the ``Observable``
   and passes an ``Observer`` as a parameter
 - Customizes the ``onNext()`` method to print each retrieved document,
   which are ``Document`` instances
 - Customizes the ``onError()`` method to print any errors
 - Customizes the ``onComplete()`` methods to print a message after all
-  the results from the ``FindObservable`` are processed
+  the results from the ``Observable`` are processed
 
 .. io-code-block::
    :copyable:

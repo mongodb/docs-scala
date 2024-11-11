@@ -1,26 +1,26 @@
-
 import org.mongodb.scala._
 import org.mongodb.scala.bson.Document
-import org.mongodb.scala.model._
 import org.mongodb.scala.model.Filters._
 import org.mongodb.scala.result._
-import org.mongodb.scala.model.Updates._
 
 object Observables {
 
   def main(args: Array[String]): Unit = {
     val mongoClient = MongoClient("<connection string URI>")
-    val database: MongoDatabase = mongoClient.getDatabase("<database name>")
-    val collection: MongoCollection[Document] = database.getCollection("<collection name>")
+
+    // start-db-coll
+    val database: MongoDatabase = mongoClient.getDatabase("sample_restaurants")
+    val collection: MongoCollection[Document] = database.getCollection("restaurants")
+    // end-db-coll
 
     // start-read-observable
-    val filter = equal("cuisine", "Ethiopian")
+    val filter = equal("cuisine", "Czech")
     val observable: Observable[Document] = collection.find(filter)
 
     observable.subscribe(new Observer[Document] {
       override def onNext(result: Document): Unit = println(result)
       override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
-      override def onComplete(): Unit = println("Completed")
+      override def onComplete(): Unit = println("Processed all results")
     })
     // end-read-observable
 
