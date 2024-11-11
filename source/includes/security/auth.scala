@@ -74,9 +74,7 @@ object StableAPI {
 
     {
       // start-mongodb-x509
-      val user = "<username>"     // the username
-
-      val credential = MongoCredential.createMongoX509Credential(user)
+      val credential = MongoCredential.createMongoX509Credential()
       val mongoClient = MongoClient(MongoClientSettings
           .builder()
           .applyToClusterSettings(builder =>
