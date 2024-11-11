@@ -55,17 +55,15 @@ What's New
 For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
 section.
 
-.. TODO
-.. Write Data to MongoDB
-.. ---------------------
+Write Data to MongoDB
+---------------------
 
-.. Learn how you can write data to MongoDB in the :ref:`scala-write` section.
+Learn how you can write data to MongoDB in the :ref:`scala-write` section.
 
-.. TODO
-.. Read Data from MongoDB
-.. ----------------------
+Read Data from MongoDB
+----------------------
 
-.. Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
+Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
 
 .. TODO
 .. Optimize Queries by Using Indexes
