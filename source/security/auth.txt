@@ -126,14 +126,14 @@ Or, you can use a connection string that explicitly specifies
    :copyable:
    :dedent:
 
-X.509
+x.509
 -----
 
-With the X.509 mechanism, MongoDB uses the X.509 certificate presented
+With the x.509 mechanism, MongoDB uses the x.509 certificate presented
 during SSL negotiation to authenticate a user whose name is derived
-from the distinguished name of the X.509 certificate.
+from the distinguished name of the x.509 certificate.
 
-X.509 authentication requires the use of SSL connections with
+x.509 authentication requires the use of SSL connections with
 certificate validation. To create a credential of this type use the
 ``createMongoX509Credential()`` static factory method:
 
@@ -155,5 +155,5 @@ Or, you can use a connection string that explicitly specifies
    :dedent:
 
 See the :manual:`Use x.509 Certificates to Authenticate Clients </tutorial/configure-x509-client-authentication/>`
-tutorial in the Server manual to learn more about
-determining the subject name from the certificate.
+tutorial in the Server manual to learn more about using x.509 certificates in your
+application.
