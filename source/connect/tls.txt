@@ -45,11 +45,15 @@ To learn how to configure your MongoDB deployment for TLS, see the
 Enable TLS
 ----------
 
-To enable TLS for the connection to your MongoDB deployment, set the ``tls`` connection
-option to ``true``. You can do this in two ways: by passing a ``SslSettings`` instance
-to the ``MongoClientSettings`` builder or through a parameter in your connection string.
+You can enable TLS for the connection to your MongoDB deployment in the following
+ways:
+
+- Use the ``enabled()`` method from the ``SslSettings.Builder`` class when creating
+  a ``MongoClientSettings`` instance
+- Set the ``tls`` parameter in your connection URI
+
 Select the :guilabel:`MongoClientSettings` or :guilabel:`Connection URI` tab to see
-corresponding code for each approach:
+corresponding code that enables TLS:
 
 .. tabs::
 
@@ -121,13 +125,13 @@ properties to initiate TLS requests:
 - ``javax.net.ssl.trustStorePassword``: The password to access the trust store defined by
   the ``javax.net.ssl.trustStore`` property
 
-You can use the `keytool <https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html>`__
+You can use the `keytool <https://docs.oracle.com/en/java/javase/{+java-version+}/docs/specs/man/keytool.html>`__
 command line tool to define the preceding properties. The following example runs the ``keytool``
-command to specify the CA file path, the trust store path, and the trust store password:
+command to specify the certificate authority file path, the trust store path, and the trust store password:
 
 .. code-block:: none
 
-   keytool -importcert -trustcacerts -file <path to CA file>
+   keytool -importcert -trustcacerts -file <path to certificate authority file>
          -keystore <path to trust store> -storepass <trust store password>
 
 Configure the JVM Key Store
@@ -150,12 +154,12 @@ the MongoDB server:
   defined in ``javax.net.ssl.keyStore``
 
 You can create a key store by using the `keytool
-<https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html>`__
+<https://docs.oracle.com/en/java/javase/{+java-version+}/docs/specs/man/keytool.html>`__
 or `openssl <https://www.openssl.org/docs/manmaster/man1/openssl.html>`__
 command line tool.
 
 To learn more about configuring a {+language+} application to use TLS,
-see the `JSSE Reference Guide <https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html>`__
+see the `JSSE Reference Guide <https://docs.oracle.com/en/java/javase/{+java-version+}/security/java-secure-socket-extension-jsse-reference-guide.html>`__
 in the Java language documentation.
 
 Configure a Client-Specific Trust Store and Key Store
@@ -174,9 +178,12 @@ Disable Hostname Verification
 
 By default, the driver ensures that the hostname included in the server's
 TLS certificates matches the hostnames provided when constructing
-a ``MongoClient``. You can disable hostname verification in two ways:
-by setting the ``invalidHostNameAllowed`` property in a ``MongoClientSettings``
-object or through a parameter in your connection string.
+a ``MongoClient``. You can disable hostname verification in the following
+ways:
+
+- Use the ``invalidHostNameAllowed()`` method from the ``SslSettings.Builder``
+  class when creating a ``MongoClientSettings`` instance
+- Set the ``tlsAllowInvalidHostnames`` parameter in your connection URI
 
 Select the :guilabel:`MongoClientSettings` or :guilabel:`Connection URI` tab to see
 corresponding code that disables hostname verification:
@@ -210,8 +217,8 @@ corresponding code that disables hostname verification:
 
 .. _scala-tls-restrict-tls-1.2:
 
-Restrict Connections to TLS 1.2 Only
-------------------------------------
+Restrict Connections to TLS 1.2
+-------------------------------
 
 To restrict your application to use only the TLS 1.2 protocol, set the
 ``jdk.tls.client.protocols`` system property to ``"TLSv1.2"``.
@@ -225,8 +232,8 @@ To restrict your application to use only the TLS 1.2 protocol, set the
 
 .. _scala-tls-custom-sslContext:
 
-Customize TLS Configuration through the Java SE SSLContext
-----------------------------------------------------------
+Customize Configuration with SSLContext
+---------------------------------------
 
 If your TLS configuration requires customization, you can
 set the ``sslContext`` property of your ``MongoClient`` object. Pass
@@ -247,7 +254,7 @@ Online Certificate Status Protocol (OCSP)
 -----------------------------------------
 
 OCSP is a standard used to check whether X.509 certificates have been
-revoked. A certificate authority can add an X.509 certificate to the
+revoked. A certificate authority (CA) can add an X.509 certificate to the
 Certificate Revocation List (CRL) before the expiry time to invalidate
 the certificate. When a client sends an X.509 certificate during the TLS
 handshake, the CA's revocation server checks the CRL and returns a status
@@ -258,7 +265,7 @@ The driver supports the following variations of OCSP:
 - Client-Driven OCSP
 - OCSP Stapling
 
-The following sections describe the differences between them and how to enable
+The following sections describe these variations and show how to enable
 them for your application.
 
 .. note::
@@ -271,8 +278,8 @@ Client-Driven OCSP
 
 In client-driven OCSP, the client receives the certificate from the server
 and sends this certificate in an OCSP request to an OCSP responder. The OCSP
-responder checks the status of the certificate with a certificate
-authority (CA) and sends a report about its validity to the client.
+responder checks the status of the certificate with a CA and sends a
+report about its validity to the client.
 
 To enable client-driven OCSP for your application, set the following JVM
 system properties:
@@ -300,8 +307,8 @@ OCSP Stapling
 ~~~~~~~~~~~~~
 
 OCSP stapling is a mechanism in which the server must obtain the signed
-certificate from the certificate authority (CA) and include it in a
-time-stamped OCSP response to the client.
+certificate from the CA and include it in a time-stamped OCSP response
+to the client.
 
 To enable OCSP stapling for your application, set the following JVM system
 properties:
