@@ -32,7 +32,7 @@ How to Process an Observable
 
 To run a MongoDB operation and process its data, you must request
 the operation results from an ``Observable``. The ``Observable``
-is a higher-level abstraction built on top of a cursor, or a 
+is a high-level abstraction built on top of a cursor, or a 
 mechanism that fetches results in batches. The {+driver-short+}
 handles the cursor internally and exposes the operation
 results through an observable interface.
