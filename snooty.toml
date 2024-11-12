@@ -19,7 +19,8 @@ toc_landing_pages = [
     "/get-started",
     "/databases-collections",
     "/read",
-    "/write"
+    "/write",
+    "/security"
 ]
 
 [constants]
