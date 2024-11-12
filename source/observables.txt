@@ -79,6 +79,8 @@ and assign the following values to your ``database`` and ``collection`` variable
 To learn how to create a free MongoDB Atlas cluster and load the sample datasets, see the
 :atlas:`Get Started with Atlas </getting-started>` guide.
 
+.. _scala-observables-callbacks:
+
 Use Callbacks to Process Results
 --------------------------------
 
@@ -179,6 +181,8 @@ to the operation and performs the following actions:
       1=BsonObjectId{value=...}}}
       Processed all results
 
+.. _scala-observables-lambda:
+
 Use Lambda Functions to Process Results
 ---------------------------------------
 
@@ -223,16 +227,28 @@ uses lambda functions to print results and handle errors:
       Staten Island
       Processed all results
 
-Use a Future to Process Results
--------------------------------
+.. _scala-observables-futures:
 
-You can subscribe to an ``Observable`` implicitly and access its results
+Retrieve All Results From a Future
+----------------------------------
+
+You can subscribe to an ``Observable`` implicitly and aggregate its results
 by calling the ``toFuture()`` method. When you call ``toFuture()`` on 
 an ``Observable``, the driver performs the following actions:
 
-- Internally subscribes to the ``Observable``
+- Subscribes to the ``Observable``
 - Collects the items emitted by the ``Observable`` and stores them in a
   ``Future`` instance
+
+Then, you can iterate through the ``Future`` to retrieve the operation
+results.
+
+.. important::
+
+   If your ``Observable`` contains a large number of documents, calling
+   the ``toFuture()`` method will consume significant memory. If you expect
+   a large result set, consider using :ref:`callback <scala-observables-callbacks>`
+   or :ref:`lambda <scala-observables-lambda>` functions to access results.
 
 Example
 ~~~~~~~
