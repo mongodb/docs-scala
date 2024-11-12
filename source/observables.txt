@@ -151,7 +151,7 @@ To access data retrieved by a write operation, create an ``Observable[T]``
 to store the operation results. Then, subscribe to the observable and
 override the ``Observer`` class callback methods to process the results.
 
-This example inserts documents into the ``restaurants`` database
+This example inserts documents into the ``restaurants`` collection
 in which the ``cuisine`` value is ``"Nepalese"``. To retrieve
 and process results, the example assigns an ``Observable[InsertManyResult]``
 to the operation and performs the following actions:
@@ -201,7 +201,7 @@ process operation results. These functions allow you to use the
 Example
 ~~~~~~~
 
-This example queries the ``restaurants`` database for each
+This example queries the ``restaurants`` collection for each
 distinct value of the ``borough`` field. The code subscribes
 to the ``Observable`` returned by the ``distinct()`` method, then
 uses lambda functions to print results and handle errors:
@@ -229,8 +229,8 @@ uses lambda functions to print results and handle errors:
 
 .. _scala-observables-futures:
 
-Retrieve All Results From a Future
-----------------------------------
+Use Futures to Retrieve All Results
+-----------------------------------
 
 You can subscribe to an ``Observable`` implicitly and aggregate its results
 by calling the ``toFuture()`` method. When you call ``toFuture()`` on 
@@ -253,7 +253,7 @@ results.
 Example
 ~~~~~~~
 
-This example queries the ``restaurants`` database for documents
+This example queries the ``restaurants`` collection for documents
 in which the value of the ``name`` field is ``"The Halal Guys"``.
 To access the operation results, the code converts the ``Observable``
 to a ``Future``, waits until the ``Future`` collects each result, and
