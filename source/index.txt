@@ -20,6 +20,7 @@
    /monitoring
    /aggregation
    /observables
+   /security
    /whats-new
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
@@ -56,17 +57,15 @@ What's New
 For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
 section.
 
-.. TODO
-.. Write Data to MongoDB
-.. ---------------------
+Write Data to MongoDB
+---------------------
 
-.. Learn how you can write data to MongoDB in the :ref:`scala-write` section.
+Learn how you can write data to MongoDB in the :ref:`scala-write` section.
 
-.. TODO
-.. Read Data from MongoDB
-.. ----------------------
+Read Data from MongoDB
+----------------------
 
-.. Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
+Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
 
 .. TODO
 .. Optimize Queries by Using Indexes
@@ -88,6 +87,12 @@ Access Data From an Observable
 Learn how to access results from a read or write operation in the
 :ref:`scala-observables` section.
 
+Secure Your Data
+----------------
+
+Learn how to authenticate your application and encrypt your data in the
+:ref:`scala-security` section.
+
 .. TODO
 .. Configure Operations on Replica Sets
 .. ------------------------------------
@@ -102,12 +107,11 @@ Learn how to access results from a read or write operation in the
 .. Learn how to report bugs, contribute to the driver, and find more resources for
 .. asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
 
-.. TODO
-.. Compatibility
-.. ------------
+Compatibility
+-------------
 
-.. To learn about the versions of the {+mdb-server+} and the C language that are compatible with 
-.. each version of the {+driver-short+}, see the :ref:`Compatibility <scala-compatibility>` section.
+To learn about the versions of the {+mdb-server+} and the C language that are compatible with 
+each version of the {+driver-short+}, see the :ref:`Compatibility <scala-compatibility>` section.
 
 Developer Hub
 -------------
