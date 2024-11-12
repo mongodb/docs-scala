@@ -49,11 +49,6 @@ include the following types:
 - ``DistinctObservable[T]``: Returned by the ``distinct()`` method
 - ``AggregateObservable[T]``: Returned by the ``aggregate()`` method
 
-.. tip::
-
-  To view a full list of ``Observable`` types, see the `Observable <{+api+}/org/mongodb/scala/Observable.html>`__
-  API documentation.
-
 You can request operation results by calling the ``subscribe()`` method
 on the operation's ``Observable``. Pass an instance of the ``Observer``
 class as a parameter to the ``subscribe()`` method. This ``Observer`` receives
@@ -118,10 +113,10 @@ to the operation and performs the following actions:
 
 - Calls the ``subscribe()`` method to subscribe to the ``Observable``
   and passes an ``Observer`` as a parameter
-- Customizes the ``onNext()`` method to print each retrieved document,
+- Overrides the ``onNext()`` method to print each retrieved document,
   which are ``Document`` instances
-- Customizes the ``onError()`` method to print any errors
-- Customizes the ``onComplete()`` methods to print a message after all
+- Overrides the ``onError()`` method to print any errors
+- Overrides the ``onComplete()`` methods to print a message after all
   the results from the ``Observable`` are processed
 
 .. io-code-block::
@@ -161,10 +156,10 @@ to the operation and performs the following actions:
 
 - Calls the ``subscribe()`` method to subscribe to the ``Observable``
   and passes an ``Observer`` as a parameter
-- Customizes the ``onNext()`` method to print the result of the insert
+- Overrides the ``onNext()`` method to print the result of the insert
   operation, returned as an ``InsertManyResult``
-- Customizes the ``onError()`` method to print any errors
-- Customizes the ``onComplete()`` methods to print a message after all
+- Overrides the ``onError()`` method to print any errors
+- Overrides the ``onComplete()`` methods to print a message after all
   the results from the ``Observable`` are processed
 
 .. io-code-block::
@@ -172,8 +167,8 @@ to the operation and performs the following actions:
 
    .. input:: /includes/observables.scala
       :language: scala
-      :start-after: start-read-observable
-      :end-before: end-read-observable
+      :start-after: start-write-observable
+      :end-before: end-write-observable
       :dedent:
 
    .. output::
@@ -195,8 +190,8 @@ process operation results. These functions allow you to use the
 
 .. tip::
 
-   To learn more about lambda, or anonymous, functions,
-   see the :wikipedia:`Anonymous function <w/index.php?title=Anonymous_function&oldid=1252038929>`
+   To learn more about lambda functions, also known as anonymous
+   functions, see the :wikipedia:`Anonymous function <w/index.php?title=Anonymous_function&oldid=1252038929>`
    Wikipedia entry.
 
 Example
@@ -228,6 +223,45 @@ uses lambda functions to print results and handle errors:
       Staten Island
       Processed all results
 
+Use a Future to Process Results
+-------------------------------
+
+You can subscribe to an ``Observable`` implicitly and access its results
+by calling the ``toFuture()`` method. When you call ``toFuture()`` on 
+an ``Observable``, the driver performs the following actions:
+
+- Internally subscribes to the ``Observable``
+- Collects the items emitted by the ``Observable`` and stores them in a
+  ``Future`` instance
+
+Example
+~~~~~~~
+
+This example queries the ``restaurants`` database for documents
+in which the value of the ``name`` field is ``"The Halal Guys"``.
+To access the operation results, the code converts the ``Observable``
+to a ``Future``, waits until the ``Future`` collects each result, and
+iterates through the results:
+
+.. io-code-block::
+   :copyable:
+
+   .. input:: /includes/observables.scala
+      :language: scala
+      :start-after: start-to-future
+      :end-before: end-to-future
+      :dedent:
+
+   .. output::
+      :language: console
+      :visible: false
+
+      Iterable((_id,...), ..., (name,BsonString{value='The Halal Guys'}),
+      (restaurant_id,BsonString{value='50012258'}))
+      Iterable((_id,...), ..., (name,BsonString{value='The Halal Guys'}),
+      (restaurant_id,BsonString{value='50017823'}))
+
+
 API Documentation
 -----------------
 
@@ -241,3 +275,4 @@ guide, see the following API documentation:
 - `onComplete() <{+api+}/org/mongodb/scala/Observer.html#onComplete():Unit>`__
 - `find() <{+api+}/org/mongodb/scala/MongoCollection.html#find[C](filter:org.mongodb.scala.bson.conversions.Bson)(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.FindObservable[C]>`__
 - `distinct() <{+api+}/org/mongodb/scala/MongoCollection.html#distinct[C](fieldName:String)(implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.DistinctObservable[C]>`__
+- `toFuture() <{+api+}/org/mongodb/scala/ObservableImplicits$ObservableFuture.html#toFuture():scala.concurrent.Future[Seq[T]]>`__

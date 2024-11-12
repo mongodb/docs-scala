@@ -15,9 +15,9 @@ object Observables {
 
     // start-read-observable
     val filter = equal("cuisine", "Czech")
-    val observable: Observable[Document] = collection.find(filter)
+    val findObservable: Observable[Document] = collection.find(filter)
 
-    observable.subscribe(new Observer[Document] {
+    findObservable.subscribe(new Observer[Document] {
       override def onNext(result: Document): Unit = println(result)
       override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Processed all results")
@@ -29,9 +29,9 @@ object Observables {
       Document("name" -> "Cafe Himalaya", "cuisine" -> "Nepalese"),
       Document("name" -> "Taste From Everest", "cuisine" -> "Nepalese")
     )
-    val observable: Observable[InsertManyResult] = collection.insertMany(docs)
+    val insertObservable: Observable[InsertManyResult] = collection.insertMany(docs)
 
-    observable.subscribe(new Observer[InsertManyResult] {
+    insertObservable.subscribe(new Observer[InsertManyResult] {
       override def onNext(result: InsertManyResult): Unit = println(result)
       override def onError(e: Throwable): Unit = println("Failed: " + e.getMessage)
       override def onComplete(): Unit = println("Processed all results")
@@ -44,6 +44,12 @@ object Observables {
                          (e: Throwable) => println(s"Failed: $e"),
                          () => println("Processed all results"))
     // end-lambda
+
+    // start-to-future
+    val observable = collection.find(equal("name", "The Halal Guys"))
+    val results = Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+    results.foreach(println)
+    // end-to-future
 
     // Wait for the operations to complete before closing client
     Thread.sleep(1000)
