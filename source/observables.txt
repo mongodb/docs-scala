@@ -38,8 +38,8 @@ handles the cursor internally and exposes the operation
 results through an observable interface.
 
 Each operation returns an instance of the ``Observable[T]`` type, where the ``[T]``
-parameterization corresponds to the type of each item stored by the
-observable. Some operations return a specialized observable that
+parameterization corresponds to the data type that the ``Observable``
+stores. Some operations return a specialized observable that
 extends the general ``Observable[T]`` type and provides additional
 methods to filter and process results. These specialized observables
 include the following types:
