@@ -77,14 +77,11 @@ object ReadWritePref {
     // Instructs the library to distribute reads between members within 35 milliseconds
     // of the closest member's ping time using a URI option
     // start-local-threshold-settings
-    val clusterSettings = ClusterSettings.builder()
-        .localThreshold(35, TimeUnit.MILLISECONDS)
-        .requiredReplicaSetName("repl0")
-        .build()
-
     val client = MongoClient(MongoClientSettings.builder()
         .applyConnectionString(ConnectionString("mongodb://localhost:27017/"))
-        .applyToClusterSettings(builder => builder.applySettings(clusterSettings))
+        .applyToClusterSettings(builder => builder
+            .localThreshold(35, TimeUnit.MILLISECONDS)
+        )
         .build())
     // end-local-threshold-settings
 

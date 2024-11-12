@@ -225,16 +225,16 @@ their ping time.
 
 By default, the driver uses only members whose ping times are within 15 milliseconds
 of the nearest member for queries. To distribute reads among members with
-higher latencies, set the ``localThreshold`` option in a ``ClusterSettings``
+higher latencies, set the ``localThreshold`` option in a ``MongoClientSettings``
 instance or the ``localThresholdMS`` option in your connection URI.
 
 The following example specifies a local threshold of 35 milliseconds. Select 
-the :guilabel:`ClusterSettings` or :guilabel:`Connection URI` tab to see
+the :guilabel:`MongoClientSettings` or :guilabel:`Connection URI` tab to see
 corresponding code for each approach:
 
 .. tabs::
 
-    .. tab:: ClusterSettings
+    .. tab:: MongoClientSettings
       :tabid: settings
 
       .. literalinclude:: /includes/read-write-pref.scala
