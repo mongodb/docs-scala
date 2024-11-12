@@ -14,10 +14,10 @@ Builders
 .. toctree::
 
    Filters </builders/filters/>
-   Projections </builders/projections/>
-   Sorts </builders/sorts/>
-   Aggregates </builders/aggregates/>
-   Updates </builders/updates/>
+   Projection </builders/projections/>
+   Sort </builders/sorts/>
+   Aggregation </builders/aggregates/>
+   Update </builders/updates/>
    Indexes </builders/indexes/>
 
 The {+driver-short+} provides the following classes that make it easier to use
