@@ -36,7 +36,7 @@ object Transaction {
 
       // Updates a document in the "users" collection
       usersCollection
-        .updateOne(clientSession, equal("name", "Amy Ryan"), set("name", "Amy Phillips"))
+        .updateOne(clientSession, equal("name", "Amy Phillips"), set("name", "Amy Ryan"))
         .subscribe((res: UpdateResult) => println(res))
 
       clientSession

@@ -23,11 +23,11 @@ Overview
 In this guide, you can learn how to use the {+driver-short+} to perform
 **transactions**. Transactions allow you to perform a series of operations
 that change data only if the entire transaction is committed.
-If any operation in the transaction does not succeed, the library stops the
+If any operation in the transaction does not succeed, the driver stops the
 transaction and discards all data changes before they ever become
 visible. This feature is called **atomicity**.
 
-In MongoDB, transactions run within logical sessions. A
+In MongoDB, transactions run within logical **sessions**. A
 session is a grouping of related read or write operations that you
 want to run sequentially. Sessions enable causal consistency for a group
 of operations and allow you to run operations in an **ACID-compliant**
@@ -85,9 +85,9 @@ transaction:
 Transaction Example
 -------------------
 
-This example defines a runTransaction() method that
-modifies data in the collections of the ``sample_mflix`` database for a
-banking transaction. The code performs the following actions:
+This example defines a ``runTransaction()`` method that
+modifies data in the collections of the ``sample_mflix`` database.
+The code performs the following actions:
 
 - Creates ``MongoCollection`` instances to access the ``movies``
   and ``users`` collections.
@@ -107,11 +107,11 @@ banking transaction. The code performs the following actions:
 Then, run the following code to perform the transaction. This code
 completes the following actions:
 
-1. Creates a session from the client by using the ``startSession()`` method.
-#. Calls the ``runTransaction()`` method defined in the preceding example, passing
-   the database and the session as parameters.
-#. Commits the transaction by calling the ``commitTransaction()`` method and waits
-   for the operations to complete.
+- Creates a session from the client by using the ``startSession()`` method.
+- Calls the ``runTransaction()`` method defined in the preceding example, passing
+  the database and the session as parameters.
+- Commits the transaction by calling the ``commitTransaction()`` method and waits
+  for the operations to complete.
 
 .. io-code-block::
    :copyable:
