@@ -1,7 +1,4 @@
-package quickstart
-
 import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
-import org.mongodb.scala.bson.Document
 
 // start-single-index-imports
 import org.mongodb.scala._
@@ -17,7 +14,6 @@ import scala.util.{Failure, Success}
 import java.util.concurrent.TimeUnit
 // end-single-index-imports
 
-
 object SingleFieldIndex {
 
     def main(args: Array[String]): Unit = {
@@ -27,8 +23,8 @@ object SingleFieldIndex {
 
     // Create a new client and connect to the server
     val mongoClient = MongoClient(connectionString)
-    val database = mongoClient.getDatabase("sample_training")
-    val collection = database.getCollection("companies")
+    val database = mongoClient.getDatabase("sample_mflix")
+    val collection = database.getCollection("movies")
 
     // start-index-single
     val index = Indexes.ascending("title")
