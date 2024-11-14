@@ -62,7 +62,7 @@ statements in your file:
    :dedent:
 
 Use the ``createIndex()`` method to create a
-compound index. The following example creates an index in ascending order 
+multikey index. The following example creates an index in ascending order 
 on the ``cast`` field:
 
 .. literalinclude:: /includes/indexes/multikey-field.scala

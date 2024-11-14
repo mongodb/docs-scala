@@ -30,7 +30,7 @@ object MulitkeyFieldIndex {
     // end-db-coll
 
     // start-index-multikey
-    val index = Indexes.descending("cast")
+    val index = Indexes.ascending("cast")
     val observable = collection.createIndex(index)
     Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
 
