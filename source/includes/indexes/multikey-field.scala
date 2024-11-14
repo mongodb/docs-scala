@@ -1,17 +1,17 @@
-package quickstart
-
 import com.mongodb.{ServerApi, ServerApiVersion}
 import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
 import org.mongodb.scala.bson.Document
-import Helpers._
 
 // start-multikey-index-imports
 import org.mongodb.scala._
 import org.mongodb.scala.model.Indexes
 import org.mongodb.scala.model.IndexOptions._
-import org.mongodb.scala.model.Projections._
-import org.mongodb.scala.model.Sorts._
 import org.mongodb.scala.model.Filters._
+
+import scala.concurrent.Await
+import scala.concurrent.duration._
+import scala.util.{Failure, Success}
+import java.util.concurrent.TimeUnit
 // end-multikey-index-imports
 
 object MulitkeyFieldIndex {
@@ -30,19 +30,22 @@ object MulitkeyFieldIndex {
     // end-db-coll
 
     // start-index-multikey
-    collection.createIndex(Indexes.ascending("cast")).printResults()
+    val index = Indexes.descending("cast")
+    val observable = collection.createIndex(index)
+    Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+
     // end-index-multikey
 
     // start-index-multikey-query
-    val filter1 = and(equal("cast", "Aamir Khan"), equal("cast", "Kajol"))
+    val filter = and(equal("cast", "Aamir Khan"), equal("cast", "Kajol"))
 
     collection.find(filter).first().subscribe((doc: Document) => println(doc.toJson()),
                             (e: Throwable) => println(s"There was an error: $e"))
     // end-index-multikey-query
 
     // start-check-multikey-index
-    collection.listIndexes().printResults()
+    collection.listIndexes().subscribe((doc: Document) => println(doc.toJson()),
+                            (e: Throwable) => println(s"There was an error: $e"))
     // end-check-multikey-index
-
   }
 }
