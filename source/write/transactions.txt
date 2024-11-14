@@ -90,12 +90,12 @@ modifies data in the collections of the ``sample_mflix`` database.
 The code performs the following actions:
 
 - Creates ``MongoCollection`` instances to access the ``movies``
-  and ``users`` collections.
+  and ``users`` collections
 - Specifies the read preference, read concern, and write concern for
-  the transaction.
-- Starts the transaction.
-- Inserts a document into the ``movies`` collection and prints the results.
-- Updates a document in the ``users`` collection and prints the results.
+  the transaction
+- Starts the transaction
+- Inserts a document into the ``movies`` collection and prints the results
+- Updates a document in the ``users`` collection and prints the results
 
 .. literalinclude:: /includes/write/transaction.scala
    :copyable:
@@ -107,11 +107,11 @@ The code performs the following actions:
 Then, run the following code to perform the transaction. This code
 completes the following actions:
 
-- Creates a session from the client by using the ``startSession()`` method.
+- Creates a session from the client by using the ``startSession()`` method
 - Calls the ``runTransaction()`` method defined in the preceding example, passing
-  the database and the session as parameters.
+  the database and the session as parameters
 - Commits the transaction by calling the ``commitTransaction()`` method and waits
-  for the operations to complete.
+  for the operations to complete
 
 .. io-code-block::
    :copyable:
@@ -140,9 +140,8 @@ following pages in the {+mdb-server+} manual:
 - :manual:`Read Isolation, Consistency, and Recency
   </core/read-isolation-consistency-recency/>`
 
-To learn more about ACID compliance, see the :website:`What are ACID
-Properties in Database Management Systems? </basics/acid-transactions>`
-article on the MongoDB website.
+To learn more about ACID compliance, see the :website:`A Guide to ACID Properties in Database Management Systems
+</basics/acid-transactions>` article on the MongoDB website.
 
 To learn more about insert operations, see the
 :ref:`scala-write-insert` guide.
