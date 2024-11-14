@@ -10,7 +10,11 @@ import org.mongodb.scala.model.IndexOptions._
 import org.mongodb.scala.model.Projections._
 import org.mongodb.scala.model.Sorts._
 import org.mongodb.scala.model.Filters._
-import Helpers._
+
+import scala.concurrent.Await
+import scala.concurrent.duration._
+import scala.util.{Failure, Success}
+import java.util.concurrent.TimeUnit
 // end-single-index-imports
 
 
@@ -27,7 +31,9 @@ object SingleFieldIndex {
     val collection = database.getCollection("companies")
 
     // start-index-single
-    collection.createIndex(Indexes.ascending("title")).printResults()
+    val index = Indexes.ascending("title")
+    val observable = collection.createIndex(index)
+    Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-index-single
 
     // start-index-single-query
@@ -38,8 +44,11 @@ object SingleFieldIndex {
     // end-index-single-query
 
     // start-check-single-index
-    collection.listIndexes().printResults()
+    collection.listIndexes().subscribe((doc: Document) => println(doc.toJson()),
+                            (e: Throwable) => println(s"There was an error: $e"))
     // end-check-single-index
 
+    Thread.sleep(1000)
+    mongoClient.close()
   }
 }
