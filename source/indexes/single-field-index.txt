@@ -48,15 +48,6 @@ The examples in this guide use the ``movies`` collection in the
 load the sample datasets, see the :atlas:`Get Started with Atlas
 </getting-started>` guide.
 
-Helper Method
-~~~~~~~~~~~~~
-
-The examples in this guide also use the ``printResults()`` method to 
-simplify printing query results. The 
-`Helpers.scala <{+driver-source-gh+}/blob/main/driver-scala/src/integration/scala/tour/Helpers.scala>`__ 
-file, found in the driver source GitHub repository, defines the method. 
-Add the ``Helpers.scala`` file to your project directory to use ``printResults()``. 
-
 Create Single-Field Index
 -------------------------
 
