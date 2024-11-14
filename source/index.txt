@@ -17,6 +17,7 @@
    /databases-collections
    /read
    /write
+   /indexes
    /monitoring
    /aggregation
    /security
