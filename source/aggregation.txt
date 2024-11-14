@@ -191,6 +191,28 @@ plan:
       "planNodeId": 1, "filter": {"cuisine": {"$eq": "Bakery"}}, "direction": "forward"}},
       ...}
 
+Run an Atlas Full-Text Search
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To specify a full-text search of one or more fields, you can use the
+``search()`` method to create a ``$search`` pipeline stage.
+
+.. tip:: Only Available on Atlas for MongoDB v4.2 and later
+
+   This aggregation pipeline operator is only available for collections hosted
+   on :atlas:`MongoDB Atlas </>` clusters running v4.2 or later that are
+   covered by an :atlas:`Atlas Search index </reference/atlas-search/index-definitions/>`.
+   To learn more about Atlas Search indexes, see the :ref:`scala-atlas-search-index`
+   guide.
+
+The following example creates a pipeline stage that searches the ``title``
+field for text that contains the word ``"Future"``:
+
+.. code-block:: scala
+
+   search(SearchOperator.text(
+       SearchPath.fieldPath("title"), "Future"))
+
 Additional Information
 ----------------------
 
