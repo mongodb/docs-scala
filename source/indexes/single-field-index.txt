@@ -51,6 +51,12 @@ load the sample datasets, see the :atlas:`Get Started with Atlas
 Create Single-Field Index
 -------------------------
 
+This guide uses the ``printResults()`` method in the 
+`Helpers.scala <https://github.com/mongodb/mongo-java-driver/blob/main/driver-scala/src/integration/scala/tour/Helpers.scala>`__ 
+file that can be found in the in the driver source GitHub repository. 
+Add the ``Helpers.scala`` file to your project directory to use ``printResults()``
+to simplify printing query results.
+
 To run the examples in this guide, you must include the following import 
 statements in your file:
 

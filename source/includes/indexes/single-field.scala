@@ -2,7 +2,6 @@ package quickstart
 
 import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
 import org.mongodb.scala.bson.Document
-import Helpers._
 
 // start-single-index-imports
 import org.mongodb.scala._
@@ -11,6 +10,7 @@ import org.mongodb.scala.model.IndexOptions._
 import org.mongodb.scala.model.Projections._
 import org.mongodb.scala.model.Sorts._
 import org.mongodb.scala.model.Filters._
+import Helpers._
 // end-single-index-imports
 
 
