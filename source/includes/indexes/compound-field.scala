@@ -5,6 +5,11 @@ import org.mongodb.scala.model.IndexOptions._
 import org.mongodb.scala.model.Projections._
 import org.mongodb.scala.model.Sorts._
 import org.mongodb.scala.model.Filters._
+
+import scala.concurrent.Await
+import scala.concurrent.duration._
+import scala.util.{Failure, Success}
+import java.util.concurrent.TimeUnit
 // end-compound-index-imports
 
 
@@ -24,11 +29,9 @@ object CompoundFieldIndex {
     // end-db-coll
 
     // start-index-compound
-    collection.createIndex(
-              Indexes.compoundIndex(Indexes.descending("runtime"),
-                                    Indexes.ascending("year")))
-          .printResults()
-
+    val index = Indexes.compoundIndex(Indexes.descending("runtime"), Indexes.ascending("year"))
+    val observable = collection.createIndex(index)
+    Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-index-compound
 
     // start-index-compound-query
@@ -39,8 +42,8 @@ object CompoundFieldIndex {
     // end-index-compound-query
 
     // start-check-compound-index
-    collection.listIndexes().printResults()
+    collection.listIndexes().subscribe((doc: Document) => println(doc.toJson()),
+                            (e: Throwable) => println(s"There was an error: $e"))
     // end-check-compound-index
-
   }
 }
