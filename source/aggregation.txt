@@ -194,7 +194,7 @@ plan:
 Run an Atlas Full-Text Search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Only Available on Atlas for MongoDB v4.2 and later
+.. tip:: Only Available on Atlas for MongoDB v4.2 and later
 
    This aggregation pipeline operator is only available for collections hosted
    on :atlas:`MongoDB Atlas </>` clusters running v4.2 or later that are
@@ -233,7 +233,7 @@ This example creates pipeline stages to perform the following actions:
       {"_id": {"$oid": "5eb3d669b31de5d588f45c80"}, "name": "Salt And Fat"}
       {"_id": {"$oid": "5eb3d669b31de5d588f45dbc"}, "name": "Salt And Pepper Diner"}
 
-.. tip::
+.. important::
 
     To run the preceding example, you must create an Atlas Search index on the ``restaurants``
     collection that covers the ``name`` field. Then, replace the ``"<search index name>"``
