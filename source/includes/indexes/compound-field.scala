@@ -29,7 +29,8 @@ object CompoundFieldIndex {
     // end-db-coll
 
     // start-index-compound
-    val index = Indexes.compoundIndex(Indexes.descending("runtime"), Indexes.ascending("year"))
+    val index = Indexes.compoundIndex(Indexes.descending("runtime"), 
+                                        Indexes.ascending("year"))
     val observable = collection.createIndex(index)
     Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-index-compound
