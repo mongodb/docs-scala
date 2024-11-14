@@ -35,6 +35,18 @@ object Aggregation {
                         (e: Throwable) => println(s"There was an error: $e"))
     // end-explain
 
+    // start-atlas-search
+    val pipeline = Seq(Aggregates.search(SearchOperator
+                                        .text(SearchPath.fieldPath("name"), "Salt"),
+                                        searchOptions().index("<search index name>")),
+                        Aggregates.project(Projections.include("name"))
+    )
+
+    collection.aggregate(pipeline)
+              .subscribe((doc: Document) => println(doc.toJson()),
+                        (e: Throwable) => println(s"There was an error: $e"))
+    // end-atlas-search
+
     Thread.sleep(1000)
     mongoClient.close()
   }

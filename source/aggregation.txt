@@ -194,24 +194,51 @@ plan:
 Run an Atlas Full-Text Search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To specify a full-text search of one or more fields, you can use the
-``search()`` method to create a ``$search`` pipeline stage.
-
-.. tip:: Only Available on Atlas for MongoDB v4.2 and later
+.. important:: Only Available on Atlas for MongoDB v4.2 and later
 
    This aggregation pipeline operator is only available for collections hosted
    on :atlas:`MongoDB Atlas </>` clusters running v4.2 or later that are
    covered by an :atlas:`Atlas Search index </reference/atlas-search/index-definitions/>`.
-   To learn more about Atlas Search indexes, see the :ref:`scala-atlas-search-index`
-   guide.
 
-The following example creates a pipeline stage that searches the ``title``
-field for text that contains the word ``"Future"``:
+To specify a full-text search of one or more fields, you can create
+a ``$search`` pipeline stage. The {+driver-short+} provides the
+``search()`` helper method from the ``Aggregates`` class to create this
+stage. Pass the following parameters to the ``search()`` method:
 
-.. code-block:: scala
+- ``SearchOperator`` instance: Specifies the field and text to search for
+- ``SearchOptions`` instance: Specifies options to customize the full-text
+  search, including the name of the Atlas Search index to use
 
-   search(SearchOperator.text(
-       SearchPath.fieldPath("title"), "Future"))
+This example creates pipeline stages to perform the following actions:
+
+- Search the ``name`` field for text that contains the word ``"Salt"``
+- Project only the ``_id`` and ``name`` values of matching documents
+
+.. io-code-block::
+   :copyable:
+
+   .. input:: /includes/aggregation.scala
+      :start-after: start-atlas-search
+      :end-before: end-atlas-search
+      :language: scala
+      :dedent:
+
+   .. output:: 
+      :visible: false
+
+      {"_id": {"$oid": "5eb3d668b31de5d588f43ca8"}, "name": "Fresh Salt"}
+      {"_id": {"$oid": "5eb3d668b31de5d588f441a9"}, "name": "Salt & Pepper"}
+      {"_id": {"$oid": "5eb3d669b31de5d588f47fd4"}, "name": "Salt + Charcoal"}
+      {"_id": {"$oid": "5eb3d668b31de5d588f4353e"}, "name": "A Salt & Battery"}
+      {"_id": {"$oid": "5eb3d669b31de5d588f45c80"}, "name": "Salt And Fat"}
+      {"_id": {"$oid": "5eb3d669b31de5d588f45dbc"}, "name": "Salt And Pepper Diner"}
+
+.. tip::
+
+    To run the preceding example, you must create an Atlas Search index on the ``restaurants``
+    collection that covers the ``name`` field. Then, replace the ``"<search index name>"``
+    placeholder with the name of the index. To learn more about Atlas Search indexes, see
+    the :ref:`scala-atlas-search-index` guide.
 
 Additional Information
 ----------------------
