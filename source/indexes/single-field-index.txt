@@ -51,7 +51,7 @@ load the sample datasets, see the :atlas:`Get Started with Atlas
 Helper Method
 ~~~~~~~~~~~~~
 
-The examples in this guide use the ``printResults()`` method to 
+The examples in this guide also use the ``printResults()`` method to 
 simplify printing query results. The 
 `Helpers.scala <{+driver-source-gh+}/blob/main/driver-scala/src/integration/scala/tour/Helpers.scala>`__ 
 file, found in the driver source GitHub repository, defines the method. 
