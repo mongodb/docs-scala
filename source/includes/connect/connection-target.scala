@@ -14,7 +14,7 @@ object MongoClientConnectToAtlas {
     // Replace the placeholder with your Atlas connection string
     val connectionString = "<connection string>";
 
-    // Construct a ServerApi instance using the ServerApi.builder() method
+    // Constructs a ServerApi instance using the ServerApi.builder() method
     val serverApi = ServerApi.builder.version(ServerApiVersion.V1).build()
 
     val settings = MongoClientSettings
@@ -23,9 +23,9 @@ object MongoClientConnectToAtlas {
       .serverApi(serverApi)
       .build()
 
-    // Create a new client and connect to the server
+    // Creates a new client and connects to the server
     Using(MongoClient(settings)) { mongoClient =>
-      // Send a ping to confirm a successful connection
+      // Sends a ping to confirm a successful connection
       val database = mongoClient.getDatabase("admin")
       val ping = database.runCommand(Document("ping" -> 1)).head()
 

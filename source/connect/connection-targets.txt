@@ -137,3 +137,14 @@ corresponding to all of the replica set members:
    If you construct a ``MongoClient`` and immediately print the string representation
    of its ``nodes`` attribute, the list might be empty while the client connects to
    the replica-set members.
+
+API Documentation
+-----------------
+
+To learn more about any of the methods or types discussed in this guide, see the 
+following API documentation:
+
+- `MongoClient <{+api+}/org/mongodb/scala/MongoClient$.html>`__
+- `MongoClientSettings <{+api+}/org/mongodb/scala/MongoClientSettings$.html>`__
+- `MongoClientSettings.Builder <{+core-api+}/com/mongodb/MongoClientSettings.Builder.html>`__
+- `ServerApi <{+core-api+}/com/mongodb/ServerApi.html>`__
