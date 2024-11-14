@@ -103,7 +103,7 @@ created on the ``runtime`` and ``year`` fields:
    .. output::
       :visible: false
 
-      {"_id":...,"runtime": 98,...,"title":"In the Mood for Love",...,"year":2000,...}
+      {"_id":...,"runtime": 98,...,"title": "In the Mood for Love",...,"year": 2000,...}
 
 Additional Information
 ----------------------
