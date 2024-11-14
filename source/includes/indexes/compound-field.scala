@@ -1,9 +1,10 @@
+import com.mongodb.{ServerApi, ServerApiVersion}
+import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
+
 // start-compound-index-imports
 import org.mongodb.scala._
 import org.mongodb.scala.model.Indexes
 import org.mongodb.scala.model.IndexOptions._
-import org.mongodb.scala.model.Projections._
-import org.mongodb.scala.model.Sorts._
 import org.mongodb.scala.model.Filters._
 
 import scala.concurrent.Await
@@ -11,7 +12,6 @@ import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 import java.util.concurrent.TimeUnit
 // end-compound-index-imports
-
 
 object CompoundFieldIndex {
 
