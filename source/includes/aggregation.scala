@@ -2,6 +2,9 @@ import org.mongodb.scala._
 import org.mongodb.scala.model.{ Aggregates, Filters, Accumulators }
 import org.mongodb.scala.bson.Document
 import com.mongodb.ExplainVerbosity
+import org.mongodb.scala.model.Projections
+import org.mongodb.scala.model.search._
+import org.mongodb.scala.model.search.SearchOptions.searchOptions
 
 object Aggregation {
 
