@@ -4,8 +4,6 @@ import org.mongodb.scala.{ConnectionString, MongoClient, MongoClientSettings}
 import org.mongodb.scala._
 import org.mongodb.scala.model.Indexes
 import org.mongodb.scala.model.IndexOptions._
-import org.mongodb.scala.model.Projections._
-import org.mongodb.scala.model.Sorts._
 import org.mongodb.scala.model.Filters._
 
 import scala.concurrent.Await
