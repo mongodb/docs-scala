@@ -109,14 +109,12 @@ To perform an aggregation, pass a list containing the pipeline stages to
 the ``aggregate()`` method. The {+driver-short+} provides the ``Aggregates`` class,
 which includes helper methods for building pipeline stages. 
 
-.. tip::
+To learn more about pipeline stages and their corresponding ``Aggregates`` helper
+methods, see the following resources:
 
-    To learn more about pipeline stages and their corresponding ``Aggregates`` helper
-    methods, see the following resources:
-
-    - :manual:`Aggregation Stages </reference/operator/aggregation-pipeline/>` in the
-      {+mdb-server+} manual
-    - `Aggregates <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__ in the API documentation
+- :manual:`Aggregation Stages </reference/operator/aggregation-pipeline/>` in the
+  {+mdb-server+} manual
+- `Aggregates <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__ in the API documentation
 
 .. _scala-aggregation-example:
 
@@ -171,7 +169,7 @@ information about verbosity, see :manual:`Verbosity Modes </reference/command/ex
 in the {+mdb-server+} manual.
 
 The following example instructs MongoDB to explain the aggregation operation
-from the preceding :ref:`scala-aggregation-example`. The code passes a verbosity
+from the preceding :ref:`scala-aggregation-example` example. The code passes a verbosity
 value of ``ExplainVerbosity.EXECUTION_STATS`` to the ``explain()`` method, which
 configures the method to return statistics describing the execution of the winning
 plan:
@@ -210,9 +208,10 @@ a ``$search`` pipeline stage. The {+driver-short+} provides the
 ``Aggregates.search()`` helper method to create this stage. The ``search()``
 method requires the following arguments:
 
-- ``SearchOperator`` instance: Specifies the field and text to search for
+- ``SearchOperator`` instance: Specifies the field and text to search for.
 - ``SearchOptions`` instance: Specifies options to customize the full-text
-  search, including the name of the Atlas Search index to use
+  search. You must set the ``index`` option to the name of the Atlas Search
+  index to use.
 
 This example creates pipeline stages to perform the following actions:
 
