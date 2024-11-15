@@ -27,7 +27,6 @@ When you enable TLS for a connection, the {+driver-short+} performs the followin
 
 - Uses TLS to connect to the MongoDB deployment
 - Verifies the deployment's certificate
-- Ensures that the certificate certifies the deployment
 
 To learn how to configure your MongoDB deployment for TLS, see the
 :manual:`TLS configuration guide </tutorial/configure-ssl/>` in the
