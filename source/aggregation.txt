@@ -226,12 +226,12 @@ This example creates pipeline stages to perform the following actions:
    .. output:: 
       :visible: false
 
-      {"_id": {"$oid": "5eb3d668b31de5d588f43ca8"}, "name": "Fresh Salt"}
-      {"_id": {"$oid": "5eb3d668b31de5d588f441a9"}, "name": "Salt & Pepper"}
-      {"_id": {"$oid": "5eb3d669b31de5d588f47fd4"}, "name": "Salt + Charcoal"}
-      {"_id": {"$oid": "5eb3d668b31de5d588f4353e"}, "name": "A Salt & Battery"}
-      {"_id": {"$oid": "5eb3d669b31de5d588f45c80"}, "name": "Salt And Fat"}
-      {"_id": {"$oid": "5eb3d669b31de5d588f45dbc"}, "name": "Salt And Pepper Diner"}
+      {"_id": {"$oid": "..."}, "name": "Fresh Salt"}
+      {"_id": {"$oid": "..."}, "name": "Salt & Pepper"}
+      {"_id": {"$oid": "..."}, "name": "Salt + Charcoal"}
+      {"_id": {"$oid": "..."}, "name": "A Salt & Battery"}
+      {"_id": {"$oid": "..."}, "name": "Salt And Fat"}
+      {"_id": {"$oid": "..."}, "name": "Salt And Pepper Diner"}
 
 .. important::
 
