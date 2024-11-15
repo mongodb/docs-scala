@@ -64,6 +64,7 @@ The following example creates an ascending index on the specified field:
    :language: scala
    :start-after: start-index-single
    :end-before: end-index-single
+   :dedent:
 
 To learn more about single field indexes, see the :ref:`scala-single-field-index`
 guide.
@@ -78,6 +79,7 @@ and ``year``.
    :language: scala
    :start-after: start-index-compound
    :end-before: end-index-compound
+   :dedent:
 
 To learn more about compound indexes, see the :ref:`scala-compound-index` guide.
 
@@ -91,6 +93,7 @@ contains GeoJSON objects:
    :language: scala
    :start-after: start-create-geospatial-index
    :end-before: end-create-geospatial-index
+   :dedent:
 
 For more information on 2dsphere indexes, see the 
 :manual:`2dsphere Indexes </core/indexes/index-types/geospatial/2dsphere/>`
@@ -117,6 +120,7 @@ The following example creates an Atlas Search index on the specified field:
    :language: scala
    :start-after: start-create-search-index
    :end-before: end-create-search-index
+   :dedent:
 
 List Search Indexes
 ~~~~~~~~~~~~~~~~~~~
@@ -128,6 +132,7 @@ collection:
    :language: scala
    :start-after: start-list-search-indexes
    :end-before: end-list-search-indexes
+   :dedent:
 
 Update Search Indexes
 ~~~~~~~~~~~~~~~~~~~~~
@@ -139,6 +144,7 @@ new index definition:
    :language: scala
    :start-after: start-update-search-indexes
    :end-before: end-update-search-indexes
+   :dedent:
 
 Delete Search Indexes
 ~~~~~~~~~~~~~~~~~~~~~
@@ -149,6 +155,7 @@ The following example deletes an Atlas Search index with the specified name:
    :language: scala
    :start-after: start-drop-search-index
    :end-before: end-drop-search-index
+   :dedent:
 
 Drop Index
 ----------
@@ -159,3 +166,4 @@ The following example deletes an index with the specified name:
    :language: scala
    :start-after: start-drop-single-index
    :end-before: end-drop-single-index
+   :dedent:

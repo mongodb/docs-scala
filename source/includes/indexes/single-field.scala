@@ -43,7 +43,8 @@ object SingleFieldIndex {
     // end-check-single-index
 
     // start-drop-single-index
-    collection.dropIndex("<index name>")
+    val observable = collection.dropIndex("<index name>")
+    Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
     // end-drop-single-index
 
     // start-create-geospatial-index
