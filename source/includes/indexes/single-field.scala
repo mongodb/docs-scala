@@ -42,6 +42,15 @@ object SingleFieldIndex {
                             (e: Throwable) => println(s"There was an error: $e"))
     // end-check-single-index
 
+    // start-drop-single-index
+    collection.dropIndex("<index name>")
+    // end-drop-single-index
+
+    // start-create-geospatial-index
+    val observable = collection.createIndex(Indexes.geo2dsphere("<2d index>"))
+    Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+    // end-create-geospatial-index
+
     Thread.sleep(1000)
     mongoClient.close()
   }
