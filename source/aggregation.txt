@@ -93,10 +93,10 @@ Consider the following limitations when performing aggregation operations:
   operator has a strict memory limit of 100 megabytes and ignores the
   value passed to the ``allowDiskUse()`` method.
 
-.. _scala-aggregation-example:
+.. _scala-run-aggregation:
 
-Aggregation Example
--------------------
+Run Aggregation Operations
+--------------------------
 
 .. note:: Sample Data
   
@@ -117,6 +117,11 @@ which includes helper methods for building pipeline stages.
     - :manual:`Aggregation Stages </reference/operator/aggregation-pipeline/>` in the
       {+mdb-server+} manual
     - `Aggregates <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__ in the API documentation
+
+.. _scala-aggregation-example:
+
+Filter, Group, and Count Documents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This code example produces a count of the number of bakeries in each borough
 of New York. To do so, it calls the ``aggregate()`` method and passes an aggregation
