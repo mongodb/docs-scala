@@ -53,8 +53,8 @@ working properly if not addressed before upgrading.
 The breaking changes in this section are categorized by the driver version that
 introduced them. When upgrading driver versions, address all the breaking
 changes between the current and upgrade versions. For example, if you
-are upgrading the driver from v4.0 to v4.5, address all breaking changes from
-the version after v4.0 including any listed under v4.5.
+are upgrading the driver from v4.0 to v4.7, address all breaking changes from
+the version after v4.0 including any listed under v4.7.
 
 .. _scala-breaking-changes-v5.2:
 
