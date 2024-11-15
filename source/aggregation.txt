@@ -207,8 +207,8 @@ Run an Atlas Full-Text Search
 
 To specify a full-text search of one or more fields, you can create
 a ``$search`` pipeline stage. The {+driver-short+} provides the
-``search()`` helper method from the ``Aggregates`` class to create this
-stage. Pass the following parameters to the ``search()`` method:
+``Aggregates.search()`` helper method to create this stage. The ``search()``
+method requires the following arguments:
 
 - ``SearchOperator`` instance: Specifies the field and text to search for
 - ``SearchOptions`` instance: Specifies options to customize the full-text

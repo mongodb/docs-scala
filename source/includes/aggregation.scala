@@ -39,10 +39,11 @@ object Aggregation {
     // end-explain
 
     // start-atlas-search
-    val pipeline = Seq(Aggregates.search(SearchOperator
-                                        .text(SearchPath.fieldPath("name"), "Salt"),
-                                        searchOptions().index("<search index name>")),
-                        Aggregates.project(Projections.include("name"))
+    val operator = SearchOperator.text(SearchPath.fieldPath("name"), "Salt")
+    val options = searchOptions().index("<search index name>")
+    
+    val pipeline = Seq(Aggregates.search(operator, options),
+                       Aggregates.project(Projections.include("name"))
     )
 
     collection.aggregate(pipeline)
