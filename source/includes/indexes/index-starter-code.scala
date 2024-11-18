@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 
+import org.mongodb.scala.model.Indexes
+
 object SearchIndexes {
 
   def main(args: Array[String]): Unit = {
