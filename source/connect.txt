@@ -23,7 +23,7 @@ Connect to MongoDB
    /connect/mongoclient
    /connect/stable-api
    /connect/connection-targets
-   /connect/connection-options
+..   /connect/connection-options
    /connect/tls
 
 Overview
