@@ -18,7 +18,6 @@ object Transaction {
 
       val transactionOptions = TransactionOptions
         .builder()
-        .readPreference(ReadPreference.primary())
         .readConcern(ReadConcern.SNAPSHOT)
         .writeConcern(WriteConcern.MAJORITY)
         .build()
@@ -27,17 +26,20 @@ object Transaction {
       clientSession.startTransaction(transactionOptions)
 
       // Inserts a document into the "movies" collection  
-      moviesCollection
-        .insertOne(
+      val insertObservable = moviesCollection.insertOne(
           clientSession,
           Document("name" -> "The Menu", "runtime" -> 107)
-        )
-        .subscribe((res: InsertOneResult) => println(res))
+      )
+      val insertResult = Await.result(insertObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      println(s"Insert completed: $insertResult")
 
       // Updates a document in the "users" collection
-      usersCollection
-        .updateOne(clientSession, equal("name", "Amy Phillips"), set("name", "Amy Ryan"))
-        .subscribe((res: UpdateResult) => println(res))
+      val updateObservable = usersCollection.updateOne(
+          clientSession,
+          equal("name", "Amy Phillips"), set("name", "Amy Ryan")
+      )
+      val updateResult = Await.result(updateObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      println(s"Update completed: $updateResult")
 
       clientSession
     })

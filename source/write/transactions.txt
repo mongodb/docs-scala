@@ -91,8 +91,7 @@ The code performs the following actions:
 
 - Creates ``MongoCollection`` instances to access the ``movies``
   and ``users`` collections
-- Specifies the read preference, read concern, and write concern for
-  the transaction
+- Specifies the read and write concern for the transaction
 - Starts the transaction
 - Inserts a document into the ``movies`` collection and prints the results
 - Updates a document in the ``users`` collection and prints the results
@@ -103,6 +102,12 @@ The code performs the following actions:
    :dedent:
    :start-after: begin-transaction-method
    :end-before: end-transaction-method
+
+.. note::
+
+   Within a transaction, operations must run in sequence. The preceding
+   code awaits the result of each write operation to ensure that the operations
+   do not run concurrently.
 
 Then, run the following code to perform the transaction. This code
 completes the following actions:
@@ -126,8 +131,8 @@ completes the following actions:
       :language: console
       :visible: false
 
-      AcknowledgedUpdateResult{matchedCount=1, modifiedCount=1, upsertedId=null}
-      AcknowledgedInsertOneResult{insertedId=BsonObjectId{value=...}}
+      Insert completed: AcknowledgedInsertOneResult{insertedId=BsonObjectId{value=...}}
+      Update completed: AcknowledgedUpdateResult{matchedCount=1, modifiedCount=1, upsertedId=null}
 
 Additional Information
 ----------------------
