@@ -13,7 +13,7 @@ Stable API
 .. facet::
    :name: genre
    :values: reference
- 
+
 .. meta::
    :keywords: compatible, backwards, upgrade
 
