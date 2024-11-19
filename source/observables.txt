@@ -27,24 +27,30 @@ An ``Observable`` represents a stream of data emitted by an operation
 over time. To access this data, you can create an ``Observer`` instance
 that subscribes to the ``Observable``. 
 
+.. note::
+
+   The {+driver-short+} is built upon the MongoDB Java Reactive Streams driver.
+   The ``Observable`` class extends the ``Publisher`` class from Java Reactive
+   Streams and includes additional convenience methods to help process results.
+
 How to Process an Observable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run a MongoDB operation and process its data, you must request
-the operation results from an ``Observable``. The ``Observable``
-is a high-level abstraction built on top of a cursor, or a 
+the operation results from an ``Observable``. An ``Observable``
+that returns multiple results is built on top of a cursor, or a 
 mechanism that fetches results in batches. The {+driver-short+}
 handles the cursor internally and exposes the operation
 results through an observable interface.
 
 Each operation returns an instance of the ``Observable[T]`` type, where the ``[T]``
 parameterization corresponds to the data type that the ``Observable``
-stores. Some operations return a specialized observable that
-extends the general ``Observable[T]`` type and provides additional
-methods to filter and process results. These specialized observables
-include the following types:
+handles. Operations that produce a single result, such as the ``findOne()``
+method, return an instance of ``SingleObservable[T]``. Some operations return
+specific ``Observable`` types that provide additional methods to filter and
+process results. The following types allow you to chain operation-specific
+methods to the ``Observable``:
 
-- ``SingleObservable[T]``: Returned by operations that produce a single result
 - ``FindObservable[T]``: Returned by the ``find()`` method
 - ``DistinctObservable[T]``: Returned by the ``distinct()`` method
 - ``AggregateObservable[T]``: Returned by the ``aggregate()`` method
