@@ -37,18 +37,17 @@ How to Process an Observable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run a MongoDB operation and process its data, you must request
-the operation results from an ``Observable``. An ``Observable``
-that returns multiple results is built on top of a cursor, or a 
-mechanism that fetches results in batches. The {+driver-short+}
-handles the cursor internally and exposes the operation
-results through an observable interface.
+the operation results from an ``Observable``. The driver provides the
+``Observable`` interface for operations that return any number of 
+results. Operations that produce no results or one result, such as the
+``findOne()`` method, return a ``SingleObservable[T]``. The ``[T]``
+parameterization corresponds to the data type that the ``SingleObservable``
+handles.
 
-Each operation returns an instance of the ``Observable[T]`` type, where the ``[T]``
-parameterization corresponds to the data type that the ``Observable``
-handles. Operations that produce a single result, such as the ``findOne()``
-method, return an instance of ``SingleObservable[T]``. Some operations return
-specific ``Observable`` types that provide additional methods to filter and
-process results. The following types allow you to chain operation-specific
+Operations that can produce an unbounded number of results return an instance of the
+``Observable[T]`` type. Some operations return specific ``Observable`` types that
+provide additional methods to filter and process results before subscribing to them.
+The following list describes some types that allow you to chain operation-specific
 methods to the ``Observable``:
 
 - ``FindObservable[T]``: Returned by the ``find()`` method
