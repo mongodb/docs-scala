@@ -308,14 +308,14 @@ This driver version introduces the following breaking changes:
   - ``connectionRemoved()``
 
   For more information about the ``com.mongodb.event`` package, see the
-  `API documentation <{+core-api+}/com/mongodb/event/package-summary.html>`__.
+  `API documentation. <{+core-api+}/com/mongodb/event/package-summary.html>`__
 
 .. _scala-breaking-changes-v5.0-list-collections:
 
 - Adds the ``authorizedCollection`` option for the ``listCollections`` command.
   This introduces a breaking binary change in the ``MongoDatabase.listCollectionNames()``
-  methods. This change does not require any changes to source code, but you must
-  recompile any code that uses these methods.
+  method. This change does not require any changes to source code, but you must
+  recompile any code that uses this method.
 
 - Removes the following methods and types related to the
   `Stream
@@ -412,8 +412,8 @@ Version 4.0 Breaking Changes
 This driver version introduces the following breaking changes:
 
 - Removes several classes and methods marked as deprecated in the 3.12 release.
-- Modifies insert helper methods to return an insert result object instead of
-  ``void``.
+- Modifies insert helper methods to return an ``InsertOneResult`` or
+  ``InsertManyResult`` object instead of ``void``.
 - Modifies ``toJson()`` methods in the ``BsonDocument``, ``Document``, and
   ``DbObject`` classes to return a relaxed JSON format instead of a strict JSON
   format. This makes the JSON documents more readable, but can make it more
