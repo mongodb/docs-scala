@@ -30,7 +30,7 @@ Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
 // end-drop-single-index
 
 // start-create-search-index
-val index = Document("mappings" -> Document("dynamic" -> true))
+val index = Document("mappings" -> Document("dynamic" -> <boolean value>))
 val observable = collection.createSearchIndex("<index name>", index)
 Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
 // end-create-search-index
