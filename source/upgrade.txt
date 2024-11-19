@@ -112,7 +112,7 @@ This driver version introduces the following breaking changes:
   - ``BsonProperty``
   - ``BsonRepresentation``
 
-- Changes the data type of the ``connectTimeout`` timeout duration parameter in the
+- Changes the data type of the ``connectTimeout`` timeout duration parameter for the
   ``SocketSettings.Builder.connectTimeout()`` and
   ``SocketSettings.Builder.readTimeout()`` methods. The data type of this
   parameter is now ``long`` instead of ``int``.
@@ -173,7 +173,7 @@ This driver version introduces the following breaking changes:
   ``Decimal128`` values. ``BsonDecimal128.isNumber()`` now returns ``true`` and
   ``BsonDecimal128.asNumber()`` returns the equivalent ``BsonNumber``.
 
-- Removes the `ServerAddress <{+api+}/mongodb-driver-core/com/mongodb/ServerAddress.html>`__
+- Removes the `ServerAddress <{+core-api+}/com/mongodb/ServerAddress.html>`__
   methods ``getSocketAddress()`` and ``getSocketAddresses()``.
 
   Instead of ``getSocketAddress()``, use the ``getByName()`` instance
@@ -182,7 +182,7 @@ This driver version introduces the following breaking changes:
   Instead of ``getSocketAddresses()``, use the ``getAllByName()`` instance
   method of ``java.net.InetAddress``.
 
-- Removes the `UnixServerAddress <{+api+}/mongodb-driver-core/com/mongodb/UnixServerAddress.html>`__
+- Removes the `UnixServerAddress <{+core-api+}/com/mongodb/UnixServerAddress.html>`__
   methods ``getSocketAddress()`` and ``getUnixSocketAddress()``.
 
   Instead of ``getSocketAddress()``, use the ``getByName()`` instance
@@ -228,7 +228,7 @@ This driver version introduces the following breaking changes:
   :manual:`Geospatial Queries </geospatial-queries>` page in the {+mdb-server+} manual.
 
 - Removes the ``oplogReplay`` option from find operations. The
-	following ``oplogReplay`` methods are no longer available:
+  following ``oplogReplay`` methods are no longer available:
 
   - ``DBCursor.oplogReplay()``
   - ``DBCollectionFindOptions.isOplogReplay()``
@@ -252,20 +252,26 @@ This driver version introduces the following breaking changes:
 
 - Removes the following ``ChangeStreamDocument`` constructors:
 
-  - ``ChangeStreamDocument(String, BsonDocument, BsonDocument, BsonDocument, TDocument, TDocument, BsonDocument, ...)``
-  - ``ChangeStreamDocument(String, BsonDocument, BsonDocument, BsonDocument, TDocument, BsonDocument, BsonTimestamp, ...)``
-  - ``ChangeStreamDocument(OperationType, BsonDocument, BsonDocument, BsonDocument, TDocument, BsonDocument, BsonTimestamp, ...)``
+  - ``ChangeStreamDocument(String, BsonDocument, BsonDocument, BsonDocument,
+    TDocument, TDocument, BsonDocument, ...)``
+  - ``ChangeStreamDocument(String, BsonDocument, BsonDocument, BsonDocument,
+    TDocument, BsonDocument, BsonTimestamp, ...)``
+  - ``ChangeStreamDocument(OperationType, BsonDocument, BsonDocument, BsonDocument,
+    TDocument, BsonDocument, BsonTimestamp, ...)``
 
 - Removes the following constructors for events:
 
   - ``CommandEvent(RequestContext, int, ConnectionDescription, String)``
   - ``CommandEvent(int, ConnectionDescription, String)``
   - ``CommandEvent(RequestContext, long, int, ConnectionDescription, String)``
-  - ``CommandFailedEvent(RequestContext, int, ConnectionDescription, String, long, Throwable)``
+  - ``CommandFailedEvent(RequestContext, int, ConnectionDescription, String,
+    long, Throwable)``
   - ``CommandFailedEvent(int, ConnectionDescription, String, long, Throwable)``
-  - ``CommandStartedEvent(RequestContext, int, ConnectionDescription, String, String, BsonDocument)``
+  - ``CommandStartedEvent(RequestContext, int, ConnectionDescription, String,
+    String, BsonDocument)``
   - ``CommandStartedEvent(int, ConnectionDescription, String, String, BsonDocument)``
-  - ``CommandSucceededEvent(RequestContext, int, ConnectionDescription, String, BsonDocument, long)``
+  - ``CommandSucceededEvent(RequestContext, int, ConnectionDescription, String,
+    BsonDocument, long)``
   - ``CommandSucceededEvent(int, ConnectionDescription, String, BsonDocument, long)``
   - ``ConnectionCheckedInEvent(ConnectionId)``
   - ``ConnectionCheckedOutEvent(ConnectionId, long)``
@@ -302,7 +308,7 @@ This driver version introduces the following breaking changes:
   - ``connectionRemoved()``
 
   For more information about the ``com.mongodb.event`` package, see the
-  `API documentation <{+api+}/mongodb-driver-core/com/mongodb/event/package-summary.html>`__.
+  `API documentation <{+core-api+}/com/mongodb/event/package-summary.html>`__.
 
 .. _scala-breaking-changes-v5.0-list-collections:
 
