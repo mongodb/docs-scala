@@ -13,10 +13,16 @@
    :maxdepth: 1
 
    /get-started
+   /connect
+   /databases-collections
    /read
    /write
    /indexes
+   /monitoring
+   /aggregation
+   /security
    /whats-new
+   /read-write-pref
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
    API Documentation <{+api+}/index.html>
@@ -41,11 +47,10 @@ working with data in the :ref:`scala-get-started` tutorial.
 .. Learn how to create and configure a connection to a MongoDB deployment
 .. in the :ref:`scala-connect` section.
 
-.. TODO
-.. Databases and Collections
-.. -------------------------
-.. Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
-.. :ref:`scala-databases-collections` section.
+Databases and Collections
+-------------------------
+Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
+:ref:`scala-databases-collections` section.
 
 What's New
 ----------
@@ -53,17 +58,15 @@ What's New
 For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
 section.
 
-.. TODO
-.. Write Data to MongoDB
-.. ---------------------
+Write Data to MongoDB
+---------------------
 
-.. Learn how you can write data to MongoDB in the :ref:`scala-write` section.
+Learn how you can write data to MongoDB in the :ref:`scala-write` section.
 
-.. TODO
-.. Read Data from MongoDB
-.. ----------------------
+Read Data from MongoDB
+----------------------
 
-.. Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
+Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
 
 .. TODO
 .. Optimize Queries by Using Indexes
@@ -72,19 +75,24 @@ section.
 .. Learn how to work with common types of indexes in the :ref:`scala-indexes`
 .. section.
 
-.. TODO
-.. Transform Your Data with Aggregation
-.. ------------------------------------
 
-.. Learn how to use the {+driver-short+} to perform aggregation operations in the
-.. :ref:`scala-aggregation` section.
+Transform Your Data with Aggregation
+------------------------------------
 
-.. TODO
-.. Configure Operations on Replica Sets
-.. ------------------------------------
+Learn how to use the {+driver-short+} to perform aggregation operations in the
+:ref:`scala-aggregation` section.
 
-.. Learn how to configure read and write operations on a replica set in the
-.. :ref:`scala-read-write-config` section.
+Secure Your Data
+----------------
+
+Learn how to authenticate your application and encrypt your data in the
+:ref:`scala-security` section.
+
+Configure Operations on Replica Sets
+------------------------------------
+
+Learn how to configure read and write operations on a replica set in the
+:ref:`scala-read-write-pref` section.
 
 .. TODO
 .. Issues & Help
@@ -93,12 +101,11 @@ section.
 .. Learn how to report bugs, contribute to the driver, and find more resources for
 .. asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
 
-.. TODO
-.. Compatibility
-.. ------------
+Compatibility
+-------------
 
-.. To learn about the versions of the {+mdb-server+} and the C language that are compatible with 
-.. each version of the {+driver-short+}, see the :ref:`Compatibility <scala-compatibility>` section.
+To learn about the versions of the {+mdb-server+} and the C language that are compatible with 
+each version of the {+driver-short+}, see the :ref:`Compatibility <scala-compatibility>` section.
 
 Developer Hub
 -------------
