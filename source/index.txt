@@ -20,8 +20,10 @@
    /indexes
    /monitoring
    /aggregation
+   /observables
    /security
    /whats-new
+   /upgrade
    /read-write-pref
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
@@ -80,6 +82,12 @@ Transform Your Data with Aggregation
 Learn how to use the {+driver-short+} to perform aggregation operations in the
 :ref:`scala-aggregation` section.
 
+Access Data From an Observable
+------------------------------
+
+Learn how to access results from a read or write operation in the
+:ref:`scala-observables` section.
+
 Secure Your Data
 ----------------
 
@@ -98,6 +106,18 @@ Learn how to configure read and write operations on a replica set in the
 
 .. Learn how to report bugs, contribute to the driver, and find more resources for
 .. asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
+
+What's New
+----------
+
+For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
+section.
+
+Upgrade Library Versions
+------------------------
+ 
+Learn what changes you must make to your application to upgrade driver
+versions in the :ref:`scala-upgrade` section.
 
 Compatibility
 -------------

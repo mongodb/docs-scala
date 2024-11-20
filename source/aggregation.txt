@@ -93,10 +93,10 @@ Consider the following limitations when performing aggregation operations:
   operator has a strict memory limit of 100 megabytes and ignores the
   value passed to the ``allowDiskUse()`` method.
 
-.. _scala-aggregation-example:
+.. _scala-run-aggregation:
 
-Aggregation Example
--------------------
+Run Aggregation Operations
+--------------------------
 
 .. note:: Sample Data
   
@@ -109,14 +109,17 @@ To perform an aggregation, pass a list containing the pipeline stages to
 the ``aggregate()`` method. The {+driver-short+} provides the ``Aggregates`` class,
 which includes helper methods for building pipeline stages. 
 
-.. tip::
+To learn more about pipeline stages and their corresponding ``Aggregates`` helper
+methods, see the following resources:
 
-    To learn more about pipeline stages and their corresponding ``Aggregates`` helper
-    methods, see the following resources:
+- :manual:`Aggregation Stages </reference/operator/aggregation-pipeline/>` in the
+  {+mdb-server+} manual
+- `Aggregates <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__ in the API documentation
 
-    - :manual:`Aggregation Stages </reference/operator/aggregation-pipeline/>` in the
-      {+mdb-server+} manual
-    - `Aggregates <{+api+}/org/mongodb/scala/model/Aggregates$.html>`__ in the API documentation
+.. _scala-aggregation-example:
+
+Filter, Group, and Count Documents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This code example produces a count of the number of bakeries in each borough
 of New York. To do so, it calls the ``aggregate()`` method and passes an aggregation
@@ -166,7 +169,7 @@ information about verbosity, see :manual:`Verbosity Modes </reference/command/ex
 in the {+mdb-server+} manual.
 
 The following example instructs MongoDB to explain the aggregation operation
-from the preceding :ref:`scala-aggregation-example`. The code passes a verbosity
+from the preceding :ref:`scala-aggregation-example` example. The code passes a verbosity
 value of ``ExplainVerbosity.EXECUTION_STATS`` to the ``explain()`` method, which
 configures the method to return statistics describing the execution of the winning
 plan:
@@ -190,6 +193,56 @@ plan:
       {"queryPlan": {"stage": "GROUP", "planNodeId": 3, "inputStage": {"stage": "COLLSCAN",
       "planNodeId": 1, "filter": {"cuisine": {"$eq": "Bakery"}}, "direction": "forward"}},
       ...}
+
+Run an Atlas Full-Text Search
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. tip:: Only Available on Atlas for MongoDB v4.2 and later
+
+   This aggregation pipeline operator is only available for collections hosted
+   on :atlas:`MongoDB Atlas </>` clusters running v4.2 or later that are
+   covered by an :atlas:`Atlas Search index </reference/atlas-search/index-definitions/>`.
+
+To specify a full-text search of one or more fields, you can create
+a ``$search`` pipeline stage. The {+driver-short+} provides the
+``Aggregates.search()`` helper method to create this stage. The ``search()``
+method requires the following arguments:
+
+- ``SearchOperator`` instance: Specifies the field and text to search for.
+- ``SearchOptions`` instance: Specifies options to customize the full-text
+  search. You must set the ``index`` option to the name of the Atlas Search
+  index to use.
+
+This example creates pipeline stages to perform the following actions:
+
+- Search the ``name`` field for text that contains the word ``"Salt"``
+- Project only the ``_id`` and ``name`` values of matching documents
+
+.. io-code-block::
+   :copyable:
+
+   .. input:: /includes/aggregation.scala
+      :start-after: start-atlas-search
+      :end-before: end-atlas-search
+      :language: scala
+      :dedent:
+
+   .. output:: 
+      :visible: false
+
+      {"_id": {"$oid": "..."}, "name": "Fresh Salt"}
+      {"_id": {"$oid": "..."}, "name": "Salt & Pepper"}
+      {"_id": {"$oid": "..."}, "name": "Salt + Charcoal"}
+      {"_id": {"$oid": "..."}, "name": "A Salt & Battery"}
+      {"_id": {"$oid": "..."}, "name": "Salt And Fat"}
+      {"_id": {"$oid": "..."}, "name": "Salt And Pepper Diner"}
+
+.. important::
+
+    To run the preceding example, you must create an Atlas Search index on the ``restaurants``
+    collection that covers the ``name`` field. Then, replace the ``"<search index name>"``
+    placeholder with the name of the index. To learn more about Atlas Search indexes, see
+    the :ref:`scala-atlas-search-index` guide.
 
 Additional Information
 ----------------------
