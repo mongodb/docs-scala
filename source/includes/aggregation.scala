@@ -2,6 +2,9 @@ import org.mongodb.scala._
 import org.mongodb.scala.model.{ Aggregates, Filters, Accumulators }
 import org.mongodb.scala.bson.Document
 import com.mongodb.ExplainVerbosity
+import org.mongodb.scala.model.Projections
+import org.mongodb.scala.model.search._
+import org.mongodb.scala.model.search.SearchOptions.searchOptions
 
 object Aggregation {
 
@@ -34,6 +37,18 @@ object Aggregation {
               .subscribe((doc: Document) => println(doc.toJson()),
                         (e: Throwable) => println(s"There was an error: $e"))
     // end-explain
+
+    // start-atlas-search
+    val operator = SearchOperator.text(SearchPath.fieldPath("name"), "Salt")
+    val options = searchOptions().index("<search index name>")
+    
+    val pipeline = Seq(Aggregates.search(operator, options),
+                       Aggregates.project(Projections.include("name")))
+
+    collection.aggregate(pipeline)
+              .subscribe((doc: Document) => println(doc.toJson()),
+                        (e: Throwable) => println(s"There was an error: $e"))
+    // end-atlas-search
 
     Thread.sleep(1000)
     mongoClient.close()
