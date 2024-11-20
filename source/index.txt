@@ -20,6 +20,7 @@
    /indexes
    /monitoring
    /aggregation
+   /observables
    /security
    /whats-new
    /read-write-pref
@@ -81,6 +82,12 @@ Transform Your Data with Aggregation
 
 Learn how to use the {+driver-short+} to perform aggregation operations in the
 :ref:`scala-aggregation` section.
+
+Access Data From an Observable
+------------------------------
+
+Learn how to access results from a read or write operation in the
+:ref:`scala-observables` section.
 
 Secure Your Data
 ----------------
