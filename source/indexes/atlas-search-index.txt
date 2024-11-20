@@ -87,13 +87,8 @@ You can use the ``listSearchIndexes()`` method to return all Atlas Search indexe
 collection.
 
 The following code example shows how to print a list of the search indexes in
-a collection by using the ``Observable`` returned by the ``listSearchIndexes()``:
-
-.. .. literalinclude:: /includes/indexes/atlas-search-index.scala
-..    :language: scala
-..    :start-after: start-list-search-indexes
-..    :end-before: end-list-search-indexes
-..    :dedent:
+a collection by subscribing to the ``Observable`` returned by the ``listSearchIndexes()``
+method:
 
 .. io-code-block::
    :copyable: true
@@ -109,7 +104,6 @@ a collection by using the ``Observable`` returned by the ``listSearchIndexes()``
 
       {"id": "...", "name": "<index name 1>", "type": "search", "status": "READY", "queryable": true, ... }
       {"id": "...", "name": "<index name 2>", "type": "search", "status": "READY", "queryable": true, ... }
-      Completed
 
 .. _scala-atlas-search-index-update:
 
