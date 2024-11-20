@@ -43,8 +43,7 @@ object Aggregation {
     val options = searchOptions().index("<search index name>")
     
     val pipeline = Seq(Aggregates.search(operator, options),
-                       Aggregates.project(Projections.include("name"))
-    )
+                       Aggregates.project(Projections.include("name")))
 
     collection.aggregate(pipeline)
               .subscribe((doc: Document) => println(doc.toJson()),
