@@ -63,6 +63,9 @@ Version 5.2 Breaking Changes
 
 This driver version introduces the following breaking changes:
 
+- Drops support for {+mdb-server+} v3.6. To learn more about this change,
+  see the :ref:`<scala-server-release-change-v5.2>` section.
+
 - Revises the `mongodb-crypt <https://mvnrepository.com/artifact/org.mongodb/mongodb-crypt>`__
   dependency versioning to match the versioning for the JVM drivers. Future versions of
   ``mongodb-crypt`` will be released alongside the driver and will share the same version number.
