@@ -113,7 +113,7 @@ To access data retrieved by a read operation, create an ``Observable[T]``
 to store the operation results. Then, subscribe to the observable and
 override the ``Observer`` class callback methods to process the results.
 
-This example queries the ``restaurants`` database for documents
+This example queries the ``restaurants`` collection for documents
 in which the ``cuisine`` value is ``"Czech"``. To retrieve
 and process results, the example assigns a ``Observable[Document]``
 to the operation and performs the following actions:
