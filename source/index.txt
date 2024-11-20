@@ -23,6 +23,7 @@
    /observables
    /security
    /whats-new
+   /upgrade
    /read-write-pref
    /compatibility
    View the Source <https://github.com/mongodb/mongo-java-driver>
@@ -52,12 +53,6 @@ Databases and Collections
 -------------------------
 Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
 :ref:`scala-databases-collections` section.
-
-What's New
-----------
-
-For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
-section.
 
 Write Data to MongoDB
 ---------------------
@@ -107,6 +102,18 @@ Learn how to configure read and write operations on a replica set in the
 
 .. Learn how to report bugs, contribute to the driver, and find more resources for
 .. asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
+
+What's New
+----------
+
+For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
+section.
+
+Upgrade Library Versions
+------------------------
+ 
+Learn what changes you must make to your application to upgrade driver
+versions in the :ref:`scala-upgrade` section.
 
 Compatibility
 -------------
