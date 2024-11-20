@@ -40,17 +40,26 @@ Get Started
 Learn how to install the driver, establish a connection to MongoDB, and begin
 working with data in the :ref:`scala-get-started` tutorial.
 
-.. TODO
-.. Connect to MongoDB
-.. ------------------
+Connect to MongoDB
+------------------
 
-.. Learn how to create and configure a connection to a MongoDB deployment
-.. in the :ref:`scala-connect` section.
+Learn how to create and configure a connection to a MongoDB deployment
+in the :ref:`scala-connect` section.
 
 Databases and Collections
 -------------------------
 Learn how to use the {+driver-short+} to work with MongoDB databases and collections in the
 :ref:`scala-databases-collections` section.
+
+Read Data from MongoDB
+----------------------
+
+Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
+
+Write Data to MongoDB
+---------------------
+
+Learn how you can write data to MongoDB in the :ref:`scala-write` section.
 
 What's New
 ----------
@@ -58,22 +67,11 @@ What's New
 For a list of new features and changes in each version, see the :ref:`What's New <scala-whats-new>`
 section.
 
-Write Data to MongoDB
----------------------
+Optimize Queries by Using Indexes
+---------------------------------
 
-Learn how you can write data to MongoDB in the :ref:`scala-write` section.
-
-Read Data from MongoDB
-----------------------
-
-Learn how you can retrieve data from MongoDB in the :ref:`scala-read` section.
-
-.. TODO
-.. Optimize Queries by Using Indexes
-.. ---------------------------------
-
-.. Learn how to work with common types of indexes in the :ref:`scala-indexes`
-.. section.
+Learn how to work with common types of indexes in the :ref:`scala-indexes`
+section.
 
 
 Transform Your Data with Aggregation

@@ -53,10 +53,9 @@ from which you can access the query results. The ``FindObservable`` class also
 provides additional methods that you can chain to a ``FindObservable`` instance to modify
 its behavior, such as ``first()``.
 
-.. TODO:
- .. tip::
+.. tip::
     
-    .. To learn more about query filters, see the :ref:`scala-specify-query` guide.
+   To learn more about query filters, see the :ref:`scala-specify-query` guide.
 
 .. _scala-retrieve-find-multiple:
 
@@ -232,10 +231,10 @@ For a full list of ``FindObservable`` member methods, see the API documentation 
 Additional Information
 ----------------------
 
-.. TODO: To learn more about query filters, see the :ref:`scala-specify-query` guide.
+To learn more about query filters, see the :ref:`scala-specify-query` guide.
 
-.. TODO: To view code examples of retrieving documents with the {+driver-short+},
- see :ref:`scala-read`.
+To view code examples that retrieve documents by using the {+driver-short+},
+see :ref:`scala-read`.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

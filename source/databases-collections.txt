@@ -138,8 +138,10 @@ To query for only the names of the collections in the database, call the
       test_collection
       example_collection
 
-.. TODO
-.. For more information about iterating over a cursor, see :ref:`scala-cursors`. 
+.. tip::
+
+   For more information about iterating over a ``Future``, see :ref:`scala-observables-futures`
+   in the Access Data From an Observable guide. 
 
 Delete a Collection
 -------------------
