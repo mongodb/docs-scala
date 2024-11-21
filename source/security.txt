@@ -22,7 +22,7 @@ Secure Your Data
     :titlesonly:
     :maxdepth: 1
 
-    /security/auth
+    Authentication </security/auth>
 
 Overview
 --------

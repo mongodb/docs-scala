@@ -22,10 +22,10 @@ Optimize Queries by Using Indexes
    :titlesonly:
    :maxdepth: 1
    
-   /indexes/single-field-index
-   /indexes/compound-index
-   /indexes/multikey-index
-   /indexes/atlas-search-index
+   Single Field </indexes/single-field-index>
+   Compound </indexes/compound-index>
+   Multikey </indexes/multikey-index>
+   Atlas Search </indexes/atlas-search-index>
 
 Overview
 --------
