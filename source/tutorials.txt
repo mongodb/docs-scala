@@ -24,7 +24,7 @@ Tutorials
    Text Search </tutorials/text-search/>
    Geospatial Search </tutorials/geospatial/>
    GridFS </tutorials/gridfs/>
-   Run Commands </tutorials/command/>
+   Run Database Commands </tutorials/command/>
 
 - :ref:`scala-connect`
 - :ref:`scala-db-coll`
