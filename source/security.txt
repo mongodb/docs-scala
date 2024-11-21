@@ -23,6 +23,7 @@ Secure Your Data
     :maxdepth: 1
 
     /security/auth
+    /security/encrypt
 
 Overview
 --------
@@ -33,3 +34,6 @@ following sections:
 
 - Learn how to use different authentication mechanisms to secure your data in
   the :ref:`Authentication Mechanisms <scala-auth>` guide.
+
+- Learn how to encrypt data before sending it to MongoDB in the
+  :ref:`In-Use Encryption <scala-encrypt>` guide.
