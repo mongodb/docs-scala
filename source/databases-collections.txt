@@ -140,7 +140,7 @@ To query for only the names of the collections in the database, call the
 
 .. tip::
 
-   For more information about iterating over a ``Future``, see :ref:`scala-observables-futures`
+   For more information about iterating over a ``Future`` instance, see :ref:`scala-observables-futures`
    in the Access Data From an Observable guide. 
 
 Delete a Collection
