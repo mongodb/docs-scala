@@ -75,7 +75,9 @@ A standard connection string includes the following components:
 
      - Optional. A query string that specifies connection-specific
        options as ``<name>=<value>`` pairs.
-       .. TODO: See :ref:`scala-connection-options` for a full description of these options.
+       
+.. TODO: Add as the last sentence of ``?<options>`` - See :ref:`scala-connection-options`
+  for a full description of these options.
 
 For more information about creating a connection string, see
 :manual:`Connection Strings </reference/connection-string>` in the

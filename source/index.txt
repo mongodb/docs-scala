@@ -23,6 +23,7 @@
    Data Aggregation </aggregation>
    Observables </observables>
    Security </security>
+   Issues & Help </issues-and-help>
    What's New </whats-new>
    Upgrade </upgrade>
    Compatibility </compatibility>
@@ -101,12 +102,11 @@ Secure Your Data
 Learn how to authenticate your application and encrypt your data in the
 :ref:`scala-security` section.
 
-.. TODO
-.. Issues & Help
-.. -------------
+Issues & Help
+-------------
 
-.. Learn how to report bugs, contribute to the driver, and find more resources for
-.. asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
+Learn how to report bugs, contribute to the driver, and find more resources for
+asking questions and receiving help in the :ref:`Issues & Help <scala-issues-and-help>` section.
 
 What's New
 ----------
