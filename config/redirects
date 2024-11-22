@@ -40,11 +40,9 @@ raw: ${prefix}/stable -> ${base}/current/
 (v5.2-master]: ${prefix}/${version}/tutorials/indexes/ -> ${base}/${version}/indexes/
 (v5.2-master]: ${prefix}/${version}/tutorials/aggregation/ -> ${base}/${version}/aggregation/
 (v5.2-master]: ${prefix}/${version}/reference/monitoring/ -> ${base}/${version}/monitoring/
-(v5.2-master]: ${prefix}/${version}/ -> ${base}/${version}/security/
 (v5.2-master]: ${prefix}/${version}/tutorials/encrypt/ -> ${base}/${version}/security/encrypt/
 (v5.2-master]: ${prefix}/${version}/tutorials/connect/authentication/ -> ${base}/${version}/security/auth/
 (v5.2-master]: ${prefix}/${version}/reference/observables -> ${base}/${version}/observables/
-(v5.2-master]: ${prefix}/${version}/ -> ${base}/${version}/upgrade/
 (v5.2-master]: ${prefix}/${version}/validate-signatures/ -> ${base}/${version}/
 (v5.2-master]: ${prefix}/${version}/builders/ -> ${base}/${version}/
 (v5.2-master]: ${prefix}/${version}/bson/ -> ${base}/${version}/
