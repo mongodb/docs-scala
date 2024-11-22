@@ -16,8 +16,9 @@ object AtlasSearchIndexes {
     {
       // start-create-search-index
       val index = Document("mappings" -> Document("dynamic" -> true))
-      val observable = collection.createSearchIndex("<index name>", index)
-      Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      collection.createSearchIndex("<index name>", index)
+                .subscribe((result: String) => ())
+
       // end-create-search-index
     }
 
@@ -25,33 +26,29 @@ object AtlasSearchIndexes {
       // start-create-search-indexes
       val indexOne = SearchIndexModel("<first index name>", Document("mappings" -> Document("dynamic" -> true, "fields" -> Document("field1" -> Document("type" -> "string")))))
       val indexTwo = SearchIndexModel("<second index name>", Document("mappings" -> Document("dynamic" -> false, "fields" -> Document("field2" -> Document("type" -> "string")))))
-      val observable = collection.createSearchIndexes(List(indexOne, indexTwo))
-      Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      collection.createSearchIndexes(List(indexOne, indexTwo))
+                .subscribe((result: String) => ())
       // end-create-search-indexes
     }
 
     {
       // start-list-search-indexes
-      val observable = collection.listSearchIndexes()
-      observable.subscribe(new Observer[Document] {
-        override def onNext(index: Document): Unit = println(index.toJson())
-        override def onError(e: Throwable): Unit = println("Error: " + e.getMessage)
-        override def onComplete(): Unit = println("Completed")
-      })
+      collection.listSearchIndexes()
+                .subscribe((result: Document) => println(result.toJson()))
       // end-list-search-indexes
     }
 
     {
       // start-update-search-indexes
       val updateIndex = Document("mappings" -> Document("dynamic" -> false))
-      val observable = collection.updateSearchIndex("<index to update>", updateIndex)
-      Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      collection.updateSearchIndex("<index to update>", updateIndex)
+                .subscribe((result: Unit) => ())
       // end-update-search-indexes
     }
 
     // start-drop-search-index
-    val observable = collection.dropSearchIndex("<index name>")
-    Await.result(observable.toFuture(), Duration(10, TimeUnit.SECONDS))
+    collection.dropSearchIndex("<index name>")
+              .subscribe((result: Unit) => ())    
     // end-drop-search-index
 
     Thread.sleep(1000)

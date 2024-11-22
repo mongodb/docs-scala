@@ -25,10 +25,12 @@ object DatabasesCollections {
       // end-access-collection
     }
 
-    // start-create-collection
-    val createObservable = database.createCollection("example_collection")
-    Await.result(createObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
-    // end-create-collection
+    {
+      // start-create-collection
+      val createObservable = database.createCollection("example_collection")
+      Await.result(createObservable.toFuture(), Duration(10, TimeUnit.SECONDS))
+      // end-create-collection
+    }
 
     {
       // start-find-collections
@@ -51,16 +53,19 @@ object DatabasesCollections {
       // end-delete-collection
     }
 
-    // start-database-read-prefs
-    val databaseWithReadPrefs =
-        mongoClient.getDatabase("test_database").withReadPreference(ReadPreference.secondary())
-    // end-database-read-prefs
+    {
 
-    // start-collection-read-prefs
-    val collectionWithReadPrefs =
-        database.getCollection("test_collection").withReadPreference(ReadPreference.secondary())
-    // end-collection-read-prefs
+      // start-database-read-prefs
+      val databaseWithReadPrefs =
+          mongoClient.getDatabase("test_database").withReadPreference(ReadPreference.secondary())
+      // end-database-read-prefs
 
+      // start-collection-read-prefs
+      val collectionWithReadPrefs =
+          database.getCollection("test_collection").withReadPreference(ReadPreference.secondary())
+      // end-collection-read-prefs
+
+    }
 
     {
       // start-tags

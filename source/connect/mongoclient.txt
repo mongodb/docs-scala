@@ -40,9 +40,6 @@ Connection URI
 
 A standard connection string includes the following components:
 
-.. TODO, add this as last sentence for ``username:password`` description once a scala auth page is made: 
-.. For more information about the ``authSource`` connection option, see :ref:`scala-sync-auth`. 
-
 .. list-table::
    :widths: 20 80
    :header-rows: 1
@@ -59,6 +56,8 @@ A standard connection string includes the following components:
 
      - Optional. Authentication credentials. If you include these, the client
        authenticates the user against the database specified in ``authSource``.
+       To learn more about the ``authSource`` connection option, see the
+       :ref:`scala-auth` guide.
 
    * - ``host[:port]``
 
@@ -75,9 +74,8 @@ A standard connection string includes the following components:
    * - ``?<options>``
 
      - Optional. A query string that specifies connection-specific
-       options as ``<name>=<value>`` pairs. See
-       :ref:`scala-connection-options` for a full description of
-       these options.
+       options as ``<name>=<value>`` pairs.
+       .. TODO: See :ref:`scala-connection-options` for a full description of these options.
 
 For more information about creating a connection string, see
 :manual:`Connection Strings </reference/connection-string>` in the

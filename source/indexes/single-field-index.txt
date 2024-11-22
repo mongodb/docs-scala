@@ -26,7 +26,7 @@ sort performance. They also support :manual:`TTL Indexes </core/index-ttl>`
 that automatically remove documents from a collection after a certain
 amount of time or at a specified clock time.
 
-When creating a single-field index, you must specify the following
+When creating a single field index, you must specify the following
 details:
 
 - The field on which to create the index
@@ -35,7 +35,7 @@ details:
 
 .. note::
 
-   The default ``_id_`` index is an example of a single-field index.
+   The default ``_id_`` index is an example of a single field index.
    This index is automatically created on the ``_id`` field when a new
    collection is created.
 
@@ -48,7 +48,7 @@ The examples in this guide use the ``movies`` collection in the
 load the sample datasets, see the :atlas:`Get Started with Atlas
 </getting-started>` guide.
 
-Create Single-Field Index
+Create Single Field Index
 -------------------------
 
 To run the examples in this guide, you must include the following import 

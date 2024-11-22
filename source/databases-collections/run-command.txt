@@ -95,11 +95,11 @@ You can set a read preference for the command execution by passing a
 ``ReadPreference`` instance as a parameter to ``runCommand()``, as
 shown in the following code:
    
-   .. literalinclude:: /includes/run-command.scala
-      :language: scala
-      :dedent:
-      :start-after: start-readpref
-      :end-before: end-readpref
+.. literalinclude:: /includes/run-command.scala
+   :language: scala
+   :dedent:
+   :start-after: start-readpref
+   :end-before: end-readpref
 
 .. tip::
 
