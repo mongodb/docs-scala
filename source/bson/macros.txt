@@ -1,8 +1,8 @@
 .. _scala-macros:
 
-======
-Macros
-======
+========================================================
+Macros Helper- Create a Codec to Convert Case Class Data
+========================================================
 
 .. facet::
    :name: genre
