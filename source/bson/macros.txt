@@ -1,7 +1,7 @@
 .. _scala-macros:
 
 ========================================================
-Macros Helper- Create a Codec to Convert Case Class Data
+Macros Helper: Create a Codec to Convert Case Class Data
 ========================================================
 
 .. facet::
