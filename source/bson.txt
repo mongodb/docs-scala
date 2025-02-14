@@ -14,7 +14,7 @@ BSON Implementation
 .. toctree::
 
    Documents </bson/documents/>
-   Macros </bson/macros/>
+   Macros Helper </bson/macros/>
    Extended JSON </bson/extended-json/>
 
 The BSON library comprehensively supports `BSON
