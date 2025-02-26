@@ -139,7 +139,7 @@ result. You can specify a sort in an ``UpdateOptions`` instance to apply
 an order to matched documents before the driver performs the update
 operation, as shown in the following code:
 
-.. code-block:: java
+.. code-block:: scala
 
    val options = UpdateOptions.sort(ascending("name"))
 
@@ -183,7 +183,7 @@ result. You can specify a sort in a ``ReplaceOptions`` instance to apply
 an order to matched documents before the driver performs the replace
 operation, as shown in the following code:
 
-.. code-block:: java
+.. code-block:: scala
 
    val options = ReplaceOptions.sort(ascending("name"))
 
@@ -385,6 +385,7 @@ The models and their corresponding instance methods are described
 in the table below.
 
 .. list-table::
+   :widths: 20 20 15 45
    :header-rows: 1
    
    * - Model
@@ -524,7 +525,7 @@ existing documents in the ``db.people`` and ``db.things`` collections:
 .. literalinclude:: /includes/write/client-bulk-write.scala
    :start-after: start-replace-models
    :end-before: end-replace-models
-   :language: java
+   :language: scala
    :copyable:
    :dedent:
 
@@ -563,7 +564,6 @@ The following example performs multiple write operations by using the
    .. input:: /includes/write/client-bulk-write.scala
       :start-after: start-perform
       :end-before: end-perform
-      :emphasize-lines: 18-19
       :language: scala
       :dedent:
 
@@ -577,7 +577,7 @@ If any of the write operations fail, the driver raises a
 ``ClientBulkWriteException.getWriteErrors()`` method, which provides details of the
 individual failure.
 
-.. _java-rs-client-bulk-write-options:
+.. _scala-client-bulk-write-options:
 
 Customize Bulk Write
 ~~~~~~~~~~~~~~~~~~~~
@@ -606,7 +606,6 @@ insert multiple documents.
 .. literalinclude:: /includes/write/client-bulk-write.scala
    :start-after: start-options
    :end-before: end-options
-   :emphasize-lines: 3-5, 23-24
    :language: scala
    :copyable:
    :dedent:
