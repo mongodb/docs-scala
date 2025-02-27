@@ -54,8 +54,8 @@ write operation at the collection level, pass a ``Seq`` of ``WriteModel``
 documents to the ``MongoCollection.bulkWrite()`` method. A ``WriteModel`` is a 
 model that represents a write operation.
 
-For each write operation you want to perform, create an instance of one of
-the following classes that inherit from ``WriteModel``:
+For each write operation that you want to perform, create an instance of
+one of the following classes that inherit from ``WriteModel``:
 
 - ``InsertOneModel``
 - ``UpdateOneModel``
@@ -120,7 +120,7 @@ To update a document, create an instance of ``UpdateOneModel`` and pass
 the following arguments:
 
 - **Query filter** that specifies the criteria used to match documents in your collection.
-- **Update operation** you want to perform. To learn more about update
+- **Update operation** that you want to perform. To learn more about update
   operations, see the :manual:`Field Update Operators
   </reference/operator/update-field/>` guide in the {+mdb-server+} manual.
 
@@ -228,8 +228,8 @@ The following example creates an instance of ``DeleteManyModel``:
 Perform the Bulk Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After you define a model instance for each operation you want to perform,
-pass a ``Seq`` instance containing the models to the
+After you define a model instance for each operation that you want to
+perform, pass a ``Seq`` instance containing the models to the
 ``MongoCollection.bulkWrite()`` method. By default, the method runs the
 operations in the order specified by the list of models.
 
@@ -267,7 +267,7 @@ Customize Bulk Write
 ~~~~~~~~~~~~~~~~~~~~
 
 The ``MongoCollection.bulkWrite()`` method optionally accepts a
-``BulkWriteOptions`` parameter, which specifies options you can use to
+``BulkWriteOptions`` parameter, which specifies options that you can use to
 configure the bulk write operation. If you don't specify any options,
 the driver performs the bulk operation with default settings. To modify
 the behavior of the write operation, pass the class instance as the last
@@ -381,8 +381,8 @@ For example, an instance of ``ClientNamespacedInsertOneModel`` represents an
 operation to insert one document, and you can create this model by using
 the ``ClientNamespacedWriteModel.insertOne()`` method.
 
-The models and their corresponding instance methods are described
-in the table below.
+The following table describes the models and their corresponding
+instance methods:
 
 .. list-table::
    :widths: 20 20 15 45
@@ -529,10 +529,11 @@ existing documents in the ``db.people`` and ``db.things`` collections:
    :copyable:
    :dedent:
 
-After this example runs successfully, the document that has an ``_id`` value of ``1`` 
-in the ``people`` collection is replaced with a new document. The document in 
-the ``things`` collection that has an ``_id`` value of ``1`` 
-is replaced with a new document.
+The preceding code example replaces the following documents with new
+documents:
+
+- Document in the ``people`` collection that has an ``_id`` value of ``1`` 
+- Document in the ``things`` collection that has an ``_id`` value of ``1`` 
 
 If multiple documents match the query filter specified in
 a ``ClientNamespacedReplaceOneModel`` instance, the operation replaces the
@@ -551,9 +552,9 @@ Perform the Bulk Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you define a ``ClientNamespacedWriteModel`` instance for each
-operation you want to perform, pass a list of these instances to the
+operation that you want to perform, pass a list of these instances to the
 client ``bulkWrite()`` method. By default, the method runs the
-operations in the order they're specified.
+operations in the order that you specify them.
 
 The following example performs multiple write operations by using the
 ``bulkWrite()`` method:
@@ -574,8 +575,8 @@ The following example performs multiple write operations by using the
 If any of the write operations fail, the driver raises a
 ``ClientBulkWriteException`` and does not perform any further individual operations.
 ``ClientBulkWriteException`` includes a ``BulkWriteError`` that can be accessed by using the
-``ClientBulkWriteException.getWriteErrors()`` method, which provides details of the
-individual failure.
+``ClientBulkWriteException.getWriteErrors()`` method, which provides
+information about the failure.
 
 .. _scala-client-bulk-write-options:
 
@@ -590,18 +591,19 @@ Order of Execution
 ``````````````````
 
 By default, the driver runs the individual operations in a bulk
-operation in the order that you specify them until an error occurs, or
-until the operation completes successfully.
+operation in the order that you specify them. The driver runs the
+operations until an error occurs, or until the bulk operations
+successfully complete.
 
 However, you can pass ``false`` to the ``ordered()`` method when creating
 a ``ClientBulkWriteOptions`` instance to direct the driver to perform
-write operations in an unordered way. When using the unordered option,
-an error-producing operation does not prevent the driver from running
-other write operations in the bulk write operation.
+write operations in an unordered way. If you pass ``false``, the driver
+attempts to run all write operations in the bulk write operation, even if one
+operation produces an error.
 
 The following code sets the ``ordered`` option to ``false`` in an
 instance of ``ClientBulkWriteOptions`` and performs a bulk write operation to 
-insert multiple documents.
+insert multiple documents:
 
 .. literalinclude:: /includes/write/client-bulk-write.scala
    :start-after: start-options
@@ -610,9 +612,9 @@ insert multiple documents.
    :copyable:
    :dedent:
 
-Even though the write operation inserting a document with a duplicate key results
-in an error, the other operations are performed because the write operation is
-unordered.
+Because the write operation is unordered, the driver performs all the
+non-erroring operations even though the write operation that inserts a
+document with a duplicate key results in an error.
 
 Additional Information
 ----------------------
