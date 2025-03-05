@@ -15,7 +15,9 @@ Installation
    :keywords: dependency, reactive streams, add package, sbt, maven
 
 The recommended way to get started with the {+driver-short+} in your
-project is by using a dependency management system.
+project is by using a dependency management system. To manually
+download the MongoDB Scala driver, see the `Scala driver Maven repository
+<https://mvnrepository.com/artifact/org.mongodb.scala/mongo-scala-driver>`__.
 
 The following sections contain the Reactive Streams-based Scala
 implementation for asynchronous stream processing with non-blocking back
@@ -37,8 +39,8 @@ Scala 2.12 Based Driver
          <dependencies>
              <dependency>
                  <groupId>org.mongodb.scala</groupId>
-                 <artifactId>mongo-scala-driver</artifactId>
-                 <version>{+full-version+}_2.12</version>
+                 <artifactId>mongo-scala-driver_2.12</artifactId>
+                 <version>{+full-version+}</version>
              </dependency>
          </dependencies>
 
@@ -68,8 +70,8 @@ Scala 2.11 Based Driver
          <dependencies>
              <dependency>
                  <groupId>org.mongodb.scala</groupId>
-                 <artifactId>mongo-scala-driver</artifactId>
-                 <version>{+full-version+}_2.11</version>
+                 <artifactId>mongo-scala-driver_2.11</artifactId>
+                 <version>{+full-version+}</version>
              </dependency>
          </dependencies>
 

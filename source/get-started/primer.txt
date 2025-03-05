@@ -3,9 +3,9 @@
 
 .. _scala-primer:
 
-======
-Primer
-======
+========================================
+Primer: Reactive Streams and Observables
+========================================
 
 .. facet::
    :name: genre

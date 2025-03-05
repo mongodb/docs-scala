@@ -3,9 +3,9 @@
 
 .. _scala-builders-sorts:
 
-=====
-Sorts
-=====
+===================
+Sorts Builder Class 
+===================
 
 .. facet::
    :name: genre

@@ -3,9 +3,9 @@
 
 .. _scala-builders-indexes:
 
-=======
-Indexes
-=======
+=====================
+Indexes Builder Class
+=====================
 
 .. facet::
    :name: genre

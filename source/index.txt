@@ -15,12 +15,12 @@
    :titlesonly:
    :maxdepth: 1
 
-   /installation/
-   /get-started/
-   /tutorials/
-   /reference/
-   /bson/
-   /builders/
+   Installation </installation>
+   Get Started </get-started>
+   Tutorials </tutorials>
+   Reference </reference>
+   BSON Implementation </bson>
+   Builders </builders>
    View the Source <https://github.com/mongodb/mongo-java-driver>
    API Documentation <{+api+}/index.html>
    Previous Versions <https://mongodb.github.io/mongo-java-driver/>
@@ -54,7 +54,7 @@ runnable project by following the :ref:`scala-quickstart` guide.
 To access MongoDB by using Java instead of Scala, use the `Java Sync
 Driver <https://www.mongodb.com/docs/drivers/java/sync/current/>`__ or
 the asynchronous `Java Reactive Streams Driver
-<https://www.mongodb.com/docs/languages/java/drivers/java-rs/current/>`__.
+<https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/>`__.
 
 Compatibility
 -------------
