@@ -25,7 +25,7 @@ full-version = "{+version+}.4"
 api = "https://mongodb.github.io/mongo-java-driver/{+version+}/apidocs/mongo-scala-driver"
 driver-source-gh = "https://github.com/mongodb/mongo-java-driver"
 rs-docs = "https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/org/reactivestreams"
-current-url = "https://www.mongodb.com/docs/languages/scala/scala-driver/current/"
+current-url = "https://www.mongodb.com/docs/languages/scala/scala-driver/current"
 
 [[banners]]
 targets = ["*"]
