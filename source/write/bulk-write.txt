@@ -592,8 +592,8 @@ Order of Execution
 
 By default, the driver runs the individual operations in a bulk
 operation in the order that you specify them. The driver runs the
-operations until an error occurs, or until the bulk operations
-successfully complete.
+operations until an error occurs, or until the total bulk operation
+successfully completes.
 
 However, you can pass ``false`` to the ``ordered()`` method when creating
 a ``ClientBulkWriteOptions`` instance to direct the driver to perform
@@ -625,12 +625,6 @@ To learn how to perform individual write operations, see the following guides:
 - :ref:`scala-write-update`
 - :ref:`scala-write-delete`
 - :ref:`scala-write-replace`
-
-API Documentation
-~~~~~~~~~~~~~~~~~
-
-To learn more about any of the methods or types discussed in this
-guide, see the following API documentation:
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

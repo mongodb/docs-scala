@@ -13,12 +13,12 @@ object Main {
     {
       // start-insert-models
       val personToInsert = ClientNamespacedWriteModel.insertOne(
-        new MongoNamespace("db", "people"),
+        MongoNamespace("db", "people"),
         Document("name" -> "Julia Smith")
       )
 
       val thingToInsert = ClientNamespacedWriteModel.insertOne(
-        new MongoNamespace("db", "things"),
+        MongoNamespace("db", "things"),
         Document("object" -> "washing machine")
       );
       // end-insert-models
@@ -26,13 +26,13 @@ object Main {
     {
       // start-update-models
       val personUpdate = ClientNamespacedWriteModel.updateOne(
-        new MongoNamespace("db", "people"),
+        MongoNamespace("db", "people"),
         equal("name", "Freya Polk"),
         inc("age", 1)
       )
 
       val thingUpdate = ClientNamespacedWriteModel.updateMany(
-        new MongoNamespace("db", "things"),
+        MongoNamespace("db", "things"),
         equal("category", "electronic"),
         set("manufacturer", "Premium Technologies")
       )
@@ -42,13 +42,13 @@ object Main {
     {
       // start-replace-models
       val personReplacement = ClientNamespacedWriteModel.replaceOne(
-        new MongoNamespace("db", "people"),
+        MongoNamespace("db", "people"),
         equal("_id", 1),
         Document("name" -> "Frederic Hilbert")
       )
 
       val thingReplacement = ClientNamespacedWriteModel.replaceOne(
-        new MongoNamespace("db", "things"),
+        MongoNamespace("db", "things"),
         equal("_id", 1),
         Document("object" -> "potato")
       )
@@ -57,8 +57,8 @@ object Main {
 
     {
       // start-perform
-      val peopleNamespace = new MongoNamespace("db", "people")
-      val thingsNamespace = new MongoNamespace("db", "things")
+      val peopleNamespace = MongoNamespace("db", "people")
+      val thingsNamespace = MongoNamespace("db", "things")
 
       val writeModels = List(
         ClientNamespacedWriteModel.insertOne(
@@ -83,7 +83,7 @@ object Main {
     }
     {
       // start-options
-      val namespace = new MongoNamespace("db", "people")
+      val namespace = MongoNamespace("db", "people")
 
       val options = ClientBulkWriteOptions.clientBulkWriteOptions().ordered(false)
 
