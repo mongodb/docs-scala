@@ -8,7 +8,7 @@ object StableAPI {
 
     {
       // start-default
-      val user = "<username>"     // the username
+      val user = "<db_username>"     // the username
       val source = "<source>"     // the source where the user is defined
       val password = ...          // the password as a character array
 
