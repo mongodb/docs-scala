@@ -244,7 +244,7 @@ This example creates pipeline stages to perform the following actions:
     placeholder with the name of the index. To learn more about Atlas Search indexes, see
     the :ref:`scala-atlas-search-index` guide.
 
-.. _scala-atlas-search-helper-methods
+.. _scala-atlas-search-helper-methods:
 
 SearchOperator Helper Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
