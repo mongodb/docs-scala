@@ -244,6 +244,34 @@ This example creates pipeline stages to perform the following actions:
     placeholder with the name of the index. To learn more about Atlas Search indexes, see
     the :ref:`scala-atlas-search-index` guide.
 
+.. _scala-atlas-search-helper-methods
+
+SearchOperator Helper Methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. sharedinclude:: dbx/jvm/atlas-search-operator-helpers.rst
+
+   .. replacement:: atlas-query-operators-example
+
+      .. io-code-block::
+
+         .. input:: /includes/aggregation.scala
+            :language: scala
+            :start-after: // start-atlas-helper-methods
+            :end-before: // end-atlas-helper-methods
+            :dedent:
+
+         .. output::
+            :language: console
+            :visible: false
+
+            Document{{_id=573a1397f29313caabce86db, genres=[Drama, Sport], cast=[Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers], title=Rocky III, year=1982}}
+            Document{{_id=573a1398f29313caabce9af0, genres=[Drama, Sport], cast=[Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers], title=Rocky IV, year=1985}}
+
+   .. replacement:: searchoperator-interface-api-docs
+
+      the `SearchOperator Interface API documentation <{+core-api+}/client/model/search/SearchOperator.html>`__
+
 Additional Information
 ----------------------
 

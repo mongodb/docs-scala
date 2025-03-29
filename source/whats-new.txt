@@ -54,8 +54,8 @@ and features:
 
    .. replacement:: atlas-query-operators
 
-      the `SearchOperator <{+core-api+}/client/model/search/SearchOperator.html>`__
-      interface API documentation
+      the :ref:`SearchOperator Helper Methods <scala-atlas-search-helper-methods>` section on the Data
+      Aggregation page.
 
 .. _scala-version-5.3:
 
