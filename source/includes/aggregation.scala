@@ -50,6 +50,30 @@ object Aggregation {
                         (e: Throwable) => println(s"There was an error: $e"))
     // end-atlas-search
 
+    // start-atlas-helper-methods
+    val searchStage: Bson = Aggregates.search(
+      SearchOperator.compound()
+        .filter(
+          Iterable(
+            SearchOperator.text(fieldPath("genres"), "Drama"),
+            SearchOperator.phrase(fieldPath("cast"), "sylvester stallone"),
+            SearchOperator.numberRange(fieldPath("year")).gtLt(1980, 1989),
+            SearchOperator.wildcard(fieldPath("title"), "Rocky *")
+          )
+        )
+    )
+
+    val projection = Projections.fields(
+      Projections.include("title", "year", "genres", "cast")
+    )
+
+    val aggregatePipelineStages = Seq(searchStage, Aggregates.project(projection))
+
+    collection.aggregate(aggregatePipelineStages)
+      .subscribe((doc: Document) => println(doc.toJson()),
+        (e: Throwable) => println(s"There was an error: $e"))
+    // end-atlas-helper-methods
+
     Thread.sleep(1000)
     mongoClient.close()
   }
