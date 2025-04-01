@@ -195,7 +195,7 @@ plan:
       ...}
 
 Run an Atlas Full-Text Search
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 .. tip:: Only Available on Atlas for MongoDB v4.2 and later
 
@@ -246,10 +246,14 @@ This example creates pipeline stages to perform the following actions:
 
 .. _scala-atlas-search-helper-methods:
 
-SearchOperator Helper Methods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Search Operator Helper Methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. sharedinclude:: dbx/jvm/atlas-search-operator-helpers.rst
+
+   .. replacement:: as-idx-link
+
+      the :ref:`scala-atlas-search-index` guide
 
    .. replacement:: atlas-query-operators-example
 
@@ -265,12 +269,8 @@ SearchOperator Helper Methods
             :language: console
             :visible: false
 
-            Document{{_id=573a1397f29313caabce86db, genres=[Drama, Sport], cast=[Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers], title=Rocky III, year=1982}}
-            Document{{_id=573a1398f29313caabce9af0, genres=[Drama, Sport], cast=[Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers], title=Rocky IV, year=1985}}
-
-   .. replacement:: searchoperator-interface-api-docs
-
-      the `SearchOperator Interface API documentation <{+core-api+}/client/model/search/SearchOperator.html>`__
+            {"_id": ..., "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky III", "year": 1982}
+            {"_id": ..., "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky IV", "year": 1985}
 
 Additional Information
 ----------------------
