@@ -57,16 +57,16 @@ object Aggregation {
       SearchOperator.compound()
         .must(
           Iterable(
-            SearchOperator.text(fieldPath("genres"), "Drama"),
-            SearchOperator.phrase(fieldPath("cast"), "sylvester stallone"),
-            SearchOperator.numberRange(fieldPath("year")).gtLt(1980, 1989),
-            SearchOperator.wildcard("Rocky *", fieldPath("title"))
+            SearchOperator.in(fieldPath("genres"), List("Comedy")),
+            SearchOperator.phrase(fieldPath("fullplot"), "new york"),
+            SearchOperator.numberRange(fieldPath("year")).gtLt(1950, 2000),
+            SearchOperator.wildcard("Love *", fieldPath("title")),
           ).asJava
         )
     )
 
     val projectStage = Aggregates.project(
-      Projections.include("title", "year", "genres", "cast"))
+      Projections.include("title", "year", "genres"))
 
     val aggregatePipelineStages = Seq(searchStage, projectStage)
 

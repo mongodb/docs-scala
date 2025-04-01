@@ -269,8 +269,8 @@ Search Operator Helper Methods
             :language: console
             :visible: false
 
-            {"_id": ..., "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky III", "year": 1982}
-            {"_id": ..., "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky IV", "year": 1985}
+            {"_id": ..., "genres": ["Comedy", "Romance"], "title": "Love at First Bite", "year": 1979}
+            {"_id": ..., "genres": ["Comedy", "Drama"], "title": "Love Affair", "year": 1994}
 
 Additional Information
 ----------------------
@@ -310,4 +310,3 @@ following API documentation:
 - `aggregate() <{+driver-api+}/MongoCollection.html#aggregate[C](pipeline:Seq[org.mongodb.scala.bson.conversions.Bson])(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[C,TResult],implicitct:scala.reflect.ClassTag[C]):org.mongodb.scala.AggregateObservable[C]>`__
 - `Aggregates <{+driver-api+}/model/Aggregates$.html>`__
 - `explain() <{+driver-api+}/AggregateObservable.html#explain[ExplainResult](verbosity:com.mongodb.ExplainVerbosity)(implicite:org.mongodb.scala.bson.DefaultHelper.DefaultsTo[ExplainResult,org.mongodb.scala.Document],implicitct:scala.reflect.ClassTag[ExplainResult]):org.mongodb.scala.SingleObservable[ExplainResult]>`__
-
