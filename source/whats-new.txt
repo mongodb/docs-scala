@@ -54,8 +54,8 @@ and features:
 
    .. replacement:: atlas-query-operators
 
-      the :ref:`SearchOperator Helper Methods <scala-atlas-search-helper-methods>` section on the Data
-      Aggregation page.
+      the :ref:`Search Operator Helper Methods <scala-atlas-search-helper-methods>`
+      section of the Data Aggregation guide.
 
 .. _scala-version-5.3:
 
