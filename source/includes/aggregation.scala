@@ -5,6 +5,8 @@ import com.mongodb.ExplainVerbosity
 import org.mongodb.scala.model.Projections
 import org.mongodb.scala.model.search._
 import org.mongodb.scala.model.search.SearchOptions.searchOptions
+import org.mongodb.scala.model.search.SearchPath.fieldPath
+import scala.jdk.CollectionConverters._
 
 object Aggregation {
 
@@ -51,23 +53,22 @@ object Aggregation {
     // end-atlas-search
 
     // start-atlas-helper-methods
-    val searchStage: Bson = Aggregates.search(
+    val searchStage = Aggregates.search(
       SearchOperator.compound()
-        .filter(
+        .must(
           Iterable(
             SearchOperator.text(fieldPath("genres"), "Drama"),
             SearchOperator.phrase(fieldPath("cast"), "sylvester stallone"),
             SearchOperator.numberRange(fieldPath("year")).gtLt(1980, 1989),
-            SearchOperator.wildcard(fieldPath("title"), "Rocky *")
-          )
+            SearchOperator.wildcard("Rocky *", fieldPath("title"))
+          ).asJava
         )
     )
 
-    val projection = Projections.fields(
-      Projections.include("title", "year", "genres", "cast")
-    )
+    val projectStage = Aggregates.project(
+      Projections.include("title", "year", "genres", "cast"))
 
-    val aggregatePipelineStages = Seq(searchStage, Aggregates.project(projection))
+    val aggregatePipelineStages = Seq(searchStage, projectStage)
 
     collection.aggregate(aggregatePipelineStages)
       .subscribe((doc: Document) => println(doc.toJson()),
