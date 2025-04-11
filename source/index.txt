@@ -3,7 +3,7 @@
 ====================
 
 .. meta::
-   :description: Explore resources and tutorials for using the MongoDB Scala Driver, including installation, connection setup, data operations, and more.
+   :description: Explore resources and tutorials for using the MongoDB Scala Driver.
 
 .. contents:: On this page
    :local:
