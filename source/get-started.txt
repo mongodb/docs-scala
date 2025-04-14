@@ -177,7 +177,7 @@ To learn how to connect to an instance or deployment not hosted on Atlas, see th
       
       Save this file to a safe location for use in the next step.
 
-After completing these steps, you have a connection string that
+After you complete these steps, you have a connection string that
 corresponds to your Atlas cluster.
 
 .. _scala-connect-to-mongodb:
