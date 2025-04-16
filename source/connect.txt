@@ -27,7 +27,6 @@ Connect to MongoDB
    AWS Lambda <https://www.mongodb.com/docs/atlas/manage-connections-aws-lambda/>
 ..   /connect/connection-options
 
-
 Overview
 --------
 
