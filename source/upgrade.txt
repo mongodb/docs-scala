@@ -56,6 +56,15 @@ changes between the current and upgrade versions. For example, if you
 are upgrading the driver from v4.0 to v4.7, address all breaking changes from
 the version after v4.0 including any listed for v4.7.
 
+.. _scala-breaking-changes-v5.5:
+
+Version 5.5 Breaking Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The driver is no longer compatible with {+mdb-server+} version
+  4.0. To learn more about this change, see the
+  :ref:`scala-server-release-change-v5.5` section.
+
 .. _scala-breaking-changes-v5.2:
 
 Version 5.2 Breaking Changes
@@ -71,15 +80,6 @@ This driver version introduces the following breaking changes:
   ``mongodb-crypt`` will be released alongside the driver and will share the same version number.
   You must upgrade your ``mongodb-crypt`` dependency to v5.2.0 when upgrading your driver for
   this release.
-
-.. _scala-breaking-changes-v5.5:
-
-Version 5.5 Breaking Changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- The driver is no longer compatible with {+mdb-server+} version
-  v4.0. To learn more about this change, see the
-  :ref:`scala-server-release-change-v5.5` section.
 
 .. _scala-breaking-changes-v5.1:
 
