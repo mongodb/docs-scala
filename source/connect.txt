@@ -26,6 +26,7 @@ Connect to MongoDB
    Limit Execution Time </connect/csot>
    Configure TLS </connect/tls>
    AWS Lambda <https://www.mongodb.com/docs/atlas/manage-connections-aws-lambda/>
+
 ..   /connect/connection-options
 
 Overview
