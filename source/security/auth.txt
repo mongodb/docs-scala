@@ -68,8 +68,8 @@ users with passwords.
 SCRAM-SHA-256
 ~~~~~~~~~~~~~
 
-Using this mechanism requires MongoDB 4.0 or later and
-``featureCompatibilityVersion`` to be set to 4.0 or a later version.
+Using this mechanism requires ``featureCompatibilityVersion`` to be set to 4.0 
+or a later version.
 
 To explicitly create a credential of type ``SCRAM-SHA-256``, use
 the ``createScramSha256Credential()`` method:
