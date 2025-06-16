@@ -29,6 +29,15 @@ following versions of the {+driver-long+}:
 * :ref:`Version 5.1.1 <scala-version-5.1.1>`
 * :ref:`Version 5.1 <scala-version-5.1>`
 
+.. _scala-version-5.5.1:
+
+What's New in 5.5.1
+-------------------
+
+The 5.5.1 driver patch release includes the following changes:
+
+.. sharedinclude:: dbx/jvm/v5.5.1-wn-items.rst
+
 .. _scala-version-5.5:
 
 What's New in 5.5
