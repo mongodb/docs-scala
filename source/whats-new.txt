@@ -21,6 +21,7 @@ What's New
 Learn about new features, improvements, and fixes introduced in the
 following versions of the {+driver-long+}:
 
+* :ref:`Version 5.5.1 <scala-version-5.5.1>`
 * :ref:`Version 5.5 <scala-version-5.5>`
 * :ref:`Version 5.4 <scala-version-5.4>`
 * :ref:`Version 5.3 <scala-version-5.3>`
